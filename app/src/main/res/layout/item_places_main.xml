@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/places_item_cardview"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/std_200_dp"
+        android:layout_height="@dimen/std_160_dp"
         android:layout_centerHorizontal="true"
         android:elevation="12dp"
         android:innerRadius="40dp"
@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/item_icon"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/std_200_dp"
+            android:layout_height="@dimen/std_160_dp"
             android:background="@drawable/empty_image"
             android:contentDescription="places icon" />
 
@@ -31,12 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="@dimen/std_20_dp"
+            android:paddingBottom="@dimen/std_6_dp"
+            android:paddingTop="@dimen/std_6_dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/app_name"
             android:textStyle="bold"
             android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
+            android:background="#40000000"
+            android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
 
 

@@ -173,14 +173,14 @@ public class UtilityPlaces {
         beachList.add(B_MALPE_BEACH_UDUPI);
         beachList.add(B_OM_BEACH_GOKARNA);
         beachList.add(B_PADUBIDRI_BEACH);
-        beachList.add(B_SASITALU_BEACH_MANGALORE);
+        beachList.add(B_SASIHITHLU_BEACH_MANGALORE);
         return beachList;
     }
 
     private static List<String> getHillStationList() {
         // Hills Station Names
         List<String> hillStationList = new ArrayList<>();
-        hillStationList.add(H_KUDURE_MUKHA);
+        hillStationList.add(H_KUDREMUKH);
         hillStationList.add(H_MADIKERI);
         hillStationList.add(H_AAGUMBE);
         hillStationList.add(H_NANDHI_HILLS);
@@ -261,6 +261,22 @@ public class UtilityPlaces {
     public static String getReferenceUrls(String placeName) {
         if (B_GOKARNA_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/gokarna/beaches-in-gokarna/";
+        }else if(B_KARWAR_BEACH.equals(placeName)){
+            return "https://www.karnataka.com/karwar/beaches-in-karwar/";
+        }else if(B_KAUP_BEACH_UDUPI.equals(placeName)){
+            return "https://www.karnataka.com/udupi/kaup-beach/";
+        }else if(B_MALPE_BEACH_UDUPI.equals(placeName)){
+            return "https://www.karnataka.com/udupi/malpe-beach/";
+        }else if(B_OM_BEACH_GOKARNA.equals(placeName)){
+            return "https://www.karnataka.com/gokarna/om-beach/";
+        }else if(B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)){
+            return "https://www.karnataka.com/mangalore/sasihithlu-beach/";
+        }else if(B_PADUBIDRI_BEACH.equals(placeName)){
+            return "https://www.karnataka.com/udupi/padubidri-beach/";
+        }else if(H_KUDREMUKH.equals(placeName)){
+            return "https://www.holidify.com/places/kudremukh/";
+        }else if(H_MADIKERI.equals(placeName)){
+            return "https://www.holidify.com/places/madikeri/";
         }
         return "";
     }

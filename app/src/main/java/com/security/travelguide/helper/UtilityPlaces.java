@@ -2,18 +2,53 @@ package com.security.travelguide.helper;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 
 import androidx.annotation.StringRes;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.security.travelguide.model.PlaceItem;
-import com.security.travelguide.helper.UtilityPlaceConstants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.security.travelguide.helper.UtilityPlaceConstants.*;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_GOKARNA_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_KARWAR_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_KAUP_BEACH_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_MALPE_BEACH_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_OM_BEACH_GOKARNA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_PADUBIDRI_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_SASIHITHLU_BEACH_MANGALORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_ALAMATTI_GARDEN;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_CUBBON_PARK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_DANDELI_FOREST;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_HOSPET_GARDEN;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_LALBAG_BANGALORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_MYSORE_ZOO;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_AGUMBE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_KUDREMUKH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_MADIKERI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_NANDHI_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_SAVANADURGA_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_SHIVAGANGE_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_BIDAR_FORT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOL_GUMBAZ;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_MYSORE_PALACE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_VIDHANA_SOUDHA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_CHAMUNDESHWARI_MYSORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_DARMASTHALA_MANJUNATHA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_ISKON_BANGALORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KOODALA_SANGAMA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALAMATTI_WATER_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODACHINA_MALAKI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_GOKAK_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOGA_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_WATER_DAM;
 
 public class UtilityPlaces {
 
@@ -182,9 +217,9 @@ public class UtilityPlaces {
         List<String> hillStationList = new ArrayList<>();
         hillStationList.add(H_KUDREMUKH);
         hillStationList.add(H_MADIKERI);
-        hillStationList.add(H_AAGUMBE);
+        hillStationList.add(H_AGUMBE);
         hillStationList.add(H_NANDHI_HILLS);
-        hillStationList.add(H_SHIVAGANGA_HILLS);
+        hillStationList.add(H_SHIVAGANGE_HILLS);
         hillStationList.add(H_SAVANADURGA_HILLS);
         return hillStationList;
     }
@@ -192,11 +227,11 @@ public class UtilityPlaces {
     private static List<String> getMonumentsList() {
         // Monuments Names
         List<String> monumentList = new ArrayList<>();
-        monumentList.add(M_GOLAGUMBAJ_VIJAYAPURA);
+        monumentList.add(M_GOL_GUMBAZ);
         monumentList.add(M_MYSORE_PALACE);
-        monumentList.add(M_VIDHANASOUDA_BANGALORE);
-        monumentList.add(M_CHURCH_MYSORE);
-        monumentList.add(M_MENABASID_BADAMI);
+        monumentList.add(M_VIDHANA_SOUDHA);
+        monumentList.add(M_PHILOMENA_CHURCH);
+        monumentList.add(M_MENA_BASADI);
         monumentList.add(M_BIDAR_FORT);
         return monumentList;
     }
@@ -261,22 +296,42 @@ public class UtilityPlaces {
     public static String getReferenceUrls(String placeName) {
         if (B_GOKARNA_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/gokarna/beaches-in-gokarna/";
-        }else if(B_KARWAR_BEACH.equals(placeName)){
+        } else if (B_KARWAR_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/karwar/beaches-in-karwar/";
-        }else if(B_KAUP_BEACH_UDUPI.equals(placeName)){
+        } else if (B_KAUP_BEACH_UDUPI.equals(placeName)) {
             return "https://www.karnataka.com/udupi/kaup-beach/";
-        }else if(B_MALPE_BEACH_UDUPI.equals(placeName)){
+        } else if (B_MALPE_BEACH_UDUPI.equals(placeName)) {
             return "https://www.karnataka.com/udupi/malpe-beach/";
-        }else if(B_OM_BEACH_GOKARNA.equals(placeName)){
+        } else if (B_OM_BEACH_GOKARNA.equals(placeName)) {
             return "https://www.karnataka.com/gokarna/om-beach/";
-        }else if(B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)){
+        } else if (B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/sasihithlu-beach/";
-        }else if(B_PADUBIDRI_BEACH.equals(placeName)){
+        } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/udupi/padubidri-beach/";
-        }else if(H_KUDREMUKH.equals(placeName)){
+        } else if (H_KUDREMUKH.equals(placeName)) {
             return "https://www.holidify.com/places/kudremukh/";
-        }else if(H_MADIKERI.equals(placeName)){
+        } else if (H_MADIKERI.equals(placeName)) {
             return "https://www.holidify.com/places/madikeri/";
+        } else if (H_AGUMBE.equals(placeName)) {
+            return "https://www.holidify.com/places/shimoga/agumbe-sightseeing-8109.html";
+        } else if (H_NANDHI_HILLS.equals(placeName)) {
+            return "holidify.com/places/nandi-hills/";
+        } else if (H_SHIVAGANGE_HILLS.equals(placeName)) {
+            return "https://www.holidify.com/places/shivagange/";
+        } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
+            return "https://www.holidify.com/places/savandurga/";
+        }else if (M_GOL_GUMBAZ.equals(placeName)) {
+            return "https://www.yatra.com/indian-monuments/bijapur/gol-gumbaz";
+        }else if (M_MYSORE_PALACE.equals(placeName)) {
+            return "https://www.mysoretourism.org.in/mysore-maharaja-palace";
+        }else if (M_VIDHANA_SOUDHA.equals(placeName)) {
+            return "https://www.thrillophilia.com/attractions/vidhana-soudha";
+        }else if (M_PHILOMENA_CHURCH.equals(placeName)) {
+            return "https://www.mysoretourism.org.in/st-philomenas-church-mysore";
+        }else if (M_MENA_BASADI.equals(placeName)) {
+            return "https://en.wikipedia.org/wiki/Badami_cave_temples";
+        }else if (M_BIDAR_FORT.equals(placeName)) {
+            return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
         }
         return "";
     }

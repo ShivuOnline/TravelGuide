@@ -14,17 +14,17 @@ public class UtilityPlaceConstants {
     // Hills Station Names
     public static String H_KUDREMUKH = "Kudremukh";
     public static String H_MADIKERI = "Madikeri";
-    public static String H_AAGUMBE = "Aagumbe";
+    public static String H_AGUMBE = "Agumbe";
     public static String H_NANDHI_HILLS = "Nandhi Hills";
-    public static String H_SHIVAGANGA_HILLS = "Shivaganga Hills";
+    public static String H_SHIVAGANGE_HILLS = "Shivagange Hills";
     public static String H_SAVANADURGA_HILLS = "Savandurga Hills";
 
     // Monuments Names
-    public static String M_GOLAGUMBAJ_VIJAYAPURA = "Golagumbaj Vijayapura";
+    public static String M_GOL_GUMBAZ = "Gol Gumbaz";
     public static String M_MYSORE_PALACE = "Mysore Palace";
-    public static String M_VIDHANASOUDA_BANGALORE = "Vidhanasouda Bangalore";
-    public static String M_CHURCH_MYSORE = "Church Mysore";
-    public static String M_MENABASID_BADAMI = "Menabasid Badami";
+    public static String M_VIDHANA_SOUDHA = "Vidhana Soudha";
+    public static String M_PHILOMENA_CHURCH = "Philomena Church";
+    public static String M_MENA_BASADI = "Mena Basadi";
     public static String M_BIDAR_FORT = "Bidar Fort";
 
     // Religious Names

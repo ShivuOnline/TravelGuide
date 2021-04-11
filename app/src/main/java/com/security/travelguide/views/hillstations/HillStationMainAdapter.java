@@ -53,21 +53,21 @@ public class HillStationMainAdapter extends RecyclerView.Adapter<HillStationMain
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.hillStationsPlaceItemClicked(position, hillStationPlaceItem);
+                            listener.hillStationsPlaceItemClicked(position, holder.imageIcon,holder.textTitle, hillStationPlaceItem);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.hillStationsPlaceItemClicked(position, hillStationPlaceItem);
+                            listener.hillStationsPlaceItemClicked(position, holder.imageIcon,holder.textTitle, hillStationPlaceItem);
                         }
                     });
 
                     holder.hillStationPlaceItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.hillStationsPlaceItemClicked(position, hillStationPlaceItem);
+                            listener.hillStationsPlaceItemClicked(position, holder.imageIcon,holder.textTitle, hillStationPlaceItem);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class HillStationMainAdapter extends RecyclerView.Adapter<HillStationMain
     }
 
     public interface PlaceItemClickListener {
-        void hillStationsPlaceItemClicked(int position, PlaceItem hillStationPlaceItem);
+        void hillStationsPlaceItemClicked(int position, ImageView imagePlace,TextView textPlaceHeader, PlaceItem hillStationPlaceItem);
     }
 
     static class HillStationAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

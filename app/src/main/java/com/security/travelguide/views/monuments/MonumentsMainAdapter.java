@@ -53,21 +53,21 @@ public class MonumentsMainAdapter extends RecyclerView.Adapter<MonumentsMainAdap
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.monumentsPlaceItemClicked(position, monumentsPlaceItem);
+                            listener.monumentsPlaceItemClicked(position, holder.imageIcon, holder.textTitle, monumentsPlaceItem);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.monumentsPlaceItemClicked(position, monumentsPlaceItem);
+                            listener.monumentsPlaceItemClicked(position, holder.imageIcon, holder.textTitle, monumentsPlaceItem);
                         }
                     });
 
                     holder.monumentsPlaceItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.monumentsPlaceItemClicked(position, monumentsPlaceItem);
+                            listener.monumentsPlaceItemClicked(position, holder.imageIcon, holder.textTitle, monumentsPlaceItem);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class MonumentsMainAdapter extends RecyclerView.Adapter<MonumentsMainAdap
     }
 
     public interface PlaceItemClickListener {
-        void monumentsPlaceItemClicked(int position, PlaceItem monumentsPlaceItem);
+        void monumentsPlaceItemClicked(int position, ImageView imagePlace, TextView textPlaceHeader, PlaceItem monumentsPlaceItem);
     }
 
     static class MonumentsAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

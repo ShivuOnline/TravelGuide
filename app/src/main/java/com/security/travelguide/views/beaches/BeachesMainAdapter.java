@@ -53,21 +53,21 @@ public class BeachesMainAdapter extends RecyclerView.Adapter<BeachesMainAdapter.
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.beachPlaceItemClicked(position, beachPlaceItem);
+                            listener.beachPlaceItemClicked(position,holder.imageIcon,holder.textTitle, beachPlaceItem);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.beachPlaceItemClicked(position, beachPlaceItem);
+                            listener.beachPlaceItemClicked(position,holder.imageIcon,holder.textTitle, beachPlaceItem);
                         }
                     });
 
                     holder.beachPlaceItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.beachPlaceItemClicked(position, beachPlaceItem);
+                            listener.beachPlaceItemClicked(position,holder.imageIcon, holder.textTitle, beachPlaceItem);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class BeachesMainAdapter extends RecyclerView.Adapter<BeachesMainAdapter.
     }
 
     public interface PlaceItemClickListener {
-        void beachPlaceItemClicked(int position, PlaceItem beachPlaceItem);
+        void beachPlaceItemClicked(int position,ImageView imagePlace, TextView textPlaceHeader, PlaceItem beachPlaceItem);
     }
 
     static class BeachesAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

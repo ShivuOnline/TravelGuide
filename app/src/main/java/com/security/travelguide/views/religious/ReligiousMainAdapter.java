@@ -53,21 +53,21 @@ public class ReligiousMainAdapter extends RecyclerView.Adapter<ReligiousMainAdap
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.religiousPlaceItemClicked(position, religiousPlaceItem);
+                            listener.religiousPlaceItemClicked(position, holder.imageIcon,holder.textTitle, religiousPlaceItem);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.religiousPlaceItemClicked(position, religiousPlaceItem);
+                            listener.religiousPlaceItemClicked(position, holder.imageIcon,holder.textTitle, religiousPlaceItem);
                         }
                     });
 
                     holder.religiousPlaceItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.religiousPlaceItemClicked(position, religiousPlaceItem);
+                            listener.religiousPlaceItemClicked(position, holder.imageIcon,holder.textTitle, religiousPlaceItem);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class ReligiousMainAdapter extends RecyclerView.Adapter<ReligiousMainAdap
     }
 
     public interface PlaceItemClickListener {
-        void religiousPlaceItemClicked(int position, PlaceItem religiousPlaceItem);
+        void religiousPlaceItemClicked(int position, ImageView imagePlace,TextView textPlaceHeader, PlaceItem religiousPlaceItem);
     }
 
     static class ReligiousAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -1,15 +1,19 @@
 package com.security.travelguide.views.gardens;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +25,7 @@ import com.security.travelguide.helper.UtilityPlaces;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.model.PlaceItem;
 import com.security.travelguide.views.dashboard.Dashboard;
+import com.security.travelguide.views.main.MainViewActivity;
 
 import java.util.List;
 
@@ -102,7 +107,26 @@ public class Gardens extends Fragment implements GardensMainAdapter.PlaceItemCli
     }
 
     @Override
-    public void gardensPlaceItemClicked(int position, PlaceItem gardensPlaceItem) {
-//        Toast.makeText(requireContext(), "Garden Item: " + position, Toast.LENGTH_SHORT).show();
+    public void gardensPlaceItemClicked(int position, ImageView imagePlace, TextView textPlaceHeader, PlaceItem gardensPlaceItem) {
+        try {
+            Intent intent = new Intent(requireContext(), MainViewActivity.class);
+            intent.putExtra(MainViewActivity.PLACES_ITEM_DETAILS, gardensPlaceItem);
+
+            Pair<View, String> transactionPairOne = Pair.create((View) imagePlace, requireContext().getResources().getString(R.string.transaction_name));
+            Pair<View, String> transactionPairTwo = Pair.create((View) textPlaceHeader, requireContext().getResources().getString(R.string.transaction_title_name));
+
+           /*
+           // Call single Shared Transaction
+           ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(requireActivity(), (View) imagePlace, requireContext().getResources().getString(R.string.transaction_name));
+            */
+
+            // Call Multiple Shared Transaction using Pair Option
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(requireActivity(), transactionPairOne, transactionPairTwo);
+            startActivity(intent, options.toBundle());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

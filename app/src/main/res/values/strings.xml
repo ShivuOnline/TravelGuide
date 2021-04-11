@@ -4,4 +4,63 @@
     <string name="implementation_on_fragment_listener"> must implement OnFragmentInteractionListener</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="transaction_name" translatable="false">places</string>
+    <string name="transaction_title_name" translatable="false">placeTitle</string>
+
+
+    // Beaches Description
+    <string name="beaches_gokarna_beach_desc">\tGokarna Beaches are the chief tourist attractions in the holy town of Gokarna. The name itself has been derived from Go (holy cow) and Karna (ears); hence, it has considerable mythological reverence as well.
+\n\n\tPart of a largely Hindu domain, the tourists also pay homage to the famous Mahabaleswara temple, which is a renowned Shiva temple (a major Hindu deity), Maha Ganapathy temple, the Uma Maheshwari temples, and a host of other well-know temples for which this tourist spot is also famous.
+\n\n\tGokarna is remotely populated with its nearest connection being Goa to its north and the city of Bangalore is located roughly around 275 miles to its east.
+\n\n\tFor those looking at convenient air-travel, Dabolim in Goa is by far the nearest airport. From Dabolim, travel enthusiasts can either opt for train services or simply hire a cab to reach Gokarna in close to 4 hours.
+\n\n\tOther nearby cities on international maps can be located in Madgaon also in Goa and Mangalore. For all the first timers, this tourist spot offers warm and pleasant weather conditions with an average Celsius temperature of around 30 degrees.
+</string>
+    <string name="beaches_karwar_beach_desc"> </string>
+    <string name="beaches_kaup_beach_udupi_desc"> </string>
+    <string name="beaches_malpe_beach_udupi_desc"> </string>
+    <string name="beaches_om_beach_gokarna_desc"> </string>
+    <string name="beaches_padubidri_beach_desc"> </string>
+    <string name="beaches_sasitalu_beach_mangalore_desc"> </string>
+
+    // Hill Stations Description
+    <string name="hills_kudure_muka_desc"> </string>
+    <string name="hills_madikeri_desc"> </string>
+    <string name="hills_agumbe_desc"> </string>
+    <string name="hills_nandi_desc"> </string>
+    <string name="hills_shivaganga_desc"> </string>
+    <string name="hills_savanadurga_desc"> </string>
+
+    // Monuments Description
+    <string name="monumnets_golgumbaj_desc"> </string>
+    <string name="monumnets_mysore_palace_desc"> </string>
+    <string name="monumnets_vidanasouda_desc"> </string>
+    <string name="monumnets_church_desc"> </string>
+    <string name="monumnets_menabasid_desc"> </string>
+    <string name="monumnets_bidar_fort_desc"> </string>
+
+    // Religious Description
+    <string name="rel_koodalasangama_desc"> </string>
+    <string name="rel_iskon_blg_desc"> </string>
+    <string name="rel_murudeshwara_desc"> </string>
+    <string name="rel_sri_krishna_udupi_desc"> </string>
+    <string name="rel_darmasthala_desc"> </string>
+    <string name="rel_kukke_subramanya_desc"> </string>
+    <string name="rel_chamundeshwari_desc"> </string>
+
+    // Gardens Description
+    <string name="gard_alamatti_desc"> </string>
+    <string name="gard_hosapet_desc"> </string>
+    <string name="gard_lalbag_desc"> </string>
+    <string name="gard_cubbon_desc"> </string>
+    <string name="gard_mysore_desc"> </string>
+    <string name="gard_dandeli_desc"> </string>
+
+    // Water Falls Description
+    <string name="water_Joga_falls_desc"> </string>
+    <string name="water_gokak_falls_desc"> </string>
+    <string name="water_godachin_malaki_desc"> </string>
+    <string name="water_krs_desc"> </string>
+    <string name="water_alamatti_desc"> </string>
+
 </resources>

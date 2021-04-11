@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:transitionName="@string/transaction_name"
+    tools:context=".views.main.MainViewActivity">
+
+    <ImageView
+        android:id="@+id/places_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/std_240_dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/empty_image"
+        android:transitionName="places" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_header_secondary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/std_50_dp"
+                android:layout_marginTop="@dimen/std_240_dp"
+                android:background="@color/color_primary"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="16dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/std_18_sp" />
+
+            <TextView
+                android:id="@+id/places_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/std_300_dp"
+                android:layout_marginBottom="@dimen/std_40_dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/std_6_dp"
+                android:paddingStart="@dimen/std_10_dp"
+                android:paddingLeft="@dimen/std_10_dp"
+                android:paddingEnd="@dimen/std_2_dp"
+                android:paddingRight="@dimen/std_2_dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/std_16_sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/text_header_primary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_primary"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="16dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/std_18_sp" />
+
+</RelativeLayout>

@@ -31,6 +31,7 @@
 
     <!-- Custom DP Dimension Values -->
     <dimen name="std_300_dp">300dp</dimen>
+    <dimen name="std_290_dp">290dp</dimen>
     <dimen name="std_280_dp">280dp</dimen>
     <dimen name="std_260_dp">260dp</dimen>
     <dimen name="std_240_dp">240dp</dimen>

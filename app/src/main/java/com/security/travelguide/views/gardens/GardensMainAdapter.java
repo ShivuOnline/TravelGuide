@@ -53,21 +53,21 @@ public class GardensMainAdapter extends RecyclerView.Adapter<GardensMainAdapter.
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.gardensPlaceItemClicked(position, gardensPlaceItem);
+                            listener.gardensPlaceItemClicked(position,holder.imageIcon,holder.textTitle, gardensPlaceItem);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.gardensPlaceItemClicked(position, gardensPlaceItem);
+                            listener.gardensPlaceItemClicked(position,holder.imageIcon,holder.textTitle, gardensPlaceItem);
                         }
                     });
 
                     holder.gardensPlaceItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.gardensPlaceItemClicked(position, gardensPlaceItem);
+                            listener.gardensPlaceItemClicked(position,holder.imageIcon,holder.textTitle, gardensPlaceItem);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class GardensMainAdapter extends RecyclerView.Adapter<GardensMainAdapter.
     }
 
     public interface PlaceItemClickListener {
-        void gardensPlaceItemClicked(int position, PlaceItem gardensPlaceItem);
+        void gardensPlaceItemClicked(int position,ImageView imagePlace, TextView textPlaceHeader,PlaceItem gardensPlaceItem);
     }
 
     static class GardensAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

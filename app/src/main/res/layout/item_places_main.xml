@@ -23,6 +23,7 @@
             android:id="@+id/item_icon"
             android:layout_width="match_parent"
             android:layout_height="@dimen/std_160_dp"
+            android:transitionName="@string/transaction_name"
             android:background="@drawable/empty_image"
             android:contentDescription="places icon" />
 
@@ -35,6 +36,7 @@
             android:paddingTop="@dimen/std_6_dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/app_name"
+            android:transitionName="@string/transaction_title_name"
             android:textStyle="bold"
             android:textColor="@color/colorWhite"
             android:background="#40000000"

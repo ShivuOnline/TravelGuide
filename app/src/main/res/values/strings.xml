@@ -106,13 +106,47 @@
 \n\n\tBidar Fort is 700 kms from Bengaluru. Recently opened Bidar Airport is the closest airport (11 kms from Bidar Fort) which has once a day flight from Bengaluru. Hyderabad airport is the next best option, 150 kms from Bidar. Bidar city railway station is 3 kms from Bidar Fort. Buses and trains are available from Bengaluru to reach Bidar.</string>
 
     // Religious Description
-    <string name="rel_koodalasangama_desc"> </string>
-    <string name="rel_iskon_blg_desc"> </string>
-    <string name="rel_murudeshwara_desc"> </string>
-    <string name="rel_sri_krishna_udupi_desc"> </string>
-    <string name="rel_darmasthala_desc"> </string>
-    <string name="rel_kukke_subramanya_desc"> </string>
-    <string name="rel_chamundeshwari_desc"> </string>
+    <string name="rel_kudala_sangama_desc">\tKudala Sangama (Kudalasangama Koodalsangama Koodalasangama) is in Bagalkot District of Karnataka. It is a famous pilgrim place for Veerashaivas. Here is the confluence of two big rivers Krishna and Malaprabha. The holy samadhi, Aikya Mantapa is situated here. The Mantapa is under water, but is well protected. There is a temple dedicated to Lord Sangameswara, worshipped in the form of a ling. The temple is an ancient monument built in the Chalukyan style architecture. Distance between Kudala Sangama and Bengaluru, Karnataka is 445.7 km and travel time is around 7 h 10 min via NH50 and NH48.
+\n\n\tThis place is closely associated with the 12th century poet and social reformer Saint Basaveswara. Basavana Bagewadi is another important place in the locality. Bagalkot Railway Station and Belgaum Airport are the nearest railhead and airport respectively.
+\n\n\tA true visionary of his time and a revolutionary who started a new religion, Lingayatism (also known as Veershaivism), which literally means The brave followers of Shiva. Basavannas ultimate aim was to make this fundamental right available to each and everyone. Basavanna, keeping welfare as the ultimate aim, expedited programmes to take religion to the people by preaching and writing religious literature in Kannada. His samadhi is at Kudalasangama.
+\n\n\tKudalasangama Pin code is 587118 and postal head office is Hungund. Kudalasangama STD code is 08351. Nearest railway station to Kudalasangama is Almatti which is 15 km away. Distance from Kudala Sangama to Bagalkot, Karnataka is 52.3 km and travelling takes around 1 h 13 min via NH367.
+</string>
+
+    <string name="rel_iskon_bangalore_desc">\tIskon located in the Rajaji Nagar in Bangalore, and a venture of the International Society of Krishna Consciousness, ISKCON Temple in Bangalore is a shrine to Lord Krishna. This splendid architecture was first erected by Sri Madhu Pandit Das and inaugurated in the year 1997 by the then President of India, Shankar Dayal Sharma.
+\n\n\tIt houses a number of prayer halls, dedicated to Sri Sri Radha Krishnachandra, Sri Sri Krishna Balarama, Sri Sri Nitai Gauranga, Sri Srinivasa Govinda and Sri Prahlada Narasimha.
+\n\n\tThe International Society for Krishna Consciousness was initiated in the year 1976 by Krishna devotees from across the world. The ISKCON Temple in Bangalore was first established in 1998 under the Karnataka Societies Registration Act, 1960.
+\n\n\tThe construction of the temple began in 1990, and around 600 skilled artisans were employed for the purpose. The construction finally ended in the year 1997.  On the same year, the Temple was inaugurated by the ninth President of India- Shankar Dayal Sharma.
+</string>
+
+    <string name="rel_murdeshwara_desc">\tMurudeshwara is a holy city dedicated to Lord Shiva, situated in the southern state of Karnataka, on the coast of the Arabian Sea. This city mainly prides itself on having the second tallest sculpture of Lord Shiva in the whole world.
+\n\n\tMurudeshwara is easily accessible by bus, train and by air. The nearest airport is Mangalore airport, which is 133km away from the city. All the trains that connect Mangalore and Mumbai pass through the Murudeshwar Railway Station, which makes it conveniently accessible by frequent trains. Other nearby cities like Kochi, Bangalore and Mumbai are connected to Murudeshwara through very efficient bus service.
+\n\n\tThe romantic sunsets on the Murudeshwar Beach are truly something worth witnessing when you are in the area. The beaches of the Arabian Sea such as the Aligadda Beach and Murudeshwar Beach allow tourists to enjoy water sports and other adventures along their shores. A unique activity you can enjoy in Murudeshwar Beach is scuba-diving, which is sure to leave you with lifelong memories. One must definitely visit the majestic statue of Lord Shiva that towers over the city at a height of 123 feet. A visit to the Murudeshwar Temple and Raja Gopura is also a spiritually rewarding experience for visitors.
+\n\n\tThe best time to visit Murudeshwar is between October and May when the city comes alive with fairs, events and festivals. The festival of Mahashivaratri is performed here with great spirit and fervour during February and March and is a spectacle worth witnessing. You can choose from a multitude of hotels and accommodations for a comfortable stay when you are visiting here.
+</string>
+
+    <string name="rel_sri_krishna_udupi_desc">\tUdupi is a wonderful holiday destination in Karnataka located about 60 km away from Mangalore. One of the unique things about this city is that it is surrounded by the Western ghats on one side and the Arabian Sea on the other. After Bangalore and Mangalore, Udupi is the most important city in Karnataka.
+\n\n\tUdupi is famous for its scenic beauty, mouth watering cuisines, pristine beaches and untouched forests. One of the best things to do in Udupi is explore the wonderful green forests and get a glimpse of some of its rare inmates. The intricately carved temples are visited by devotees and history buffs all year round. Udupi has a rich cultural heritage with a history that is over 700 years old.
+\n\n\tUdupi has some of the most beautiful places to visit in Karnataka such as the famous Krishna temple which is visited by devotees all year round. Other popular places to visit here are St. Marys Island, Bramhvar, Barkur, Maple Beach, Kudlu Falls and Anantheshwar Temple.
+\n\n\tUdupi city is not only famous for having some good temples and beaches, but you can also do some fun activities in this city. You can try the banana boats on Maple beach or ride the speed boats and enjoy a trip to St Marys island. Apart from boating, you can also do trekking, river rafting, water sports, pilgrimage, and many other outdoor activities. Udupi is also a great place to shop for Kanjeevaram sarees and other silken goods.
+</string>
+
+    <string name="rel_darmasthala_manjunatha_desc">\tShri Kshetra Dharmasthala, the land of righteousness and piety, is one of south Indias most renowned religious landmarks with a history as old as 800 years. Manjunatheshwara, the chief deity of the spiritual abode, has taken the form of a shivalinga and made immaculate, the temple town of Dharmasthala since and forever. Lord Manjunatheshwara, is being worshipped in a very unusual yet exceptionally inordinate manner in Shree kshetra dharmasthala, as this Shaiva temple is beseeched by Vaishnava priests and administered by Jain descendants.
+\n\n\tDharmasthala, the abode of dharma, is the quintessence of humanity and faith. As the name suggests, the word dharma in its truest sense means righteousness, it is the embodiment of the worlds most divine emotions in spite of ones cast, creed or religion.
+\n\n\tAnnappa swamy betta located 1.5 km west of the new bus stand and half a kilometre from the Shri Manjunatha temple, in the southeast direction is the hill of Annappa Betta, which is also known as Badinede Betta; this shrine is dedicated to Shri Annappa swamy and is home to the shrines of the four Dharma Daivas. A peep through the window of the inside of a dwelling, one can see a swing, believed to be used by one of the Daivas Generally the hill is visited, after having visited the main temple. Entry of children and women is restricted to this hill owing to the legend and lore of the temple.
+</string>
+
+    <string name="rel_kukke_subramanya_desc">\tSri Kukke Subramanya shrine in Dakshina Kannada district of Karnataka is one place almost every Hindu devotee in the Southern part of India would be familiar with.  And not just being familiar, many would either have visited or would have planned to visit the temple at least once in a lifetime for the powers Lord Subramanya here is known to possess and bless a devotee with. Come, lets learn about all that the shrine is known for and more.
+\n\n\tThe Kukke Subramanya Temple is dedicated to Lord Subramanya, Son of Lord Shiva. According to legends, Lord Subramanya is considered the Deva Senapathi – the commander of the army of the lords and is worshipped as the lord of snakes.
+\n\n\tThe temple Sri Kukke Subramanya is located in the Subramanya town of Sullia Taluk in Dakshina Kannada district. Easily accessible by rail and road, this small town is located about 105 km from Mangaluru while the temple is situated amidst a scenic location thats relatively unexplored and neat in comparison to a lot of other pilgrimage venues.
+</string>
+
+    <string name="rel_chamundeshwari_mysore_desc">\tIn India, just as a persons name usually has a symbolic meaning, names given to places also have a meaning behind them. Chamundi Hills in Karnataka are named after the Goddess Chamundeshwari.
+\n\n\tThe hills lie at a height of about 1000 meters above sea level and are 13 km east of Mysore. The Chamundeshwari Temple dedicated to the Goddess after whom the hills are named is the highlight of this place.
+\n\n\tAccording to popular legends, many years ago, a buffalo demon named Mahishasura was wreaking havoc in heaven and earth.  He had been gifted a boon by Brahma that he could be killed by no man.
+\n\n\tFor this reason, Mahishasura was slowly winning every battle he started. The Gods found a loophole to Brahmas boon and goddess Durga was given divine powers to make her stronger than Mahishasura.
+\n\n\tGoddess Chamundeshwari is a form of Durga. With her new powers and a lion as her vehicle, she fought Mahishasura atop a hill for ten days and finally killed him.
+\n\n\tIn her honor, the hill was named as Chamundi Hill. This day is celebrated throughout India as Dasara and symbolizes the victory of good over evil.
+</string>
 
     // Gardens Description
     <string name="gard_alamatti_desc"> </string>

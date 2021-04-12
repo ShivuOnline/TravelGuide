@@ -28,10 +28,10 @@ public class UtilityPlaceConstants {
     public static String M_BIDAR_FORT = "Bidar Fort";
 
     // Religious Names
-    public static String R_KOODALA_SANGAMA = "Koodala Sangama";
+    public static String R_KUDALA_SANGAMA = "Kudala Sangama";
     public static String R_ISKON_BANGALORE = "Iskon Bangalore";
     public static String R_MURUDESHWARA = "Murdeshwara";
-    public static String R_SRI_KRISHNA_UDUPI = "Sri Krishna Uduppi";
+    public static String R_SRI_KRISHNA_UDUPI = "Sri Krishna Udupi";
     public static String R_DARMASTHALA_MANJUNATHA = "Darmasthala Manjunatha";
     public static String R_KUKKE_SUBRAMANYA = "Kukke Subramanya";
     public static String R_CHAMUNDESHWARI_MYSORE = "Chamundeshwari Mysore";

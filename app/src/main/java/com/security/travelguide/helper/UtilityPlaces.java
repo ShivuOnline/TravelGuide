@@ -40,7 +40,7 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.M_VIDHANA_SO
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_CHAMUNDESHWARI_MYSORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_DARMASTHALA_MANJUNATHA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_ISKON_BANGALORE;
-import static com.security.travelguide.helper.UtilityPlaceConstants.R_KOODALA_SANGAMA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUDALA_SANGAMA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
@@ -239,7 +239,7 @@ public class UtilityPlaces {
     private static List<String> getReligiousList() {
         // Religious Names
         List<String> religiousList = new ArrayList<>();
-        religiousList.add(R_KOODALA_SANGAMA);
+        religiousList.add(R_KUDALA_SANGAMA);
         religiousList.add(R_ISKON_BANGALORE);
         religiousList.add(R_MURUDESHWARA);
         religiousList.add(R_SRI_KRISHNA_UDUPI);
@@ -332,6 +332,20 @@ public class UtilityPlaces {
             return "https://en.wikipedia.org/wiki/Badami_cave_temples";
         }else if (M_BIDAR_FORT.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
+        }else if (R_KUDALA_SANGAMA.equals(placeName)) {
+            return "https://travel2karnataka.com/kudala_sangama.htm";
+        }else if (R_ISKON_BANGALORE.equals(placeName)) {
+            return "https://www.thrillophilia.com/attractions/iskcon-temple-bangalore";
+        }else if (R_MURUDESHWARA.equals(placeName)) {
+            return "https://www.thrillophilia.com/cities/murudeshwara";
+        }else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
+            return "https://www.thrillophilia.com/cities/udupi";
+        }else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
+            return "https://www.shridharmasthala.org/about-dharmasthala/";
+        }else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
+            return "https://www.karnataka.com/mangalore/kukke-subrahmanya-temple/";
+        }else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
+            return "https://www.karnataka.com/mysore/chamundi-hills/";
         }
         return "";
     }

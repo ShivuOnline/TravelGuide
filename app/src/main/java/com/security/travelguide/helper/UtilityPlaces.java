@@ -479,36 +479,36 @@ public class UtilityPlaces {
 
     public static LatLng getMonumentsLocationDetails(String placeName) {
         if (M_GOL_GUMBAZ.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(16.830174, 75.736117);
         } else if (M_MYSORE_PALACE.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.305153, 76.655179);
         } else if (M_VIDHANA_SOUDHA.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.9791947,77.5913193);
         } else if (M_PHILOMENA_CHURCH.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.321024, 76.658254);
         } else if (M_MENA_BASADI.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(15.916642, 75.691002);
         } else if (M_BIDAR_FORT.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(17.922706, 77.526042);
         }
         return new LatLng(0.0, 0.0);
     }
 
     public static LatLng getReligiousLocationDetails(String placeName) {
         if (R_KUDALA_SANGAMA.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(16.205774, 76.059213);
         } else if (R_ISKON_BANGALORE.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(13.0097206,77.550799);
         } else if (R_MURUDESHWARA.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(14.093609, 74.483835);
         } else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(13.3411359,74.752003);
         } else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.950344, 75.380587);
         } else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.675203, 75.605845);
         } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.272465, 76.670738);
         }
         return new LatLng(0.0, 0.0);
     }

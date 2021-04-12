@@ -20,7 +20,7 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.B_PADUBIDRI_
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_SASIHITHLU_BEACH_MANGALORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_ALAMATTI_GARDEN;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_CUBBON_PARK;
-import static com.security.travelguide.helper.UtilityPlaceConstants.G_DANDELI_FOREST;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_DANDELI_NATIONAL_PARK;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_HOSPET_GARDEN;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_LALBAG_BANGALORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_MYSORE_ZOO;
@@ -44,11 +44,12 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUDALA_SAN
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALAMATTI_WATER_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALAMATTI_DAM;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODACHINA_MALAKI_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GOKAK_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOGA_FALLS;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_WATER_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_TUNGABHADRA_DAM;
 
 public class UtilityPlaces {
 
@@ -257,7 +258,7 @@ public class UtilityPlaces {
         gardensList.add(G_LALBAG_BANGALORE);
         gardensList.add(G_CUBBON_PARK);
         gardensList.add(G_MYSORE_ZOO);
-        gardensList.add(G_DANDELI_FOREST);
+        gardensList.add(G_DANDELI_NATIONAL_PARK);
         return gardensList;
     }
 
@@ -267,8 +268,9 @@ public class UtilityPlaces {
         waterFallsList.add(W_JOGA_FALLS);
         waterFallsList.add(W_GOKAK_FALLS);
         waterFallsList.add(W_GODACHINA_MALAKI_FALLS);
-        waterFallsList.add(W_KRS_WATER_DAM);
-        waterFallsList.add(W_ALAMATTI_WATER_DAM);
+        waterFallsList.add(W_KRS_DAM);
+        waterFallsList.add(W_ALAMATTI_DAM);
+        waterFallsList.add(W_TUNGABHADRA_DAM);
         return waterFallsList;
     }
 
@@ -346,6 +348,20 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mangalore/kukke-subrahmanya-temple/";
         }else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
             return "https://www.karnataka.com/mysore/chamundi-hills/";
+        }else if (G_ALAMATTI_GARDEN.equals(placeName)) {
+            return "https://www.karnatakatourism.org/tour-item/lav-kush-garden-almatti/";
+        }else if (G_HOSPET_GARDEN.equals(placeName)) {
+            return "https://www.hosapeteonline.in/city-guide/wildlife-and-parks-in-hospet";
+        }else if (G_LALBAG_BANGALORE.equals(placeName)) {
+            return "https://www.thrillophilia.com/attractions/lal-bagh-botanical-garden";
+        }else if (G_CUBBON_PARK.equals(placeName)) {
+            return "https://www.thrillophilia.com/attractions/cubbon-park";
+        }else if (G_MYSORE_ZOO.equals(placeName)) {
+            return "https://www.karnataka.com/mysore/mysore-zoo/";
+        }else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
+            return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
+        }else if (W_TUNGABHADRA_DAM.equals(placeName)) {
+            return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
         }
         return "";
     }

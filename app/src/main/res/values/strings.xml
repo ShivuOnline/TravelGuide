@@ -149,18 +149,66 @@
 </string>
 
     // Gardens Description
-    <string name="gard_alamatti_desc"> </string>
-    <string name="gard_hosapet_desc"> </string>
-    <string name="gard_lalbag_desc"> </string>
-    <string name="gard_cubbon_desc"> </string>
-    <string name="gard_mysore_desc"> </string>
-    <string name="gard_dandeli_desc"> </string>
+    <string name="gard_alamatti_garden_desc">\tLav Kush Garden is one of the most beautiful gardens at Almatti. They are beautifully maintained and depict huge sculptures which are made by using cement and steel of lav Kush and Krishna. There is natural pavement along the paths with waterfalls and water channels alongside. The Garden has a beautiful lawn, hedges, flower beds, ornamental plants and shrubs.
+\n\n\tIn Front of the Sita Mata Temple are two ponds which are believed to never dry up and always have water in them ( also known as Kush Kanda).
+\n\n\tThe garden attracts children by viewing different childhood activities of Lava and Kush like playing in their cradle with mother Sita, taking education with their Gurus etc.
+\n\n\tThe garden has a gorgeous view point and panoramic view of the Almatti Dam.Lav Kush Garden is open daily from 6 AM to 7 PM. Entry is free during early morning and late evening 6 to 9 AM and 6 to 7 PM. A nominal fee applies during the day time.
+\n\n\tLav Kush Garden is located 6 kms from the Almatti Dam. Lalbagh can be accessed using private vehicles/taxis to reach Lav Kush Garden.Almatti Dam, Badami Cave Temples, Fort Bijapur are some of the other interesting spots to explore near Lav Kush Garden.
+</string>
+
+    <string name="gard_hospet_garden_desc">\tHospet, being a tourist center, is flocked by crowds of people from all over India as well as abroad. The Department of tourism of Karnataka ensures the development and well maintenance of recreational parks and gardens. If you plan a trip to Hospet, you must not miss visiting the beautiful parks and gardens there. There are also excellent wildlife spots in and around Hospet which would be a delight for wildlife enthusiasts.
+\n\n\tHospet is home to many wildlife sanctuaries because of its natural environment and wide range of forests. If you are a wildlife lover, there is plenty of wildlife to be watched in Hospet and its surrounding areas.
+\n\n\tThe Daroji Bear Sanctuary provides room for various sloth bears to live freely in their natural habitat. Daroji Sloth Bear Sanctuary is located near Kamalapur which is just 12 km from Hospet. This area near Kamalapur has been the abode of bears since centuries and it has been declared as the Daroji Sloth Bear Sanctuary.
+\n\n\tThe Daroji Sloth Bear sanctuary also serves as a home for hyenas, pangolins, wild boars, jackals, black-naped hares, porcupines, and leopards. Bird spotting is also very popular here and you can spot endemic bird species like painted spur fowl and yellow-throated bulbuls. You can also find dry land bird species such as sand grouse, quails, sirkeer malkohas and stone-curlews in this sanctuary. The opening hours of the sanctuary are from 9.30am to 6pm and the entrance fee is Rs.25. It is a good idea for you to visit this sanctuary during July to March as it is the best time for sighting wildlife. However, sloth bears can be sighted all through the year during all months, including extremely hot summer months.
+\n\n\tOther popular places good for sighting wildlife are Muneer park, T.B Dam zoo and Chakra Vana park.
+</string>
+
+    <string name="gard_lalbag_bangalore_desc">\tLalbagh is one of the oldest botanical gardens in India and is also a major tourist attraction in South India. Located in South Bengaluru, the Lalbagh Botanical Garden is not only one of the largest botanical gardens in India, but also the first of its kind, with planned routes, glasshouses and ornamental flowers growing throughout the property.
+\n\n\tThe garden itself is spread over an area of 240 acres and its construction was commissioned by the famous ruler Hyder Ali. It was finally completed by his son- Tipu Sultan- who designed the gardens keeping in mind the beautiful gardens of Sira in Tumkur District in Karnataka.
+\n\n\tLalbagh is home to exotic flowers that were imported by the Sultan from countries like France, Persia, Arabia, Afghanistan, etc. Therefore, flowers that were previously never seen in India were first witnessed in this historical garden. Trees that were imported by Tipu Sultan from all over the world can still be found growing here.
+\n\n\tThe bi-annual flower show at the Lalbagh Botanical Garden is a spectacle to behold. People travel from far and wide from India and even from abroad to witness millions of flowers, thousands of plants and the incredible artistry that goes into making the figurines and flower structures.
+\n\n\tThe show takes place twice a year- once during January in the same week as the Indian Republic Day, and another time in August, during Independence Day. Each year, a different theme is chosen and flower arrangements are made according to the theme.
+\n\n\tPlants and flowers are imported from all over the world and over 20 lakh flowers are used each year to make semi-permanent structures in various characteristic shapes and designs. The show takes place inside the striking Glass House which is located on the premises of the Botanical Gardens and goes on from 9:00 am in the morning until 6:00 pm in the evening.
+\n\n\tLalbagh Botanical Garden is located at a distance of 38.8 km from Kempegowda International Airport in Bangalore. There are frequent bus routes that ferry between the two places. You can also book a taxi or hire a car which will take you to Lalbagh after a short 45-minute drive through the city of Bangalore.
+\n\nThe best time to visit the Lalbagh Botanical Gardens is during winter, which lasts from November to March in Bangalore. Even though the gardens remain open throughout the year, it can get pretty stuffy and hot during summer.
+</string>
+
+    <string name="gard_cubbon_park_desc">\tAn oasis of green amidst a buzzing urbanscape, Cubbon Park is a scenic tourist attraction in the IT city of Bangalore. The park with a thriving ecosystem with more than 6000 trees, is justly regarded as the ‘lungs’ of the city. Besides being home to multitudes of vibrant flora and birdlife, Cubbon Park is also where you will find a handful of the city’s most alluring structures including the Attara Kacheri, Seshadri Iyer Memorial Hall, and the grand State Archeological Museum.
+\n\n\tThere is a wealth of historical and archaeological specimens preserved in these buildings, touching upon important turning points from the country’s past. It’s as enjoyable to leaf through the pages of history inside these museums as it is to take a relaxing walk or a jog in the park along the picturesque tree-lined avenues. There is one other attraction in the park that tourists of every temperament are bound to enjoy— the huge Cubbon Park Aquarium, also famous as the Bangalore Aquarium.
+\n\n\tAmong a diversity of vibrant water life in this aquarium, you can find the majestic-looking Siamese Fighting Fish, a variety of gouramis, predators like red tail shark and more. It’s absolutely captivating to walk inside the aquarium, as if you have stepped inside the aquamarine belly of the sea— certainly a big highlight for nature enthusiasts!
+\n\n\tCubbon Park should be the first place on your sightseeing tour in Bangalore, especially if you are in the company of kids. For the amusement of children, the park has a toy- train track passing through. Every 10-20 minute there’s a biofuel-run locomotive on the line, ready to give visitors a memorable joy ride.
+\n\n\tFind a KSRTC bus plying between the airport and M.G. Road or Kasturba Road. Alternatively, you can hire a cab to Kasturba Road from the airport. The closest access points to the park are- Hudson Circle, Ambedkar Veedhi, and State Central Library.
+</string>
+
+    <string name="gard_mysore_zoo_desc">\tShri Chamarajendra Zoological Gardens or more commonly known as Mysore Zoo is one of the oldest zoos in the world. Established in the year 1892 by the Royals of the Mysore, this Zoological Gardens was formed from a part of Maharaja Chamaraja Wodeyar’s summer palace area.
+\n\n\tLocated within an area of 157 acres (64 hectares), Mysore Zoo is the second most visited place in Mysore after Mysore Palace. It is currently an abode to 1,450 specimens of animals and birds consisting of 168 species belonging to more than 25 countries.
+\n\n\tThe Zoological Gardens is proud to have a collecting of big cats like Cheetah, Jaguar, Tiger, Lion and small cats like Leopard Cat, Jungle Cat, Common Palm Civet and Small Indian Civet. It is the only zoo in India to exhibit a Gorilla. Other Primates include Baboon, Capuchin Monkey, and Marmoset, a variety of Lemur, Chimpanzee and common Indian Langur.
+\n\n\tThe Zoological Garden is also abode to large mammals like Elephants belonging to both Asiatic and African region, Black and White African Rhino, Gaur and Hippopotamus.
+\n\n\tThe Zoological Gardens is also proud to own flightless birds like Emu, Rhea, Ostrich, and Cassowary. There is also a huge collection of Terrestrial birds, aquatic birds, deers, antelopes, ducks, and reptiles.
+</string>
+
+    <string name="gard_dandeli_national_park_desc">\tDandeli, a small sleepy town in the western ghats of North-West India in the state of Karnataka is really proud of beholding the magnanimous wild land under the tiger project.
+\n\n\tThe Dandeli Wildlife Sanctuary what the name of the reserve is; actually locating in Uttarkannada district of Karnataka which is abundantly rich in wide varieties of flora and fauna. Being spread over an area of 834.16 sq.km, this reserve is reputed as the largest sanctuary in Karnataka. The sanctuary is also counted amongst the most attractive tourist spots in Karnataka.
+\n\n\tNumerous tourists from Karnataka and all over the India come and visit the sanctuaries every year to witness the wildlife while having jungle safari, or from a boat. The calm and blissful serenity all across the reserve with a diversified varieties of floras and faunas are the added attraction to the area.
+\n\n\tThe formation of Dandeli National Park is actually a joint venture with the adjoining Anshi National Park and together they were granted the status of Project Tiger Reserve. In the year January 2007, the area was together named as Ansheli Dandeli Tiger Reserve by including the area of 340 sq km. Today, the area of Dandeli National Park by adjoining the areas of Anshi National Park together with six other adjacent protected areas in the states of Goa and Maharashtra forms the most uninterrupted protected forest area of over 2,200 sq km.
+\n\n\tThe area of Dandeli that exhibits the wide ranges of flora attraction is actually plush with the southern evergreen forest. The tourists can find wide ranges of plant life, magical herbs, and shrubs. Dominant species are Mango, Jamun, Hirda, Behda, Bamboo, Shrub, Teak, Jamba, Ficus, Herbs, Climber, Grass, and Fern can also be visible here to complement the captivating landscapes.
+\n\n\tBy Air : Belgaum (110 km,), Hubli (75 km,) and Goa (150 km.), Bangalore (3481 km.)
+\n\n\tBy Rail : Alnavar (32 km.) Londa (48 km.), Dharwad (57 km.), Karwar (117 km.) and Hubli
+\n\n\tBy Road : Dandeli is well connected to Bangalore, Mumbai, Goa, Belgaum, Karwar and Dharwad and Hubli by road. Several buses ply to Dandeli every day. Pick up and drop facility from closest destination is available on request.
+</string>
 
     // Water Falls Description
     <string name="water_Joga_falls_desc"> </string>
     <string name="water_gokak_falls_desc"> </string>
-    <string name="water_godachin_malaki_desc"> </string>
-    <string name="water_krs_desc"> </string>
-    <string name="water_alamatti_desc"> </string>
+    <string name="water_godachin_malaki_falls_desc"> </string>
+    <string name="water_krs_dam_desc"> </string>
+    <string name="water_alamatti_dam_desc"> </string>
+
+    <string name="water_tungabhadra_dam_desc">\tThe Tungabhadra Dam or TB Dam also is known as Pampa Sagar, is a reservoir constructed across the Tungabhadra River a tributary of the Krishna River. The dam Located almost 20 kilometers south-west of Hampi town, in Munirabad, Koppal district in the town Hospet in Karnataka. Tungabhadra Dam looks extremely beautiful at the sunset with water showing you how it cools the suns hotness and the Dams green lights start engulfing the darkness again.
+\n\n\tConstruction began in 1949 and completed by 1953 the Dam total length is 2,449 m (8,035 ft) and height is 49.50 m (162 ft) from the deepest foundation with total Spillway capacity 650,000 cusecs. It has been built by cement and granite. Left of it two barrages have been con¬structed (one earthen and another of stone and surkhi). The reservoir spreads over 378 sq. km. of area with a storage capacity of 4 lakh hectares.
+\n\n\tThe dam serves multiple functions as it controls irrigation, electricity generation, flood control and much more. Today it is a joint project between the states of Andhra Pradesh and Karnataka, and serves purposes of functionality and attracts tourists from across India as well. For those visiting for tourism, the views from atop this reservoir are simply magnificent, and a simple walk along the river is sure to please even the toughest critics. A hydroelectric project of the dam is famous and become a new lifeline of State of Karnataka.
+\n\n\tPower houses-three powerhouses have been constructed under the project. First of these lies on the left side at Munirabad (Karnataka) with an installed capacity of 27 MW. The second powerhouse at Hospet has eight generating units of 9 m w each (total capacity 72 MW). The third powerhouse has been built near Hampi along the canal with an installed capacity of 27 MW. This total of 126 MW of electricity is utilized in irrigation and development of small and cottage industries.
+\n\n\tTungabhadra High-Level Canal with 196 km length provides irrigation to 1.82 lakh hec¬tares of land in Bellary and Anantapur districts. Tungabhadra project is mainly an irrigation project which has helped in augmenting the area under cotton, groundnut, rice, sugarcane, jowar, and other crops.
+</string>
 
 </resources>

@@ -42,12 +42,13 @@ public class UtilityPlaceConstants {
     public static String G_LALBAG_BANGALORE = "Lalbag Bangalore";
     public static String G_CUBBON_PARK = "Cubbon Park";
     public static String G_MYSORE_ZOO = "Mysore Zoo";
-    public static String G_DANDELI_FOREST = "Dandeli Forest";
+    public static String G_DANDELI_NATIONAL_PARK = "Dandeli National Park";
 
     // Water Falls Names
     public static String W_JOGA_FALLS = "Joga Falls";
     public static String W_GOKAK_FALLS = "Gokak Falls";
     public static String W_GODACHINA_MALAKI_FALLS = "Godachina Malaki Falls";
-    public static String W_KRS_WATER_DAM = "KRS Water Dam";
-    public static String W_ALAMATTI_WATER_DAM = "Alamatti Water Dam";
+    public static String W_KRS_DAM = "KRS Dam";
+    public static String W_ALAMATTI_DAM = "Alamatti Dam";
+    public static String W_TUNGABHADRA_DAM = "Tungabhadra Dam";
 }

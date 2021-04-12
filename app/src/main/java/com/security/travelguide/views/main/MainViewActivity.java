@@ -186,7 +186,6 @@ public class MainViewActivity extends Activity {
     }
 
     private void openGoogleInfo(Context context, String placeInfoUrl) {
-        Log.d(TAG, "openGoogleInfo: placeInfoUrl: "+placeInfoUrl);
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeInfoUrl));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

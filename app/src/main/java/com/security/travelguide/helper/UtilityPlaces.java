@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.StringRes;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.security.travelguide.model.PlaceItem;
 
 import java.util.ArrayList;
@@ -69,7 +70,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getBeachesReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getBeachesLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         // Set PlaceType
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -93,7 +98,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getHillStationsReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getHillStationsLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -117,7 +126,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getMonumnetsReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getMonumentsLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -141,7 +154,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getReligiousReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getReligiousLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -165,7 +182,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getGardenReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getGardensLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         //Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -189,7 +210,11 @@ public class UtilityPlaces {
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
                         // Set Place Reference Url
-                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
+                        placeItem.setPlaceReferenceLink(getWaterFallsReferenceUrls(placeName));
+                        // Set Place Location
+                        LatLng placeLocation = getWaterFallsLocationDetails(placeName);
+                        placeItem.setPlaceLatitude(placeLocation.latitude);
+                        placeItem.setPlaceLongitude(placeLocation.longitude);
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -306,7 +331,9 @@ public class UtilityPlaces {
         return "";
     }
 
-    public static String getReferenceUrls(String placeName) {
+
+    // Reference Links Functions
+    public static String getBeachesReferenceUrls(String placeName) {
         if (B_GOKARNA_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/gokarna/beaches-in-gokarna/";
         } else if (B_KARWAR_BEACH.equals(placeName)) {
@@ -321,7 +348,12 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mangalore/sasihithlu-beach/";
         } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/udupi/padubidri-beach/";
-        } else if (H_KUDREMUKH.equals(placeName)) {
+        }
+        return "";
+    }
+
+    public static String getHillStationsReferenceUrls(String placeName) {
+        if (H_KUDREMUKH.equals(placeName)) {
             return "https://www.holidify.com/places/kudremukh/";
         } else if (H_MADIKERI.equals(placeName)) {
             return "https://www.holidify.com/places/madikeri/";
@@ -333,7 +365,12 @@ public class UtilityPlaces {
             return "https://www.holidify.com/places/shivagange/";
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return "https://www.holidify.com/places/savandurga/";
-        } else if (M_GOL_GUMBAZ.equals(placeName)) {
+        }
+        return "";
+    }
+
+    public static String getMonumnetsReferenceUrls(String placeName) {
+        if (M_GOL_GUMBAZ.equals(placeName)) {
             return "https://www.yatra.com/indian-monuments/bijapur/gol-gumbaz";
         } else if (M_MYSORE_PALACE.equals(placeName)) {
             return "https://www.mysoretourism.org.in/mysore-maharaja-palace";
@@ -345,7 +382,12 @@ public class UtilityPlaces {
             return "https://en.wikipedia.org/wiki/Badami_cave_temples";
         } else if (M_BIDAR_FORT.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
-        } else if (R_KUDALA_SANGAMA.equals(placeName)) {
+        }
+        return "";
+    }
+
+    public static String getReligiousReferenceUrls(String placeName) {
+        if (R_KUDALA_SANGAMA.equals(placeName)) {
             return "https://travel2karnataka.com/kudala_sangama.htm";
         } else if (R_ISKON_BANGALORE.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/iskcon-temple-bangalore";
@@ -359,7 +401,12 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mangalore/kukke-subrahmanya-temple/";
         } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
             return "https://www.karnataka.com/mysore/chamundi-hills/";
-        } else if (G_ALAMATTI_GARDEN.equals(placeName)) {
+        }
+        return "";
+    }
+
+    public static String getGardenReferenceUrls(String placeName) {
+        if (G_ALAMATTI_GARDEN.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/lav-kush-garden-almatti/";
         } else if (G_HOSPET_GARDEN.equals(placeName)) {
             return "https://www.hosapeteonline.in/city-guide/wildlife-and-parks-in-hospet";
@@ -371,7 +418,12 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mysore/mysore-zoo/";
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
-        } else if (W_JOG_FALLS.equals(placeName)) {
+        }
+        return "";
+    }
+
+    public static String getWaterFallsReferenceUrls(String placeName) {
+        if (W_JOG_FALLS.equals(placeName)) {
             return "https://www.tourism-of-india.com/jog-falls-tour.html";
         } else if (W_GOKAK_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/gokak-falls/";
@@ -385,5 +437,113 @@ public class UtilityPlaces {
             return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
         }
         return "";
+    }
+
+    // Specific Places LatLong Functions
+
+    public static LatLng getBeachesLocationDetails(String placeName) {
+        if (B_GOKARNA_BEACH.equals(placeName)) {
+            return new LatLng(14.5432218, 74.3140062);
+        } else if (B_KARWAR_BEACH.equals(placeName)) {
+            return new LatLng(14.8311008, 74.1250158);
+        } else if (B_KAUP_BEACH_UDUPI.equals(placeName)) {
+            return new LatLng(13.2252087, 74.7369294);
+        } else if (B_MALPE_BEACH_UDUPI.equals(placeName)) {
+            return new LatLng(13.3612261, 74.6977701);
+        } else if (B_OM_BEACH_GOKARNA.equals(placeName)) {
+            return new LatLng(14.5192901, 74.3194347);
+        } else if (B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)) {
+            return new LatLng(13.0703809, 74.7775755);
+        } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
+            return new LatLng(13.1308061, 74.762498);
+        }
+        return new LatLng(0.0, 0.0);
+    }
+
+    public static LatLng getHillStationsLocationDetails(String placeName) {
+        if (H_KUDREMUKH.equals(placeName)) {
+            return new LatLng(13.2231912, 75.2510675);
+        } else if (H_MADIKERI.equals(placeName)) {
+            return new LatLng(12.429940, 75.722328);
+        } else if (H_AGUMBE.equals(placeName)) {
+            return new LatLng(13.5064449, 75.075116);
+        } else if (H_NANDHI_HILLS.equals(placeName)) {
+            return new LatLng(13.383078, 77.6674479);
+        } else if (H_SHIVAGANGE_HILLS.equals(placeName)) {
+            return new LatLng(13.1697204, 77.2206819);
+        } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
+            return new LatLng(12.899733, 77.2656555);
+        }
+        return new LatLng(0.0, 0.0);
+    }
+
+    public static LatLng getMonumentsLocationDetails(String placeName) {
+        if (M_GOL_GUMBAZ.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (M_MYSORE_PALACE.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (M_VIDHANA_SOUDHA.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (M_PHILOMENA_CHURCH.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (M_MENA_BASADI.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (M_BIDAR_FORT.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        }
+        return new LatLng(0.0, 0.0);
+    }
+
+    public static LatLng getReligiousLocationDetails(String placeName) {
+        if (R_KUDALA_SANGAMA.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_ISKON_BANGALORE.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_MURUDESHWARA.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        }
+        return new LatLng(0.0, 0.0);
+    }
+
+    public static LatLng getGardensLocationDetails(String placeName) {
+        if (G_ALAMATTI_GARDEN.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (G_HOSPET_GARDEN.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (G_LALBAG_BANGALORE.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (G_CUBBON_PARK.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (G_MYSORE_ZOO.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        }
+        return new LatLng(0.0, 0.0);
+    }
+
+    public static LatLng getWaterFallsLocationDetails(String placeName) {
+        if (W_JOG_FALLS.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (W_GOKAK_FALLS.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (W_KRS_DAM.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (W_ALMATTI_DAM.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
+            return new LatLng(0.0, 0.0);
+        }
+        return new LatLng(0.0, 0.0);
     }
 }

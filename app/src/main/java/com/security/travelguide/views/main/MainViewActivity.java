@@ -1,15 +1,20 @@
 package com.security.travelguide.views.main;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.bumptech.glide.Glide;
@@ -25,6 +30,9 @@ public class MainViewActivity extends Activity {
     private ImageView placesImage;
     private TextView textHeaderPrimary, textHeaderSecondary, textPlacesDesc;
     private PlaceItem placeItemMain;
+
+    private CardView cardGoogleInfo, cardGmapDirection;
+    private TextView textGoogleInfo, textGmapDirection;
 
     public MainViewActivity() {
         // Required empty public constructor
@@ -54,6 +62,12 @@ public class MainViewActivity extends Activity {
             textHeaderSecondary = findViewById(R.id.text_header_secondary);
             textPlacesDesc = findViewById(R.id.places_description);
             textHeaderPrimary = findViewById(R.id.text_header_primary);
+
+            cardGoogleInfo = findViewById(R.id.google_info_item_cardview);
+            cardGmapDirection = findViewById(R.id.gmap_direction_item_cardview);
+
+            textGoogleInfo = findViewById(R.id.text_google_info);
+            textGmapDirection = findViewById(R.id.text_gmap_direction);
 
             // Initially hide the textHeaderPrimary and Visible textHeaderSecondary view
             textHeaderPrimary.setAlpha(0f);
@@ -120,6 +134,83 @@ public class MainViewActivity extends Activity {
                         .centerCrop()
                         .into(placesImage);
             }
+
+            // Open Google for More Info
+            cardGoogleInfo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openGoogleInfo(MainViewActivity.this, placeItemMain.getPlaceReferenceLink());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            textGoogleInfo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openGoogleInfo(MainViewActivity.this, placeItemMain.getPlaceReferenceLink());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            // Open GooGle Map for Direction
+            cardGmapDirection.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openGoogleMapForDirection(MainViewActivity.this, placeItemMain.getPlaceLatitude(), placeItemMain.getPlaceLongitude());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            textGmapDirection.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openGoogleMapForDirection(MainViewActivity.this, placeItemMain.getPlaceLatitude(), placeItemMain.getPlaceLongitude());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openGoogleInfo(Context context, String placeInfoUrl) {
+        Log.d(TAG, "openGoogleInfo: placeInfoUrl: "+placeInfoUrl);
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeInfoUrl));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setPackage("com.android.chrome");
+            try {
+                context.startActivity(intent);
+            } catch (ActivityNotFoundException ex) {
+                // Chrome browser presumably not installed and open Default Browser
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeInfoUrl));
+                startActivity(browserIntent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openGoogleMapForDirection(Context context, double placeLatitude, double placeLongitude) {
+        try {
+            // By Default set Google Map
+            String mapRequest = "google.navigation:q=" + placeLatitude + "," + placeLongitude + "&avoid=tf";
+            Uri gmmIntentUri = Uri.parse(mapRequest);
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
         } catch (Exception e) {
             e.printStackTrace();
         }

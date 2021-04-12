@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -43,7 +44,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/std_300_dp"
-                android:layout_marginBottom="@dimen/std_40_dp"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="left"
@@ -54,6 +54,100 @@
                 android:paddingRight="@dimen/std_2_dp"
                 android:textColor="@color/black"
                 android:textSize="@dimen/std_16_sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_below="@+id/places_description"
+                android:layout_marginTop="@dimen/std_20_dp"
+                android:layout_marginBottom="@dimen/std_40_dp"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layout_google_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/google_info_item_cardview"
+                        android:layout_width="100dp"
+                        android:layout_height="98dp"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="12dp"
+                        android:innerRadius="40dp"
+                        android:shape="ring"
+                        android:thicknessRatio="4"
+                        app:cardCornerRadius="75dp">
+
+                        <ImageView
+                            android:id="@+id/google_info_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_google_info_icon"
+                            android:contentDescription="Google info icon"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_google_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="More Info"
+                        android:layout_marginTop="@dimen/std_10_dp"
+                        android:textSize="@dimen/std_16_sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_gmap_direction"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/gmap_direction_item_cardview"
+                        android:layout_width="100dp"
+                        android:layout_height="98dp"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="12dp"
+                        android:innerRadius="40dp"
+                        android:shape="ring"
+                        android:thicknessRatio="4"
+                        app:cardCornerRadius="75dp">
+
+                        <ImageView
+                            android:id="@+id/gmap_direction_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_gmap_direction_icon"
+                            android:contentDescription="GMap Direction" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_gmap_direction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/std_10_dp"
+                        android:textSize="@dimen/std_16_sp"
+                        android:gravity="center"
+                        android:text="Direction"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 

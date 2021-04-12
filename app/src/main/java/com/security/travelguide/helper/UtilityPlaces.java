@@ -31,11 +31,10 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.H_NANDHI_HIL
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SAVANADURGA_HILLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SHIVAGANGE_HILLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BIDAR_FORT;
-import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
-import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOL_GUMBAZ;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MYSORE_PALACE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_VIDHANA_SOUDHA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_CHAMUNDESHWARI_MYSORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_DARMASTHALA_MANJUNATHA;
@@ -69,6 +68,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         // Set PlaceType
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -91,6 +92,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -113,6 +116,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -135,6 +140,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -157,6 +164,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         //Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -179,6 +188,8 @@ public class UtilityPlaces {
                         PlaceItem placeItem = new PlaceItem();
                         // Set Place Name
                         placeItem.setPlaceName(placeName);
+                        // Set Place Reference Url
+                        placeItem.setPlaceReferenceLink(getReferenceUrls(placeName));
                         // Set Place Type
                         placeItem.setStaticPlaceType(placeTypeName);
                         String itemTitleWithLower = placeName.replaceAll(" ", "_").toLowerCase();
@@ -322,55 +333,55 @@ public class UtilityPlaces {
             return "https://www.holidify.com/places/shivagange/";
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return "https://www.holidify.com/places/savandurga/";
-        }else if (M_GOL_GUMBAZ.equals(placeName)) {
+        } else if (M_GOL_GUMBAZ.equals(placeName)) {
             return "https://www.yatra.com/indian-monuments/bijapur/gol-gumbaz";
-        }else if (M_MYSORE_PALACE.equals(placeName)) {
+        } else if (M_MYSORE_PALACE.equals(placeName)) {
             return "https://www.mysoretourism.org.in/mysore-maharaja-palace";
-        }else if (M_VIDHANA_SOUDHA.equals(placeName)) {
+        } else if (M_VIDHANA_SOUDHA.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/vidhana-soudha";
-        }else if (M_PHILOMENA_CHURCH.equals(placeName)) {
+        } else if (M_PHILOMENA_CHURCH.equals(placeName)) {
             return "https://www.mysoretourism.org.in/st-philomenas-church-mysore";
-        }else if (M_MENA_BASADI.equals(placeName)) {
+        } else if (M_MENA_BASADI.equals(placeName)) {
             return "https://en.wikipedia.org/wiki/Badami_cave_temples";
-        }else if (M_BIDAR_FORT.equals(placeName)) {
+        } else if (M_BIDAR_FORT.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
-        }else if (R_KUDALA_SANGAMA.equals(placeName)) {
+        } else if (R_KUDALA_SANGAMA.equals(placeName)) {
             return "https://travel2karnataka.com/kudala_sangama.htm";
-        }else if (R_ISKON_BANGALORE.equals(placeName)) {
+        } else if (R_ISKON_BANGALORE.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/iskcon-temple-bangalore";
-        }else if (R_MURUDESHWARA.equals(placeName)) {
+        } else if (R_MURUDESHWARA.equals(placeName)) {
             return "https://www.thrillophilia.com/cities/murudeshwara";
-        }else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
+        } else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
             return "https://www.thrillophilia.com/cities/udupi";
-        }else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
+        } else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
             return "https://www.shridharmasthala.org/about-dharmasthala/";
-        }else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
+        } else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/kukke-subrahmanya-temple/";
-        }else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
+        } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
             return "https://www.karnataka.com/mysore/chamundi-hills/";
-        }else if (G_ALAMATTI_GARDEN.equals(placeName)) {
+        } else if (G_ALAMATTI_GARDEN.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/lav-kush-garden-almatti/";
-        }else if (G_HOSPET_GARDEN.equals(placeName)) {
+        } else if (G_HOSPET_GARDEN.equals(placeName)) {
             return "https://www.hosapeteonline.in/city-guide/wildlife-and-parks-in-hospet";
-        }else if (G_LALBAG_BANGALORE.equals(placeName)) {
+        } else if (G_LALBAG_BANGALORE.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/lal-bagh-botanical-garden";
-        }else if (G_CUBBON_PARK.equals(placeName)) {
+        } else if (G_CUBBON_PARK.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/cubbon-park";
-        }else if (G_MYSORE_ZOO.equals(placeName)) {
+        } else if (G_MYSORE_ZOO.equals(placeName)) {
             return "https://www.karnataka.com/mysore/mysore-zoo/";
-        }else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
-        }else if (W_JOG_FALLS.equals(placeName)) {
+        } else if (W_JOG_FALLS.equals(placeName)) {
             return "https://www.tourism-of-india.com/jog-falls-tour.html";
-        }else if (W_GOKAK_FALLS.equals(placeName)) {
+        } else if (W_GOKAK_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/gokak-falls/";
-        }else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
+        } else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
             return "https://www.trawel.co.in/city/Belagavi/godchinamalaki-falls";
-        }else if (W_KRS_DAM.equals(placeName)) {
+        } else if (W_KRS_DAM.equals(placeName)) {
             return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
-        }else if (W_ALMATTI_DAM.equals(placeName)) {
+        } else if (W_ALMATTI_DAM.equals(placeName)) {
             return "https://www.karnataka.com/bijapur/almatti-dam/";
-        }else if (W_TUNGABHADRA_DAM.equals(placeName)) {
+        } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
         }
         return "";

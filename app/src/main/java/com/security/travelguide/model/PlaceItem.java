@@ -10,6 +10,7 @@ public class PlaceItem implements Parcelable {
     private String placeDescription;
     private String placeImageUrl;
     private String staticPlaceType;
+    private String placeReferenceLink;
     private Drawable placeImageDrawable;
     private double placeLatitude;
     private double placeLongitude;
@@ -22,6 +23,7 @@ public class PlaceItem implements Parcelable {
         placeDescription = in.readString();
         placeImageUrl = in.readString();
         staticPlaceType = in.readString();
+        placeReferenceLink = in.readString();
         placeLatitude = in.readDouble();
         placeLongitude = in.readDouble();
     }
@@ -70,6 +72,14 @@ public class PlaceItem implements Parcelable {
         this.staticPlaceType = staticPlaceType;
     }
 
+    public String getPlaceReferenceLink() {
+        return placeReferenceLink;
+    }
+
+    public void setPlaceReferenceLink(String placeReferenceLink) {
+        this.placeReferenceLink = placeReferenceLink;
+    }
+
     public Drawable getPlaceImageDrawable() {
         return placeImageDrawable;
     }
@@ -101,6 +111,7 @@ public class PlaceItem implements Parcelable {
                 ", placeDescription='" + placeDescription + '\'' +
                 ", placeImageUrl='" + placeImageUrl + '\'' +
                 ", staticPlaceType='" + staticPlaceType + '\'' +
+                ", placeReferenceLink='" + placeReferenceLink + '\'' +
                 ", placeImageDrawable=" + placeImageDrawable +
                 ", placeLatitude=" + placeLatitude +
                 ", placeLongitude=" + placeLongitude +
@@ -118,6 +129,7 @@ public class PlaceItem implements Parcelable {
         parcel.writeString(placeDescription);
         parcel.writeString(placeImageUrl);
         parcel.writeString(staticPlaceType);
+        parcel.writeString(placeReferenceLink);
         parcel.writeDouble(placeLatitude);
         parcel.writeDouble(placeLongitude);
     }

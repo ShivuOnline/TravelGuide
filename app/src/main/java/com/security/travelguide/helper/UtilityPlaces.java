@@ -44,10 +44,10 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUDALA_SAN
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALAMATTI_DAM;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODACHINA_MALAKI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALMATTI_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODCHINA_MALAKI_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GOKAK_FALLS;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOGA_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOG_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_DAM;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_TUNGABHADRA_DAM;
 
@@ -265,11 +265,11 @@ public class UtilityPlaces {
     private static List<String> getWaterFallsList() {
         // Water Falls Names
         List<String> waterFallsList = new ArrayList<>();
-        waterFallsList.add(W_JOGA_FALLS);
+        waterFallsList.add(W_JOG_FALLS);
         waterFallsList.add(W_GOKAK_FALLS);
-        waterFallsList.add(W_GODACHINA_MALAKI_FALLS);
+        waterFallsList.add(W_GODCHINA_MALAKI_FALLS);
         waterFallsList.add(W_KRS_DAM);
-        waterFallsList.add(W_ALAMATTI_DAM);
+        waterFallsList.add(W_ALMATTI_DAM);
         waterFallsList.add(W_TUNGABHADRA_DAM);
         return waterFallsList;
     }
@@ -360,6 +360,16 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mysore/mysore-zoo/";
         }else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
+        }else if (W_JOG_FALLS.equals(placeName)) {
+            return "https://www.tourism-of-india.com/jog-falls-tour.html";
+        }else if (W_GOKAK_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/belgaum/gokak-falls/";
+        }else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
+            return "https://www.trawel.co.in/city/Belagavi/godchinamalaki-falls";
+        }else if (W_KRS_DAM.equals(placeName)) {
+            return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
+        }else if (W_ALMATTI_DAM.equals(placeName)) {
+            return "https://www.karnataka.com/bijapur/almatti-dam/";
         }else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
         }

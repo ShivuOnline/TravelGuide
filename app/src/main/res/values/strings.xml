@@ -198,11 +198,42 @@
 </string>
 
     // Water Falls Description
-    <string name="water_Joga_falls_desc"> </string>
-    <string name="water_gokak_falls_desc"> </string>
-    <string name="water_godachin_malaki_falls_desc"> </string>
-    <string name="water_krs_dam_desc"> </string>
-    <string name="water_alamatti_dam_desc"> </string>
+    <string name="water_jog_falls_desc">\tOne of the highest waterfalls in India Jog Falls is one of the major attractions in Karnataka. Created on Sharavathi River, Jog Falls is also known by alternative names of Gerusoppe Falls, Gersoppa Falls and Jogada Gundi.
+\n\n\tJog is located in Shimoga District of Karnataka, 30 km away from Sagara, 104 km from Shimoga, and 379 km away from Bangalore.
+\n\n\tJog Falls is formed by the Sharavathi River, gushing down from a height of 253 meters. The river originates at Ambuthirtha in Thirthahalli taluk, flows north-west through the Western Ghats forming the Jog Falls before joining the Arabian Sea at Honavar.
+\n\n\tFor a Tour to Jog Falls, the best time to visit is between the months of August and December.
+\n\n\tBy Air:The nearest airport is at Bangalore.
+\n\n\tBy Rail :You can take a train to Sagara from Bangalore, from where you can get into buses to Jog.
+\n\n\tBy Road: You can reach Jog Falls directly by availing of buses to Jog from Bangalore. Alternatively, from Bangalore you can take a bus to Sagara, from where local bus to Jog is available.
+</string>
+
+    <string name="water_gokak_falls_desc">\tGokak falls is a waterfall known for its beauty. It is at a distance of 60 Kms from Belgaum and 10 kms from Gokak town. Located right on the main road is a celebrated tourist center in the district. This falls has a height of about 170 feet.
+\n\n\tThe river Ghataprabha after winding a course of a long route takes a leap of 52 meters, over a rocky bed 170 feet down. The falls is famous for its spread and shape.Except in width and colour of the water, the general features of the fall, its height, shape and rapidity above are much like those of ” Niagara”.
+\n\n\tThe waterfall is horse shoe shaped at the crest, with a flood breadth of 177 metres (580 ft). During rainy season the thick reddish brown water sweeps far over the brink of the cliff with a dull roar that can be heard from some distance.
+\n\n\tElectricity was generated here for the first time in the country in 1887. The generating station can be reached on the ropeway. Recommended only for the extra courageous! A walk down either bank of the rocky gorge rewards you with ancient Chalukyan monuments waiting to be explored.
+\n\n\tGokak gets its name due to the Goki trees found in abundance in these areas. July to September is the best season to visit the place.
+\n\n\tIt is 10 kms from Gokak falls there is a village named Godachinamalki a trek of 2 Kms from here takes you  to a beautiful falls the stream flows in a slow rhythm until the first drop of about 70 feet as one treks to the spot, one comes across a long line of tiny falls that add up to make the big jump.
+\n\n\tThe area being a rocky bed facilitates the creation of numerous lovely cascades to give the look of a royal bath in a palace complex.
+\n\n\tThe main falls dips again a little further by another 50 feet before joining the Ghataprabha. This is truly rejuvenating falls, unspoilt and devoid of noisy crowds.
+</string>
+
+    <string name="water_godchina_malaki_falls_desc">\tThe Godachinmalki Falls is a waterfall located on Markandeya river in Belgaum district, Gokak Taluk, Karnataka, India. It is 15 kilometers away from Gokak and 40 kms from Belgaum. It is located in a deep green valley.
+\n\n\tGodachinmalki falls, also known as Markandeya falls, is located in a rugged valley, which is approachable from Godachinamalaki village by walking as well as by vehicle through an irregular forest route for about 2 kilometers and there are two routes to reach the falls from Godachinamalki, one is vai Malebail road by crossing bridge at godachinamalki and another one is vai Gurusiddeshwar Temple(Hatti Siddeshwar). It can also be reached from Nirvaneshwara Matha near Yogikolla, only by foot.
+\n\n\tTo reach Godachinamalki Falls from Belgaum vai Ankalagi, Pachhapur and Mavanur, frequent bus facility is available from Belgaum and Gokak and nearest railway station is Pachhapur, which is about 8 kilometers and good train facility is available from Belgaum to Miraj, all most all trains stops in Pachhapur railway station . There are actually two falls formed here. The Markandeya river takes a first fall from a height of about 25 metres and flows into a rocky valley. After a short distance from the rocky valley, it takes the second fall from a height of about 20 metres. Within 10 km distance Gokak falls is located from Godachinamalki vai Melmanahatti and Maradimath. Later Markandeya river joins Ghataprabha river near Gokak. Within a 6 km radius there are two dams; one built across Ghataprabha river (Hidkal dam) and another one (Shirur Dam) across Markandeya river.
+\n\n\tBest time for visiting this place is during the month of July-October (Rainy Season). There is no entry fees. There are no specific timings, a daytime visit in recommended.
+</string>
+
+    <string name="water_krs_dam_desc">\tThe Krishna Raja Sagara Dam, popularly known as KRS Dam, is built on the river Kaveri and its tributaries, Hemavathi and Lakshmana Theertha. The KRS Dam and the ornamental garden, Brindavan Gardens, attached to the dam are one of the most visited tourist spots in Mysore. The dam was planned and built over a hundred years ago with traditional materials and techniques. Maharaja Nalwadi Krishnaraja Wadiyar IV had the dam constructed to help the people of the kingdom during a severe drought. Planned by Sir M Visvesvaraya, the chief engineer of Mysore, KRS Dam was the first dam to install automated crest gates. The dam is still a major source of drinking water for people and provides irrigation in Mandya, Mysore and Bangalore.
+\n\n\tThe construction of the Krishna Raja Sagar Dam, which would provide drinking water and be a source of irrigation, started in November 1911. Over 10,000 workers were employed for the construction of KRS dam in the Kannambadi village. According to the initial plan, the gravity dam was to be 194-feet high with the capacity to hold 41,500,000,000 cu ft (1.18 km3) of water. But this plan had to be dropped and the structure that stands today is 131 feet high with a total capacity to hold 1,368,847,000 m3 of water.
+\n\n\tThe best time to visit KRS Dam is during or after the monsoon season (June to August). Due to heavy rainfall, the water level of the dam increases and sometimes the water gushes out of the gates as they automatically open on reaching 124 feet.
+\n\n\tLocated just 24 km away from Mysore, KRS Dam can be easily visited through city buses. These buses from the city bus stand are available to drop one directly near KRS Dam. If you are coming from the railway station, you can either take the auto-rickshaws or state-owned buses. It will take a few hours to reach the KRS dam.
+\n\n\tIt is 24 km from Mysore. It is 143.5 km away from Bangalore. It is 480.3 km away from Chennai. It is located 2.2 km from Venugopala Swamy Temple.
+</string>
+
+    <string name="water_almatti_dam_desc">\tThe Almatti Dam is in a Bijapur, a small town Northern Karnataka,  and is built across the Krishna river. The construction was done in 2005, so it is a relatively new dam. It is the main reservoir of the Upper Krishna Irrigation Project and it uses Kaplan Turbines.
+\n\n\tWater is released into the Narayanpur reservoir once it uses it for power generation and serves the irrigation requirements.  The height was increased by 10 meters in this dam after the Supreme Court ordered to do so.
+\n\n\tThere are about seven terrace gardens that have been built as a picnic spot in Almatti dam area. Musical fountains, stagnant fountains, boating facilities etc. have been set up here for people who wish to visit it. This makes it a great tourist attraction. There is a garden named ‘Rock Hill’ situated on one of side of this Dam. It also has an artificial forest with ceramic wild animals.
+</string>
 
     <string name="water_tungabhadra_dam_desc">\tThe Tungabhadra Dam or TB Dam also is known as Pampa Sagar, is a reservoir constructed across the Tungabhadra River a tributary of the Krishna River. The dam Located almost 20 kilometers south-west of Hampi town, in Munirabad, Koppal district in the town Hospet in Karnataka. Tungabhadra Dam looks extremely beautiful at the sunset with water showing you how it cools the suns hotness and the Dams green lights start engulfing the darkness again.
 \n\n\tConstruction began in 1949 and completed by 1953 the Dam total length is 2,449 m (8,035 ft) and height is 49.50 m (162 ft) from the deepest foundation with total Spillway capacity 650,000 cusecs. It has been built by cement and granite. Left of it two barrages have been con¬structed (one earthen and another of stone and surkhi). The reservoir spreads over 378 sq. km. of area with a storage capacity of 4 lakh hectares.

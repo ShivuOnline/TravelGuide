@@ -48,7 +48,17 @@ public class UtilityPlaceConstants {
     public static String W_JOG_FALLS = "Jog Falls";
     public static String W_GOKAK_FALLS = "Gokak Falls";
     public static String W_GODCHINA_MALKI_FALLS = "Godchina Malki Falls";
-    public static String W_KRS_DAM = "KRS Dam";
+    public static String W_ABBEY_FALLS = "Abbey Falls";
+    public static String W_BARACHUKKI_FALLS = "Barachukki Falls";
+    public static String W_BENNE_HOLE_FALLS = "Benne Hole Falls";
+    public static String W_CHUNCHANAKATTE_FALLS = "Chunchanakatte Falls";
+    public static String W_KALHATTI_GIRI_FALLS = "Kalhatti Giri Falls";
+    public static String W_SATHODI_FALLS = "Sathodi Falls";
+    public static String W_SURAL_FALLS = "Sural Falls";
+    public static String W_VIBHOOTI_FALLS = "Vibhooti Falls";
+    public static String W_UNCHALLI_FALLS = "Unchalli Falls";
     public static String W_ALMATTI_DAM = "Almatti Dam";
     public static String W_TUNGABHADRA_DAM = "Tungabhadra Dam";
+    public static String W_KRS_DAM = "KRS Dam";
+    public static String W_HIDKAL_DAM = "Hidkal Dam";
 }

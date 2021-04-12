@@ -44,12 +44,22 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUDALA_SAN
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_ABBEY_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALMATTI_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_BARACHUKKI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_BENNE_HOLE_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_CHUNCHANAKATTE_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODCHINA_MALKI_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GOKAK_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_HIDKAL_DAM;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOG_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_KALHATTI_GIRI_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_SATHODI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_SURAL_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_TUNGABHADRA_DAM;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_UNCHALLI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_VIBHOOTI_FALLS;
 
 public class UtilityPlaces {
 
@@ -304,9 +314,19 @@ public class UtilityPlaces {
         waterFallsList.add(W_JOG_FALLS);
         waterFallsList.add(W_GOKAK_FALLS);
         waterFallsList.add(W_GODCHINA_MALKI_FALLS);
-        waterFallsList.add(W_KRS_DAM);
+        waterFallsList.add(W_ABBEY_FALLS);
+        waterFallsList.add(W_BARACHUKKI_FALLS);
+        waterFallsList.add(W_BENNE_HOLE_FALLS);
+        waterFallsList.add(W_CHUNCHANAKATTE_FALLS);
+        waterFallsList.add(W_KALHATTI_GIRI_FALLS);
+        waterFallsList.add(W_SATHODI_FALLS);
+        waterFallsList.add(W_SURAL_FALLS);
+        waterFallsList.add(W_VIBHOOTI_FALLS);
+        waterFallsList.add(W_UNCHALLI_FALLS);
         waterFallsList.add(W_ALMATTI_DAM);
         waterFallsList.add(W_TUNGABHADRA_DAM);
+        waterFallsList.add(W_KRS_DAM);
+        waterFallsList.add(W_HIDKAL_DAM);
         return waterFallsList;
     }
 
@@ -429,12 +449,32 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/belgaum/gokak-falls/";
         } else if (W_GODCHINA_MALKI_FALLS.equals(placeName)) {
             return "https://www.trawel.co.in/city/Belagavi/godchinamalaki-falls";
-        } else if (W_KRS_DAM.equals(placeName)) {
-            return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
+        } else if (W_ABBEY_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/abbey-falls/";
+        }else if (W_BARACHUKKI_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/mandya/barachukki-gaganachukki-falls-shivanasamudra/";
+        }else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/karwar/bennehole-waterfalls/";
+        }else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/mysore/chunchanakatte-falls/";
+        }else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/chikmagalur/kalhatti-giri-falls/";
+        }else if (W_SATHODI_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/hubli/sathodi-falls/";
+        }else if (W_SURAL_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/belgaum/sural-falls/";
+        }else if (W_VIBHOOTI_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/karwar/vibhooti-falls/";
+        }else if (W_UNCHALLI_FALLS.equals(placeName)) {
+            return "https://www.karnataka.com/shimoga/unchalli-falls/";
         } else if (W_ALMATTI_DAM.equals(placeName)) {
             return "https://www.karnataka.com/bijapur/almatti-dam/";
         } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
+        }else if (W_KRS_DAM.equals(placeName)) {
+            return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
+        } else if (W_HIDKAL_DAM.equals(placeName)) {
+            return "https://en.wikipedia.org/wiki/Raja_Lakhamagouda_dam";
         }
         return "";
     }
@@ -537,12 +577,32 @@ public class UtilityPlaces {
             return new LatLng(16.191931, 74.776926);
         } else if (W_GODCHINA_MALKI_FALLS.equals(placeName)) {
             return new LatLng(16.123734, 74.745203);
-        } else if (W_KRS_DAM.equals(placeName)) {
-            return new LatLng(12.425459, 76.572409);
+        } else if (W_ABBEY_FALLS.equals(placeName)) {
+            return new LatLng(12.458054, 75.716642);
+        }else if (W_BARACHUKKI_FALLS.equals(placeName)) {
+            return new LatLng(12.287821, 77.183671);
+        }else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
+            return new LatLng(14.5044923,74.6244319);
+        }else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
+            return new LatLng(12.505904, 76.295861);
+        }else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
+            return new LatLng(13.536311, 75.782068);
+        }else if (W_SATHODI_FALLS.equals(placeName)) {
+            return new LatLng(14.949714, 74.585082);
+        }else if (W_SURAL_FALLS.equals(placeName)) {
+            return new LatLng(15.674933, 74.185989);
+        }else if (W_VIBHOOTI_FALLS.equals(placeName)) {
+            return new LatLng(14.598101, 74.551185);
+        }else if (W_UNCHALLI_FALLS.equals(placeName)) {
+            return new LatLng(14.409061, 74.747428);
         } else if (W_ALMATTI_DAM.equals(placeName)) {
             return new LatLng(16.330978, 75.887052);
         } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return new LatLng(15.268835, 76.325420);
+        }else if (W_KRS_DAM.equals(placeName)) {
+            return new LatLng(12.425459, 76.572409);
+        }else if (W_HIDKAL_DAM.equals(placeName)) {
+            return new LatLng(16.143003, 74.642841);
         }
         return new LatLng(0.0, 0.0);
     }

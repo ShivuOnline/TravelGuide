@@ -47,7 +47,7 @@ public class UtilityPlaceConstants {
     // Water Falls Names
     public static String W_JOG_FALLS = "Jog Falls";
     public static String W_GOKAK_FALLS = "Gokak Falls";
-    public static String W_GODCHINA_MALAKI_FALLS = "Godchina Malaki Falls";
+    public static String W_GODCHINA_MALKI_FALLS = "Godchina Malki Falls";
     public static String W_KRS_DAM = "KRS Dam";
     public static String W_ALMATTI_DAM = "Almatti Dam";
     public static String W_TUNGABHADRA_DAM = "Tungabhadra Dam";

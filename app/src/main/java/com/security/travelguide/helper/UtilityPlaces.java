@@ -45,7 +45,7 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBR
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALMATTI_DAM;
-import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODCHINA_MALAKI_FALLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.W_GODCHINA_MALKI_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_GOKAK_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_JOG_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_KRS_DAM;
@@ -303,7 +303,7 @@ public class UtilityPlaces {
         List<String> waterFallsList = new ArrayList<>();
         waterFallsList.add(W_JOG_FALLS);
         waterFallsList.add(W_GOKAK_FALLS);
-        waterFallsList.add(W_GODCHINA_MALAKI_FALLS);
+        waterFallsList.add(W_GODCHINA_MALKI_FALLS);
         waterFallsList.add(W_KRS_DAM);
         waterFallsList.add(W_ALMATTI_DAM);
         waterFallsList.add(W_TUNGABHADRA_DAM);
@@ -427,7 +427,7 @@ public class UtilityPlaces {
             return "https://www.tourism-of-india.com/jog-falls-tour.html";
         } else if (W_GOKAK_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/gokak-falls/";
-        } else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
+        } else if (W_GODCHINA_MALKI_FALLS.equals(placeName)) {
             return "https://www.trawel.co.in/city/Belagavi/godchinamalaki-falls";
         } else if (W_KRS_DAM.equals(placeName)) {
             return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
@@ -515,34 +515,34 @@ public class UtilityPlaces {
 
     public static LatLng getGardensLocationDetails(String placeName) {
         if (G_ALAMATTI_GARDEN.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(16.339343, 75.896210);
         } else if (G_HOSPET_GARDEN.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(15.268835, 76.325420);
         } else if (G_LALBAG_BANGALORE.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.948661, 77.582338);
         } else if (G_CUBBON_PARK.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.976677, 77.593873);
         } else if (G_MYSORE_ZOO.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.302315, 76.665788);
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(15.246803, 74.622078);
         }
         return new LatLng(0.0, 0.0);
     }
 
     public static LatLng getWaterFallsLocationDetails(String placeName) {
         if (W_JOG_FALLS.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(14.231168, 74.818760);
         } else if (W_GOKAK_FALLS.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
-        } else if (W_GODCHINA_MALAKI_FALLS.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(16.191931, 74.776926);
+        } else if (W_GODCHINA_MALKI_FALLS.equals(placeName)) {
+            return new LatLng(16.123734, 74.745203);
         } else if (W_KRS_DAM.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(12.425459, 76.572409);
         } else if (W_ALMATTI_DAM.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(16.330978, 75.887052);
         } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
-            return new LatLng(0.0, 0.0);
+            return new LatLng(15.268835, 76.325420);
         }
         return new LatLng(0.0, 0.0);
     }

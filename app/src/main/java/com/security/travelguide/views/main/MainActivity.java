@@ -1,7 +1,9 @@
 package com.security.travelguide.views.main;
 
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private FragmentManager fragmentManager;
+    public static BottomNavigation bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
             fragmentManager = getSupportFragmentManager();
 
-            BottomNavigation bottomNavigationView = findViewById(R.id.bottom_navigation);
+            bottomNavigationView = findViewById(R.id.bottom_navigation);
 
             bottomNavigationView.setMenuItemSelectionListener(new BottomNavigation.OnMenuItemSelectionListener() {
                 @Override
@@ -78,6 +81,22 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void hideBottomNav(){
+        try {
+            bottomNavigationView.setVisibility(View.GONE);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void showBottomNav(){
+        try {
+            bottomNavigationView.setVisibility(View.VISIBLE);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

@@ -3,6 +3,7 @@ package com.security.travelguide.views.dashboard;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.security.travelguide.model.SliderItem;
 import com.security.travelguide.views.beaches.Beaches;
 import com.security.travelguide.views.gardens.Gardens;
 import com.security.travelguide.views.hillstations.HillStations;
+import com.security.travelguide.views.main.MainActivity;
 import com.security.travelguide.views.monuments.Monuments;
 import com.security.travelguide.views.religious.Religious;
 import com.security.travelguide.views.waterfalls.WaterFalls;
@@ -31,6 +33,8 @@ import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.List;
+
+import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
 
 public class Dashboard extends Fragment implements DashboardMainAdapter.DashboardItemClickListener {
 

@@ -24,6 +24,7 @@ import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.UtilityPlaces;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.model.PlaceItem;
+import com.security.travelguide.views.main.MainActivity;
 import com.security.travelguide.views.main.MainViewActivity;
 
 import java.util.List;
@@ -122,6 +123,26 @@ public class Religious extends Fragment implements ReligiousMainAdapter.PlaceIte
             ActivityOptionsCompat options = ActivityOptionsCompat.
                     makeSceneTransitionAnimation(requireActivity(), transactionPairOne, transactionPairTwo);
             startActivity(intent, options.toBundle());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        try {
+            MainActivity.hideBottomNav();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        try {
+            MainActivity.showBottomNav();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,7 +9,16 @@ public class UtilityPlaceConstants {
     public static String B_MALPE_BEACH_UDUPI = "Malpe Beach Udupi";
     public static String B_OM_BEACH_GOKARNA = "Om Beach Gokarna";
     public static String B_PADUBIDRI_BEACH = "Padubidri Beach";
-    public static String B_SASIHITHLU_BEACH_MANGALORE = "Sasihithlu Beach Mangalore";
+    public static String B_SASIHITHLU_BEACH = "Sasihithlu Beach";
+    public static String B_PANAMBUR_BEACH = "Panambur Beach";
+    public static String B_SOMESHWARA_BEACH = "Someshwara Beach";
+    public static String B_ULLAL_BEACH = "Ullal Beach";
+    public static String B_BHATKAL_BEACH = "Bhatkal Beach";
+    public static String B_MURUDESHWAR_BEACH = "Murudeshwar Beach";
+    public static String B_KURUMGAD_BEACH = "Kurumgad Beach";
+    public static String B_SURATHKAL_BEACH = "Surathkal Beach";
+    public static String B_MARAVANTHE_BEACH = "Maravanthe Beach";
+    public static String B_TANNIRBHAVI_BEACH = "Tannirbhavi Beach";
 
     // Hills Station Names
     public static String H_KUDREMUKH = "Kudremukh";

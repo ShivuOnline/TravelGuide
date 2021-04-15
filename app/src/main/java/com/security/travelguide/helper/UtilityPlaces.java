@@ -12,13 +12,22 @@ import com.security.travelguide.model.PlaceItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_BHATKAL_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_GOKARNA_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_KARWAR_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_KAUP_BEACH_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_KURUMGAD_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_MALPE_BEACH_UDUPI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_MARAVANTHE_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_MURUDESHWAR_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_OM_BEACH_GOKARNA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_PADUBIDRI_BEACH;
-import static com.security.travelguide.helper.UtilityPlaceConstants.B_SASIHITHLU_BEACH_MANGALORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_PANAMBUR_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_SASIHITHLU_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_SOMESHWARA_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_SURATHKAL_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_TANNIRBHAVI_BEACH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.B_ULLAL_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_ALAMATTI_GARDEN;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_CUBBON_PARK;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_DANDELI_NATIONAL_PARK;
@@ -264,7 +273,16 @@ public class UtilityPlaces {
         beachList.add(B_MALPE_BEACH_UDUPI);
         beachList.add(B_OM_BEACH_GOKARNA);
         beachList.add(B_PADUBIDRI_BEACH);
-        beachList.add(B_SASIHITHLU_BEACH_MANGALORE);
+        beachList.add(B_SASIHITHLU_BEACH);
+        beachList.add(B_PANAMBUR_BEACH);
+        beachList.add(B_SOMESHWARA_BEACH);
+        beachList.add(B_ULLAL_BEACH);
+        beachList.add(B_BHATKAL_BEACH);
+        beachList.add(B_MURUDESHWAR_BEACH);
+        beachList.add(B_KURUMGAD_BEACH);
+        beachList.add(B_SURATHKAL_BEACH);
+        beachList.add(B_MARAVANTHE_BEACH);
+        beachList.add(B_TANNIRBHAVI_BEACH);
         return beachList;
     }
 
@@ -382,10 +400,28 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/udupi/malpe-beach/";
         } else if (B_OM_BEACH_GOKARNA.equals(placeName)) {
             return "https://www.karnataka.com/gokarna/om-beach/";
-        } else if (B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)) {
+        } else if (B_SASIHITHLU_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/sasihithlu-beach/";
         } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/udupi/padubidri-beach/";
+        }else if (B_PANAMBUR_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/mangalore/panambur-beach/";
+        }else if (B_SOMESHWARA_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/mangalore/someshwara-beach/";
+        }else if (B_ULLAL_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/mangalore/ullal-beach/";
+        }else if (B_BHATKAL_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/murdeshwar/bhatkal-beach/";
+        }else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/murdeshwar/murdeshwar-beach/";
+        }else if (B_KURUMGAD_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/karwar/kurumgad-beach/";
+        }else if (B_SURATHKAL_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/surathkal/surathkal-beach/";
+        }else if (B_MARAVANTHE_BEACH.equals(placeName)) {
+            return "https://www.karnataka.com/maravanthe/maravanthe-beach/";
+        }else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
+            return "https://www.thrillophilia.com/attractions/tannirbhavi-beach";
         }
         return "";
     }
@@ -528,10 +564,28 @@ public class UtilityPlaces {
             return new LatLng(13.3612261, 74.6977701);
         } else if (B_OM_BEACH_GOKARNA.equals(placeName)) {
             return new LatLng(14.5192901, 74.3194347);
-        } else if (B_SASIHITHLU_BEACH_MANGALORE.equals(placeName)) {
+        } else if (B_SASIHITHLU_BEACH.equals(placeName)) {
             return new LatLng(13.0703809, 74.7775755);
         } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return new LatLng(13.1308061, 74.762498);
+        }else if (B_PANAMBUR_BEACH.equals(placeName)) {
+            return new LatLng(12.936954, 74.804623);
+        }else if (B_SOMESHWARA_BEACH.equals(placeName)) {
+            return new LatLng(12.786331, 74.853695);
+        }else if (B_ULLAL_BEACH.equals(placeName)) {
+            return new LatLng(12.807656, 74.842757);
+        }else if (B_BHATKAL_BEACH.equals(placeName)) {
+            return new LatLng(13.992258, 74.514458);
+        }else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
+            return new LatLng(14.095227, 74.485656);
+        }else if (B_KURUMGAD_BEACH.equals(placeName)) {
+            return new LatLng(14.847758, 74.115604);
+        }else if (B_SURATHKAL_BEACH.equals(placeName)) {
+            return new LatLng(13.0096015,74.7886857);
+        }else if (B_MARAVANTHE_BEACH.equals(placeName)) {
+            return new LatLng(13.704708, 74.642438);
+        }else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
+            return new LatLng(12.886762, 74.815224);
         }
         return new LatLng(0.0, 0.0);
     }

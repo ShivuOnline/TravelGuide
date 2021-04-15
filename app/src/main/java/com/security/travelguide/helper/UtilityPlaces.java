@@ -37,12 +37,21 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASAD
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MYSORE_PALACE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_VIDHANA_SOUDHA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_BADAMI_BANASHANKARI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_CHAMUNDESHWARI_MYSORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_DARMASTHALA_MANJUNATHA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_GODACHI_VEERABADRA_TEMPLE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_GORAVANAHALLI_MAHALAKSHMI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_ISKON_BANGALORE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KALASA_TEMPLE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KOLLUR_MOOKAMBIKA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_KOTILINGESHWARA_TEMPLE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUDALA_SANGAMA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_KUKKE_SUBRAMANYA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_MURUDESHWARA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_SAVADATTI_YELLAMMA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_SIDDAGANGA_MUTT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRINGERI_SHARDA_PEETHAM;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_SRI_KRISHNA_UDUPI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_ABBEY_FALLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.W_ALMATTI_DAM;
@@ -293,6 +302,15 @@ public class UtilityPlaces {
         religiousList.add(R_DARMASTHALA_MANJUNATHA);
         religiousList.add(R_KUKKE_SUBRAMANYA);
         religiousList.add(R_CHAMUNDESHWARI_MYSORE);
+        religiousList.add(R_KOTILINGESHWARA_TEMPLE);
+        religiousList.add(R_SRINGERI_SHARDA_PEETHAM);
+        religiousList.add(R_KALASA_TEMPLE);
+        religiousList.add(R_KOLLUR_MOOKAMBIKA);
+        religiousList.add(R_GORAVANAHALLI_MAHALAKSHMI);
+        religiousList.add(R_SIDDAGANGA_MUTT);
+        religiousList.add(R_BADAMI_BANASHANKARI);
+        religiousList.add(R_GODACHI_VEERABADRA_TEMPLE);
+        religiousList.add(R_SAVADATTI_YELLAMMA);
         return religiousList;
     }
 
@@ -421,6 +439,24 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mangalore/kukke-subrahmanya-temple/";
         } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
             return "https://www.karnataka.com/mysore/chamundi-hills/";
+        } else if (R_KOTILINGESHWARA_TEMPLE.equals(placeName)) {
+            return "https://www.karnataka.com/kolar/kotilingeshwara-temple/";
+        } else if (R_SRINGERI_SHARDA_PEETHAM.equals(placeName)) {
+            return "https://www.karnataka.com/sringeri/about-sringeri/";
+        }else if (R_KALASA_TEMPLE.equals(placeName)) {
+            return "https://www.karnataka.com/chikmagalur/kalasa/";
+        }else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
+            return "https://www.karnataka.com/kollur/about-kollur/";
+        }else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
+            return "https://www.karnataka.com/tumkur/mahalakshmi-temple-goravanahalli/";
+        }else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
+            return "https://www.karnataka.com/tumkur/siddaganga-mutt/";
+        }else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
+            return "https://www.karnataka.com/badami/cholachagudd-banashankari-amma-temple/";
+        }else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
+            return "https://www.karnataka.com/badami/godachi-veerabhadra-temple/";
+        }else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
+            return "https://www.karnataka.com/belgaum/saundatti-yellamma-devi-temple/";
         }
         return "";
     }
@@ -451,27 +487,27 @@ public class UtilityPlaces {
             return "https://www.trawel.co.in/city/Belagavi/godchinamalaki-falls";
         } else if (W_ABBEY_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/coorg/abbey-falls/";
-        }else if (W_BARACHUKKI_FALLS.equals(placeName)) {
+        } else if (W_BARACHUKKI_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/mandya/barachukki-gaganachukki-falls-shivanasamudra/";
-        }else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
+        } else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/karwar/bennehole-waterfalls/";
-        }else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
+        } else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/mysore/chunchanakatte-falls/";
-        }else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
+        } else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/chikmagalur/kalhatti-giri-falls/";
-        }else if (W_SATHODI_FALLS.equals(placeName)) {
+        } else if (W_SATHODI_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/hubli/sathodi-falls/";
-        }else if (W_SURAL_FALLS.equals(placeName)) {
+        } else if (W_SURAL_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/sural-falls/";
-        }else if (W_VIBHOOTI_FALLS.equals(placeName)) {
+        } else if (W_VIBHOOTI_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/karwar/vibhooti-falls/";
-        }else if (W_UNCHALLI_FALLS.equals(placeName)) {
+        } else if (W_UNCHALLI_FALLS.equals(placeName)) {
             return "https://www.karnataka.com/shimoga/unchalli-falls/";
         } else if (W_ALMATTI_DAM.equals(placeName)) {
             return "https://www.karnataka.com/bijapur/almatti-dam/";
         } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return "https://explorebees.com/India/KARNATAKA/Hampi/Tungbhadra+Dam+And+Garden/pl50281";
-        }else if (W_KRS_DAM.equals(placeName)) {
+        } else if (W_KRS_DAM.equals(placeName)) {
             return "https://travel.earth/krs-dam-guide-visvesvarayas-legacy/";
         } else if (W_HIDKAL_DAM.equals(placeName)) {
             return "https://en.wikipedia.org/wiki/Raja_Lakhamagouda_dam";
@@ -523,7 +559,7 @@ public class UtilityPlaces {
         } else if (M_MYSORE_PALACE.equals(placeName)) {
             return new LatLng(12.305153, 76.655179);
         } else if (M_VIDHANA_SOUDHA.equals(placeName)) {
-            return new LatLng(12.9791947,77.5913193);
+            return new LatLng(12.9791947, 77.5913193);
         } else if (M_PHILOMENA_CHURCH.equals(placeName)) {
             return new LatLng(12.321024, 76.658254);
         } else if (M_MENA_BASADI.equals(placeName)) {
@@ -538,17 +574,35 @@ public class UtilityPlaces {
         if (R_KUDALA_SANGAMA.equals(placeName)) {
             return new LatLng(16.205774, 76.059213);
         } else if (R_ISKON_BANGALORE.equals(placeName)) {
-            return new LatLng(13.0097206,77.550799);
+            return new LatLng(13.0097206, 77.550799);
         } else if (R_MURUDESHWARA.equals(placeName)) {
             return new LatLng(14.093609, 74.483835);
         } else if (R_SRI_KRISHNA_UDUPI.equals(placeName)) {
-            return new LatLng(13.3411359,74.752003);
+            return new LatLng(13.3411359, 74.752003);
         } else if (R_DARMASTHALA_MANJUNATHA.equals(placeName)) {
             return new LatLng(12.950344, 75.380587);
         } else if (R_KUKKE_SUBRAMANYA.equals(placeName)) {
             return new LatLng(12.675203, 75.605845);
         } else if (R_CHAMUNDESHWARI_MYSORE.equals(placeName)) {
             return new LatLng(12.272465, 76.670738);
+        } else if (R_KOTILINGESHWARA_TEMPLE.equals(placeName)) {
+            return new LatLng(12.995150, 78.295711);
+        } else if (R_SRINGERI_SHARDA_PEETHAM.equals(placeName)) {
+            return new LatLng(13.4162243, 75.2520464);
+        }else if (R_KALASA_TEMPLE.equals(placeName)) {
+            return new LatLng(13.232640, 75.363374);
+        }else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
+            return new LatLng(13.863827, 74.814464);
+        }else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
+            return new LatLng(13.472025, 77.282746);
+        }else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
+            return new LatLng(13.321826, 77.148378);
+        }else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
+            return new LatLng(13.321826, 77.148378);
+        }else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
+            return new LatLng(16.0134923,75.1941104);
+        }else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
+            return new LatLng(15.754554, 75.154191);
         }
         return new LatLng(0.0, 0.0);
     }
@@ -579,29 +633,29 @@ public class UtilityPlaces {
             return new LatLng(16.123734, 74.745203);
         } else if (W_ABBEY_FALLS.equals(placeName)) {
             return new LatLng(12.458054, 75.716642);
-        }else if (W_BARACHUKKI_FALLS.equals(placeName)) {
+        } else if (W_BARACHUKKI_FALLS.equals(placeName)) {
             return new LatLng(12.287821, 77.183671);
-        }else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
-            return new LatLng(14.5044923,74.6244319);
-        }else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
+        } else if (W_BENNE_HOLE_FALLS.equals(placeName)) {
+            return new LatLng(14.5044923, 74.6244319);
+        } else if (W_CHUNCHANAKATTE_FALLS.equals(placeName)) {
             return new LatLng(12.505904, 76.295861);
-        }else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
+        } else if (W_KALHATTI_GIRI_FALLS.equals(placeName)) {
             return new LatLng(13.536311, 75.782068);
-        }else if (W_SATHODI_FALLS.equals(placeName)) {
+        } else if (W_SATHODI_FALLS.equals(placeName)) {
             return new LatLng(14.949714, 74.585082);
-        }else if (W_SURAL_FALLS.equals(placeName)) {
+        } else if (W_SURAL_FALLS.equals(placeName)) {
             return new LatLng(15.674933, 74.185989);
-        }else if (W_VIBHOOTI_FALLS.equals(placeName)) {
+        } else if (W_VIBHOOTI_FALLS.equals(placeName)) {
             return new LatLng(14.598101, 74.551185);
-        }else if (W_UNCHALLI_FALLS.equals(placeName)) {
+        } else if (W_UNCHALLI_FALLS.equals(placeName)) {
             return new LatLng(14.409061, 74.747428);
         } else if (W_ALMATTI_DAM.equals(placeName)) {
             return new LatLng(16.330978, 75.887052);
         } else if (W_TUNGABHADRA_DAM.equals(placeName)) {
             return new LatLng(15.268835, 76.325420);
-        }else if (W_KRS_DAM.equals(placeName)) {
+        } else if (W_KRS_DAM.equals(placeName)) {
             return new LatLng(12.425459, 76.572409);
-        }else if (W_HIDKAL_DAM.equals(placeName)) {
+        } else if (W_HIDKAL_DAM.equals(placeName)) {
             return new LatLng(16.143003, 74.642841);
         }
         return new LatLng(0.0, 0.0);

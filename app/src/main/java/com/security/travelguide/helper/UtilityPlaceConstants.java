@@ -35,6 +35,15 @@ public class UtilityPlaceConstants {
     public static String R_DARMASTHALA_MANJUNATHA = "Darmasthala Manjunatha";
     public static String R_KUKKE_SUBRAMANYA = "Kukke Subramanya";
     public static String R_CHAMUNDESHWARI_MYSORE = "Chamundeshwari Mysore";
+    public static String R_KOTILINGESHWARA_TEMPLE = "Kotilingeshwara Temple";
+    public static String R_SRINGERI_SHARDA_PEETHAM = "Sringeri Sharda Peetham";
+    public static String R_KALASA_TEMPLE = "Kalasa Temple";
+    public static String R_KOLLUR_MOOKAMBIKA = "Kollur Mookambika";
+    public static String R_GORAVANAHALLI_MAHALAKSHMI = "Goravanahalli Mahalakshmi";
+    public static String R_SIDDAGANGA_MUTT = "Siddaganga Mutt";
+    public static String R_BADAMI_BANASHANKARI = "Badami Banashankari";
+    public static String R_GODACHI_VEERABADRA_TEMPLE = "Godachi Veerabadra Temple";
+    public static String R_SAVADATTI_YELLAMMA = "Savadatti Yellamma";
 
     // Gardens Names
     public static String G_ALAMATTI_GARDEN = "Alamatti Garden";

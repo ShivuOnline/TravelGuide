@@ -35,6 +35,16 @@ public class UtilityPlaceConstants {
     public static String M_PHILOMENA_CHURCH = "Philomena Church";
     public static String M_MENA_BASADI = "Mena Basadi";
     public static String M_BIDAR_FORT = "Bidar Fort";
+    public static String M_SAAVIRA_KAMBADA_BASADI = "Saavira Kambada Basadi";
+    public static String M_BANGALORE_PALACE = "Bangalore Palace";
+    public static String M_STONE_CHARIOT_HAMPI = "Stone Chariot Hampi";
+    public static String M_GOMMATESHWARA = "Gommateshwara";
+    public static String M_CHITRADURGA_FORT = "Chitradurga Fort";
+    public static String M_KITTUR_FORT = "Kittur Fort";
+    public static String M_MADIKERI_FORT = "Madikeri Fort";
+    public static String M_GULBARGA_FORT = "Gulbarga Fort";
+    public static String M_BUDDHA_VIHAR = "Buddha Vihar";
+    public static String M_DEVANAHALLI_FORT = "Devanahalli Fort";
 
     // Religious Names
     public static String R_KUDALA_SANGAMA = "Kudala Sangama";

@@ -40,11 +40,21 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.H_MADIKERI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_NANDHI_HILLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SAVANADURGA_HILLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SHIVAGANGE_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_BANGALORE_PALACE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BIDAR_FORT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_BUDDHA_VIHAR;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_CHITRADURGA_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOL_GUMBAZ;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOMMATESHWARA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_GULBARGA_FORT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_KITTUR_FORT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_MADIKERI_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MYSORE_PALACE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_DEVANAHALLI_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_SAAVIRA_KAMBADA_BASADI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_STONE_CHARIOT_HAMPI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_VIDHANA_SOUDHA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_BADAMI_BANASHANKARI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.R_CHAMUNDESHWARI_MYSORE;
@@ -307,6 +317,16 @@ public class UtilityPlaces {
         monumentList.add(M_PHILOMENA_CHURCH);
         monumentList.add(M_MENA_BASADI);
         monumentList.add(M_BIDAR_FORT);
+        monumentList.add(M_SAAVIRA_KAMBADA_BASADI);
+        monumentList.add(M_BANGALORE_PALACE);
+        monumentList.add(M_STONE_CHARIOT_HAMPI);
+        monumentList.add(M_GOMMATESHWARA);
+        monumentList.add(M_CHITRADURGA_FORT);
+        monumentList.add(M_BUDDHA_VIHAR);
+        monumentList.add(M_KITTUR_FORT);
+        monumentList.add(M_MADIKERI_FORT);
+        monumentList.add(M_GULBARGA_FORT);
+        monumentList.add(M_DEVANAHALLI_FORT);
         return monumentList;
     }
 
@@ -456,6 +476,26 @@ public class UtilityPlaces {
             return "https://en.wikipedia.org/wiki/Badami_cave_temples";
         } else if (M_BIDAR_FORT.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
+        }else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
+            return "https://www.karnataka.com/mangalore/saavira-kambada-basadi-moodbidri/";
+        }else if (M_BANGALORE_PALACE.equals(placeName)) {
+            return "https://www.karnataka.com/bangalore/bangalore-palace/";
+        }else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
+            return "https://www.karnataka.com/hampi/stone-chariot/";
+        }else if (M_GOMMATESHWARA.equals(placeName)) {
+            return "https://www.karnataka.com/personalities/saint-bahubali/";
+        }else if (M_CHITRADURGA_FORT.equals(placeName)) {
+            return "https://www.karnataka.com/chitradurga/about-chitradurga/";
+        }else if (M_BUDDHA_VIHAR.equals(placeName)) {
+            return "https://www.karnataka.com/gulbarga/buddha-vihara/";
+        }else if (M_KITTUR_FORT.equals(placeName)) {
+            return "https://www.karnataka.com/belgaum/kittur-fort-and-palace/";
+        }else if (M_MADIKERI_FORT.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/madikeri-fort/";
+        }else if (M_GULBARGA_FORT.equals(placeName)) {
+            return "https://www.karnataka.com/gulbarga/gulbarga-fort/";
+        }else if (M_DEVANAHALLI_FORT.equals(placeName)) {
+            return "https://www.karnataka.com/bangalore/devanahalli-fort/";
         }
         return "";
     }
@@ -620,6 +660,26 @@ public class UtilityPlaces {
             return new LatLng(15.916642, 75.691002);
         } else if (M_BIDAR_FORT.equals(placeName)) {
             return new LatLng(17.922706, 77.526042);
+        }else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
+            return new LatLng(13.074266, 74.998174);
+        }else if (M_BANGALORE_PALACE.equals(placeName)) {
+            return new LatLng(12.9987041,77.5919296);
+        }else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
+            return new LatLng(15.342267, 76.475786);
+        }else if (M_GOMMATESHWARA.equals(placeName)) {
+            return new LatLng(12.853962, 76.484659);
+        }else if (M_CHITRADURGA_FORT.equals(placeName)) {
+            return new LatLng(14.216044, 76.398915);
+        }else if (M_BUDDHA_VIHAR.equals(placeName)) {
+            return new LatLng(17.306700, 76.892529);
+        }else if (M_KITTUR_FORT.equals(placeName)) {
+            return new LatLng(15.601225, 74.791409);
+        }else if (M_MADIKERI_FORT.equals(placeName)) {
+            return new LatLng(12.421042, 75.738677);
+        }else if (M_GULBARGA_FORT.equals(placeName)) {
+            return new LatLng(17.3404462,76.8296551);
+        }else if (M_DEVANAHALLI_FORT.equals(placeName)) {
+            return new LatLng(13.249751, 77.708188);
         }
         return new LatLng(0.0, 0.0);
     }

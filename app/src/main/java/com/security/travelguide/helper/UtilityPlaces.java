@@ -35,11 +35,21 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.G_HOSPET_GAR
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_LALBAG_BANGALORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_MYSORE_ZOO;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_AGUMBE;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_BRAHMAGIRI_HILL;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_CHARMADI_GHAT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_COORG;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_KODACHADRI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_KUDREMUKH;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_KUMARA_PARVATHA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_MADIKERI;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_MULLAYANAGIRI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_NANDHI_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_RAMANAGARA_HILLS;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SAVANADURGA_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_SHARAVATHI_VALLEY;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_SHIVAGANGE_HILLS;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_SIDDARA_BETTA;
+import static com.security.travelguide.helper.UtilityPlaceConstants.H_YANA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BANGALORE_PALACE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BIDAR_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BUDDHA_VIHAR;
@@ -305,6 +315,16 @@ public class UtilityPlaces {
         hillStationList.add(H_NANDHI_HILLS);
         hillStationList.add(H_SHIVAGANGE_HILLS);
         hillStationList.add(H_SAVANADURGA_HILLS);
+        hillStationList.add(H_YANA);
+        hillStationList.add(H_SIDDARA_BETTA);
+        hillStationList.add(H_COORG);
+        hillStationList.add(H_BRAHMAGIRI_HILL);
+        hillStationList.add(H_CHARMADI_GHAT);
+        hillStationList.add(H_RAMANAGARA_HILLS);
+        hillStationList.add(H_SHARAVATHI_VALLEY);
+        hillStationList.add(H_MULLAYANAGIRI);
+        hillStationList.add(H_KUMARA_PARVATHA);
+        hillStationList.add(H_KODACHADRI);
         return hillStationList;
     }
 
@@ -459,6 +479,26 @@ public class UtilityPlaces {
             return "https://www.holidify.com/places/shivagange/";
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return "https://www.holidify.com/places/savandurga/";
+        }else if (H_YANA.equals(placeName)) {
+            return "https://www.karnataka.com/hubli/yana-hill-station/";
+        }else if (H_SIDDARA_BETTA.equals(placeName)) {
+            return "https://www.karnataka.com/madhugiri/siddara-betta/";
+        }else if (H_COORG.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/about-coorg/";
+        }else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/brahmagiri-trek/";
+        }else if (H_CHARMADI_GHAT.equals(placeName)) {
+            return "https://www.karnataka.com/chikmagalur/charmadi-ghat-trek/";
+        }else if (H_RAMANAGARA_HILLS.equals(placeName)) {
+            return "https://www.karnataka.com/ramanagara/about-ramanagara/";
+        }else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
+            return "https://www.karnataka.com/shimoga/sharavathi-valley-trek/";
+        }else if (H_MULLAYANAGIRI.equals(placeName)) {
+            return "https://www.karnataka.com/chikmagalur/mullayanagiri-trek/";
+        }else if (H_KUMARA_PARVATHA.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/kumara-parvatha-trek/";
+        }else if (H_KODACHADRI.equals(placeName)) {
+            return "https://www.karnataka.com/kollur/kodachadri-trek/";
         }
         return "";
     }
@@ -643,6 +683,26 @@ public class UtilityPlaces {
             return new LatLng(13.1697204, 77.2206819);
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return new LatLng(12.899733, 77.2656555);
+        }else if (H_YANA.equals(placeName)) {
+            return new LatLng(14.590163, 74.566667);
+        }else if (H_SIDDARA_BETTA.equals(placeName)) {
+            return new LatLng(13.565131, 77.142188);
+        }else if (H_COORG.equals(placeName)) {
+            return new LatLng(12.420010, 75.729191);
+        }else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
+            return new LatLng(12.424417, 75.738197);
+        }else if (H_CHARMADI_GHAT.equals(placeName)) {
+            return new LatLng(13.058180, 75.429480);
+        }else if (H_RAMANAGARA_HILLS.equals(placeName)) {
+            return new LatLng(12.7529302,77.3019236);
+        }else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
+            return new LatLng(14.2790231,74.4749231);
+        }else if (H_MULLAYANAGIRI.equals(placeName)) {
+            return new LatLng(13.390861, 75.721314);
+        }else if (H_KUMARA_PARVATHA.equals(placeName)) {
+            return new LatLng(12.662849, 75.687289);
+        }else if (H_KODACHADRI.equals(placeName)) {
+            return new LatLng(13.8563942,74.8703597);
         }
         return new LatLng(0.0, 0.0);
     }

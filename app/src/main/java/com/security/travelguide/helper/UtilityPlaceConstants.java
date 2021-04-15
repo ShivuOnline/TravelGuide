@@ -27,6 +27,17 @@ public class UtilityPlaceConstants {
     public static String H_NANDHI_HILLS = "Nandhi Hills";
     public static String H_SHIVAGANGE_HILLS = "Shivagange Hills";
     public static String H_SAVANADURGA_HILLS = "Savandurga Hills";
+    public static String H_YANA = "Yana";
+    public static String H_SIDDARA_BETTA = "Siddara Betta";
+    public static String H_COORG = "Coorg";
+    public static String H_BRAHMAGIRI_HILL = "Brahmagiri Hill";
+    public static String H_CHARMADI_GHAT = "Charmadi Ghat";
+
+    public static String H_RAMANAGARA_HILLS = "Ramanagara Hills";
+    public static String H_SHARAVATHI_VALLEY = "Sharavathi Valley";
+    public static String H_MULLAYANAGIRI = "Mullayanagiri";
+    public static String H_KUMARA_PARVATHA = "Kumara Parvatha";
+    public static String H_KODACHADRI = "Kodachadri";
 
     // Monuments Names
     public static String M_GOL_GUMBAZ = "Gol Gumbaz";

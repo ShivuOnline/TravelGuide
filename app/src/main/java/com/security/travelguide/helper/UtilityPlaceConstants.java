@@ -32,7 +32,6 @@ public class UtilityPlaceConstants {
     public static String H_COORG = "Coorg";
     public static String H_BRAHMAGIRI_HILL = "Brahmagiri Hill";
     public static String H_CHARMADI_GHAT = "Charmadi Ghat";
-
     public static String H_RAMANAGARA_HILLS = "Ramanagara Hills";
     public static String H_SHARAVATHI_VALLEY = "Sharavathi Valley";
     public static String H_MULLAYANAGIRI = "Mullayanagiri";
@@ -82,6 +81,16 @@ public class UtilityPlaceConstants {
     public static String G_CUBBON_PARK = "Cubbon Park";
     public static String G_MYSORE_ZOO = "Mysore Zoo";
     public static String G_DANDELI_NATIONAL_PARK = "Dandeli National Park";
+    public static String G_NAGARHOLE_NATIONAL_PARK = "Nagarhole National Park";
+    public static String G_RANGANATHITTU_BIRD_SANCTUARY = "Ranganathittu Bird Sanctuary";
+    public static String G_BANNERGHATTA_NATIONAL_PARK = "Bannerghatta National Park";
+    public static String G_BANDIPUR_NATIONAL_PARK = "Bandipur National Park";
+    public static String G_ANSHI_NATIONAL_PARK = "Anshi National Park";
+    public static String G_DAROJI_SLOTH_BEAR_SANCTUARY = "Daroji Sloth Bear Sanctuary";
+    public static String G_JAYAMANGALI_BLACKBUCK = "Jayamangali Blackbuck";
+    public static String G_RANEBENNUR_BLACKBUCK = "Ranebennur Blackbuck";
+    public static String G_BANKAPURA_PEACOCK_SANCTUARY = "Bankapura Peacock Sanctuary";
+    public static String G_KOKKARE_BELLUR_PELICANRY = "Kokkare Bellur Pelicanry";
 
     // Water Falls Names
     public static String W_JOG_FALLS = "Jog Falls";

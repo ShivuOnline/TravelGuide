@@ -29,11 +29,21 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.B_SURATHKAL_
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_TANNIRBHAVI_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.B_ULLAL_BEACH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_ALAMATTI_GARDEN;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_ANSHI_NATIONAL_PARK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_BANDIPUR_NATIONAL_PARK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_BANKAPURA_PEACOCK_SANCTUARY;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_BANNERGHATTA_NATIONAL_PARK;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_CUBBON_PARK;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_DANDELI_NATIONAL_PARK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_DAROJI_SLOTH_BEAR_SANCTUARY;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_HOSPET_GARDEN;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_JAYAMANGALI_BLACKBUCK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_KOKKARE_BELLUR_PELICANRY;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_LALBAG_BANGALORE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.G_MYSORE_ZOO;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_NAGARHOLE_NATIONAL_PARK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_RANEBENNUR_BLACKBUCK;
+import static com.security.travelguide.helper.UtilityPlaceConstants.G_RANGANATHITTU_BIRD_SANCTUARY;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_AGUMBE;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_BRAHMAGIRI_HILL;
 import static com.security.travelguide.helper.UtilityPlaceConstants.H_CHARMADI_GHAT;
@@ -381,6 +391,16 @@ public class UtilityPlaces {
         gardensList.add(G_CUBBON_PARK);
         gardensList.add(G_MYSORE_ZOO);
         gardensList.add(G_DANDELI_NATIONAL_PARK);
+        gardensList.add(G_NAGARHOLE_NATIONAL_PARK);
+        gardensList.add(G_RANGANATHITTU_BIRD_SANCTUARY);
+        gardensList.add(G_BANNERGHATTA_NATIONAL_PARK);
+        gardensList.add(G_BANDIPUR_NATIONAL_PARK);
+        gardensList.add(G_ANSHI_NATIONAL_PARK);
+        gardensList.add(G_DAROJI_SLOTH_BEAR_SANCTUARY);
+        gardensList.add(G_JAYAMANGALI_BLACKBUCK);
+        gardensList.add(G_RANEBENNUR_BLACKBUCK);
+        gardensList.add(G_BANKAPURA_PEACOCK_SANCTUARY);
+        gardensList.add(G_KOKKARE_BELLUR_PELICANRY);
         return gardensList;
     }
 
@@ -590,6 +610,26 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mysore/mysore-zoo/";
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
+        }else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
+            return "https://www.karnataka.com/coorg/nagarhole-national-park/";
+        }else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
+            return "https://www.karnataka.com/srirangapatna/ranganathittu-bird-sanctuary/";
+        }else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
+            return "https://www.karnataka.com/bangalore/bannerghatta-national-park/";
+        }else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
+            return "https://www.karnataka.com/bandipur/about-bandipur/";
+        }else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
+            return "https://www.karnataka.com/karwar/anshi-national-park/";
+        }else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
+            return "https://www.karnataka.com/tourism/sanctuary/daroji-sloth-bear-sanctuary/";
+        }else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
+            return "https://www.karnataka.com/tourism/sanctuary/jayamangali-blackbuck-reserve/";
+        }else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
+            return "https://www.karnataka.com/tourism/sanctuary/ranebennur-blackbuck-sanctuary/";
+        }else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
+            return "https://www.karnataka.com/tourism/sanctuary/bankapura-peacock-sanctuary/";
+        }else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
+            return "https://www.karnataka.com/mysore/kokkarebellur-bird-sanctuary/";
         }
         return "";
     }
@@ -794,6 +834,26 @@ public class UtilityPlaces {
             return new LatLng(12.302315, 76.665788);
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(15.246803, 74.622078);
+        }else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
+            return new LatLng(12.050003, 76.099419);
+        }else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
+            return new LatLng(12.424621, 76.656342);
+        }else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
+            return new LatLng(12.798586, 77.567816);
+        }else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
+            return new LatLng(11.667517, 76.628677);
+        }else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
+            return new LatLng(14.997799, 74.358715);
+        }else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
+            return new LatLng(15.269635, 76.531377);
+        }else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
+            return new LatLng(13.740013, 77.323251);
+        }else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
+            return new LatLng(14.648028, 75.684246);
+        }else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
+            return new LatLng(14.920102, 75.262446);
+        }else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
+            return new LatLng(12.513302, 77.087656);
         }
         return new LatLng(0.0, 0.0);
     }

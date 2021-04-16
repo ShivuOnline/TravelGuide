@@ -766,5 +766,11 @@
 \n\n\tIt is an earthen and masonry dam which caters to the Irrigation needs for over 8,20,000 acres, and Hydel power generation.
 \n\n\tIt is constructed as a part of the Ghataprabha Irrigation project which was completed in three phases and finished in 2009. The dam is named after Raja Lakhamagouda Sardesai, philanthropist and Zamindar of Vantamuri.
 </string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 
 </resources>

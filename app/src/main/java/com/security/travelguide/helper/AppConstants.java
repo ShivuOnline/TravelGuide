@@ -25,6 +25,10 @@ public class AppConstants {
     public static final String FEMALE_GENDER = "Female";
     public static final String OTHER_GENDER = "Other";
 
+    // Setting Options
+    public static final String SETTINGS_PROFILE = "Profile";
+    public static final String SETTINGS_UPDATE_MPIN = "Update MPin";
+
     // User Active Status
     public static final String ACTIVE_USER = "Active";
     public static final String IN_ACTIVE_USER = "InActive";

@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
             editMobileNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
             editMPin.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)});
 
-            String version = "v." + BuildConfig.VERSION_NAME;
+            String version = "Version." + BuildConfig.VERSION_NAME;
             textVersion.setText(version);
 
             SpannableString signUpStyledString = new SpannableString(getApplicationContext().getResources().getString(R.string.account_signup));

@@ -88,4 +88,11 @@ public class Utils {
         genderType.add(AppConstants.OTHER_GENDER);
         return genderType;
     }
+
+    public static List<String> getSettingsOption() {
+        List<String> settingsOptionList = new ArrayList<>();
+        settingsOptionList.add(AppConstants.SETTINGS_PROFILE);
+        settingsOptionList.add(AppConstants.SETTINGS_UPDATE_MPIN);
+        return settingsOptionList;
+    }
 }

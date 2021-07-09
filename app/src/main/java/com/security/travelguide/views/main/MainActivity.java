@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +25,7 @@ import com.security.travelguide.views.login.LoginActivity;
 import com.security.travelguide.views.monuments.Monuments;
 import com.security.travelguide.views.profile.Profile;
 import com.security.travelguide.views.religious.Religious;
+import com.security.travelguide.views.settings.Settings;
 import com.security.travelguide.views.updateMpin.UpdateMPin;
 import com.security.travelguide.views.waterfalls.WaterFalls;
 
@@ -34,7 +34,7 @@ import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
 
 public class MainActivity extends AppCompatActivity implements Dashboard.OnFragmentInteractionListener, Beaches.OnFragmentInteractionListener,
         Gardens.OnFragmentInteractionListener, HillStations.OnFragmentInteractionListener, Monuments.OnFragmentInteractionListener,
-        Religious.OnFragmentInteractionListener, WaterFalls.OnFragmentInteractionListener {
+        Religious.OnFragmentInteractionListener, WaterFalls.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Profile(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 3:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UpdateMPin(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(), Integer.toString(getFragmentCount())).commit();
                             break;
                     }
                 }
@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Profile(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 3:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UpdateMPin(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(), Integer.toString(getFragmentCount())).commit();
                             break;
                     }
                 }
@@ -252,11 +252,11 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                         Integer.toString(getFragmentCount())).commit();
             } else if (fragment instanceof Profile) {
                 fragmentManager.popBackStack();
-                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(),
                         Integer.toString(getFragmentCount())).commit();
             } else if (fragment instanceof UpdateMPin) {
                 fragmentManager.popBackStack();
-                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(),
                         Integer.toString(getFragmentCount())).commit();
             } else if (fragment instanceof Dashboard) {
                 super.onBackPressed();

@@ -19,6 +19,7 @@ import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.model.userDetails.UserMain;
 import com.security.travelguide.views.beaches.Beaches;
 import com.security.travelguide.views.dashboard.Dashboard;
+import com.security.travelguide.views.gallery.UserGallery;
 import com.security.travelguide.views.gardens.Gardens;
 import com.security.travelguide.views.hillstations.HillStations;
 import com.security.travelguide.views.login.LoginActivity;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 3:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(), Integer.toString(getFragmentCount())).commit();
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();

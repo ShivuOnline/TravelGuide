@@ -121,7 +121,7 @@ public class PhotoUpload extends Fragment {
             imageCameraIcon = rootView.findViewById(R.id.image_camera_icon);
             btnSubmit = rootView.findViewById(R.id.btn_submit);
 
-            imageSelectedPhoto.setImageDrawable(ResourcesCompat.getDrawable(requireContext().getResources(),R.drawable.empty_image,null));
+            imageSelectedPhoto.setImageDrawable(ResourcesCompat.getDrawable(requireContext().getResources(), R.drawable.empty_image, null));
 
             placeTypeList.clear();
             placeList.clear();
@@ -232,6 +232,8 @@ public class PhotoUpload extends Fragment {
                         String selectedPlace = textPlace.getText().toString().trim();
 
                         GalleryUploadMain galleryUploadMain = new GalleryUploadMain();
+                        galleryUploadMain.setPlaceType(selectedPlaceType);
+                        galleryUploadMain.setPlace(selectedPlace);
                         galleryUploadMain.setPlacePhotoId(Utils.getCurrentTimeStampWithSecondsAsId());
                         // Initial PhotoPath is Empty
                         galleryUploadMain.setPlacePhotoPath("");
@@ -240,12 +242,12 @@ public class PhotoUpload extends Fragment {
                         galleryUploadMain.setLatitude(0.0);
                         galleryUploadMain.setLongitude(0.0);
 
-                        Log.d(TAG, "onClick: userId"+userId);
-                        Log.d(TAG, "onClick: selectedPlaceType:"+selectedPlaceType);
-                        Log.d(TAG, "onClick: selectedPlace:"+selectedPlace);
-                        Log.d(TAG, "onClick: galleryUploadMain:"+galleryUploadMain);
+                        Log.d(TAG, "onClick: userId" + userId);
+                        Log.d(TAG, "onClick: selectedPlaceType:" + selectedPlaceType);
+                        Log.d(TAG, "onClick: selectedPlace:" + selectedPlace);
+                        Log.d(TAG, "onClick: galleryUploadMain:" + galleryUploadMain);
 
-                        upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId, selectedPlaceType, selectedPlace);
+                        upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId);
 
                     }
                 }
@@ -293,7 +295,7 @@ public class PhotoUpload extends Fragment {
         }
     }
 
-    private void upLoadPlacePhoto(GalleryUploadMain galleryUploadMain, Uri photoUploadUri, String userId, String placeType, String place) {
+    private void upLoadPlacePhoto(GalleryUploadMain galleryUploadMain, Uri photoUploadUri, String userId) {
         try {
             showProgressDialog("Processing your request..");
 
@@ -307,7 +309,7 @@ public class PhotoUpload extends Fragment {
                         public void onSuccess(Uri uri) {
                             galleryUploadMain.setPlacePhotoPath(uri.toString());
                             hideProgressDialog();
-                            submitPhotoDetails(galleryUploadMain, userId, placeType, place);
+                            submitPhotoDetails(galleryUploadMain, userId);
                         }
                     });
                 }
@@ -331,11 +333,11 @@ public class PhotoUpload extends Fragment {
         }
     }
 
-    public void submitPhotoDetails(GalleryUploadMain galleryUploadMain, String userId, String placeType, String place) {
+    public void submitPhotoDetails(GalleryUploadMain galleryUploadMain, String userId) {
         try {
             showProgressDialog("Submitting please wait.");
 
-            mUserReference.child(userId).child(placeType).child(place).child(galleryUploadMain.getPlacePhotoId()).setValue(galleryUploadMain)
+            mUserReference.child(userId).child(galleryUploadMain.getPlaceType()).child(galleryUploadMain.getPlace()).child(galleryUploadMain.getPlacePhotoId()).setValue(galleryUploadMain)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -366,7 +368,7 @@ public class PhotoUpload extends Fragment {
             editComments.setText("");
             imageSelectedPhoto.setImageURI(null);
             imageSelectedPhoto.setImageDrawable(ResourcesCompat.getDrawable(requireContext().getResources(), R.drawable.empty_image, null));
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -4,6 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class GalleryUploadMain implements Parcelable {
+    private String placeType;
+    private String place;
     private String placePhotoId;
     private String placePhotoPath;
     private String placePhotoUploadedDate;
@@ -15,6 +17,8 @@ public class GalleryUploadMain implements Parcelable {
     }
 
     protected GalleryUploadMain(Parcel in) {
+        placeType = in.readString();
+        place = in.readString();
         placePhotoId = in.readString();
         placePhotoPath = in.readString();
         placePhotoUploadedDate = in.readString();
@@ -34,6 +38,22 @@ public class GalleryUploadMain implements Parcelable {
             return new GalleryUploadMain[size];
         }
     };
+
+    public String getPlaceType() {
+        return placeType;
+    }
+
+    public void setPlaceType(String placeType) {
+        this.placeType = placeType;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
 
     public String getPlacePhotoId() {
         return placePhotoId;
@@ -86,7 +106,9 @@ public class GalleryUploadMain implements Parcelable {
     @Override
     public String toString() {
         return "GalleryUploadMain{" +
-                "placePhotoId='" + placePhotoId + '\'' +
+                "placeType='" + placeType + '\'' +
+                ", place='" + place + '\'' +
+                ", placePhotoId='" + placePhotoId + '\'' +
                 ", placePhotoPath='" + placePhotoPath + '\'' +
                 ", placePhotoUploadedDate='" + placePhotoUploadedDate + '\'' +
                 ", userComments='" + userComments + '\'' +
@@ -102,6 +124,8 @@ public class GalleryUploadMain implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(placeType);
+        parcel.writeString(place);
         parcel.writeString(placePhotoId);
         parcel.writeString(placePhotoPath);
         parcel.writeString(placePhotoUploadedDate);

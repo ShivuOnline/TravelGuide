@@ -3,9 +3,12 @@ package com.security.travelguide.views.photoupload;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -45,6 +48,8 @@ import com.security.travelguide.model.userDetails.UserMain;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +64,7 @@ public class PhotoUpload extends Fragment {
     private Button btnSubmit;
     private Uri photoUploadUri;
     private ProgressDialog progressDialog;
+    private long MAX_2_MB = 2000000;
 
     // Firebase Storage
     FirebaseDatabase firebaseDatabase;
@@ -242,13 +248,33 @@ public class PhotoUpload extends Fragment {
                         galleryUploadMain.setLatitude(0.0);
                         galleryUploadMain.setLongitude(0.0);
 
-                        Log.d(TAG, "onClick: userId" + userId);
-                        Log.d(TAG, "onClick: selectedPlaceType:" + selectedPlaceType);
-                        Log.d(TAG, "onClick: selectedPlace:" + selectedPlace);
-                        Log.d(TAG, "onClick: galleryUploadMain:" + galleryUploadMain);
+                        long photoSize = getFileSize(photoUploadUri);
 
-                        upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId);
+                        Log.d(TAG, "onClick: photoSize:" + photoSize);
+                        if (photoSize > MAX_2_MB) {
+                            int scaleDivider = 4;
 
+                            try {
+                                // 1. Convert uri to bitmap
+                                Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), photoUploadUri);
+
+                                // 2. Get the downsized image content as a byte[]
+                                int scaleWidth = fullBitmap.getWidth() / scaleDivider;
+                                int scaleHeight = fullBitmap.getHeight() / scaleDivider;
+                                byte[] downsizedImageBytes =
+                                        getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
+
+                                if (downsizedImageBytes != null) {
+                                    upLoadPlacePhotoMoreSize(galleryUploadMain, downsizedImageBytes, userId);
+                                } else {
+                                    TravelGuideToast.showErrorToast(requireContext(), "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                }
+                            } catch (IOException ioEx) {
+                                ioEx.printStackTrace();
+                            }
+                        } else {
+                            upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId);
+                        }
                     }
                 }
             });
@@ -333,6 +359,58 @@ public class PhotoUpload extends Fragment {
         }
     }
 
+    private void upLoadPlacePhotoMoreSize(GalleryUploadMain galleryUploadMain, byte[] downsizedImageBytes, String userId) {
+        try {
+            showProgressDialog("Processing your request..");
+
+            StorageReference fileRef = storageReference.child(galleryUploadMain.getPlacePhotoId() + "." + getFileExtension(photoUploadUri));
+            fileRef.putBytes(downsizedImageBytes).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            galleryUploadMain.setPlacePhotoPath(uri.toString());
+                            hideProgressDialog();
+                            submitPhotoDetails(galleryUploadMain, userId);
+                        }
+                    });
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull @NotNull UploadTask.TaskSnapshot snapshot) {
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull @NotNull Exception e) {
+                    hideProgressDialog();
+                    TravelGuideToast.showErrorToast(requireContext(), "Failed to upload photo", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_LONG);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            hideProgressDialog();
+            TravelGuideToast.showErrorToast(requireContext(), e.getMessage(), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+            e.printStackTrace();
+        }
+    }
+
+    public byte[] getDownsizedImageBytes(Bitmap fullBitmap, int scaleWidth, int scaleHeight) throws IOException {
+        try {
+            Bitmap scaledBitmap = Bitmap.createScaledBitmap(fullBitmap, scaleWidth, scaleHeight, true);
+
+            // 2. Instantiate the downsized image content as a byte[]
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            return baos.toByteArray();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void submitPhotoDetails(GalleryUploadMain galleryUploadMain, String userId) {
         try {
             showProgressDialog("Submitting please wait.");
@@ -373,12 +451,6 @@ public class PhotoUpload extends Fragment {
         }
     }
 
-    private String getFileExtension(Uri profilePicUri) {
-        ContentResolver contentResolver = requireActivity().getContentResolver();
-        MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri));
-    }
-
     private void showProgressDialog(String message) {
         try {
             if (progressDialog != null) {
@@ -405,10 +477,38 @@ public class PhotoUpload extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
-            photoUploadUri = data.getData();
-            imageSelectedPhoto.setImageURI(photoUploadUri);
+        try {
+            if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
+                photoUploadUri = data.getData();
+                imageSelectedPhoto.setImageURI(photoUploadUri);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
 
+    private String getFileExtension(Uri profilePicUri) {
+        try {
+            ContentResolver contentResolver = requireActivity().getContentResolver();
+            MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
+            return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    private long getFileSize(Uri profilePicUri) {
+        long fileSize = 0;
+        ContentResolver contentResolver = requireActivity().getContentResolver();
+        AssetFileDescriptor afd = null;
+        try {
+            afd = contentResolver.openAssetFileDescriptor(profilePicUri, "r");
+            fileSize = afd.getLength();
+            afd.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileSize;
     }
 }

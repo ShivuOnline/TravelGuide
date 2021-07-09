@@ -3,9 +3,12 @@ package com.security.travelguide.views.signup;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -45,6 +48,8 @@ import com.security.travelguide.model.userDetails.UserMain;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -58,6 +63,8 @@ public class SignupActivity extends AppCompatActivity {
     private CircleImageView userProfilePic;
     private Button btnSignup;
     private ProgressDialog progressDialog;
+
+    private long MAX_2_MB = 2000000;
 
     // Firebase Storage
     FirebaseDatabase firebaseDatabase;
@@ -145,7 +152,32 @@ public class SignupActivity extends AppCompatActivity {
                         boolean isNotExistUser = verifyUserRegistration(userMain);
                         Log.d(TAG, "onClick: isNotExistUser:" + isNotExistUser);
                         if (isNotExistUser) {
-                            upLoadProfilePic(userMain, profilePicUri);
+                            long photoSize = getFileSize(profilePicUri);
+                            Log.d(TAG, "onClick: photoSize:" + photoSize);
+                            if (photoSize > MAX_2_MB) {
+                                int scaleDivider = 4;
+
+                                try {
+                                    // 1. Convert uri to bitmap
+                                    Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(SignupActivity.this.getContentResolver(), profilePicUri);
+
+                                    // 2. Get the downsized image content as a byte[]
+                                    int scaleWidth = fullBitmap.getWidth() / scaleDivider;
+                                    int scaleHeight = fullBitmap.getHeight() / scaleDivider;
+                                    byte[] downsizedImageBytes =
+                                            getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
+
+                                    if (downsizedImageBytes != null) {
+                                        upLoadProfilePicWithBytes(userMain, downsizedImageBytes);
+                                    } else {
+                                        TravelGuideToast.showErrorToast(SignupActivity.this, "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                    }
+                                } catch (IOException ioEx) {
+                                    ioEx.printStackTrace();
+                                }
+                            } else {
+                                upLoadProfilePic(userMain, profilePicUri);
+                            }
                         } else {
                             TravelGuideToast.showErrorToastWithBottom(SignupActivity.this, "Mobile number already exists", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                         }
@@ -177,6 +209,42 @@ public class SignupActivity extends AppCompatActivity {
 
             StorageReference fileRef = storageReference.child(userMain.getMobileNumber() + "." + getFileExtension(profilePicUri));
             fileRef.putFile(profilePicUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            userMain.setProfilePicUrl(uri.toString());
+                            signUpNewUser(userMain);
+                        }
+                    });
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull @NotNull UploadTask.TaskSnapshot snapshot) {
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull @NotNull Exception e) {
+                    hideProgressDialog();
+                    TravelGuideToast.showErrorToast(SignupActivity.this, "Failed to upload pic", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_LONG);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void upLoadProfilePicWithBytes(UserMain userMain, byte[] bytePic) {
+        try {
+            showProgressDialog("Processing..");
+
+            StorageReference fileRef = storageReference.child(userMain.getMobileNumber() + "." + getFileExtension(profilePicUri));
+            fileRef.putBytes(bytePic).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -336,6 +404,35 @@ public class SignupActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public byte[] getDownsizedImageBytes(Bitmap fullBitmap, int scaleWidth, int scaleHeight) throws IOException {
+        try {
+            Bitmap scaledBitmap = Bitmap.createScaledBitmap(fullBitmap, scaleWidth, scaleHeight, true);
+
+            // 2. Instantiate the downsized image content as a byte[]
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            return baos.toByteArray();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private long getFileSize(Uri profilePicUri) {
+        long fileSize = 0;
+        ContentResolver contentResolver = SignupActivity.this.getContentResolver();
+        AssetFileDescriptor afd = null;
+        try {
+            afd = contentResolver.openAssetFileDescriptor(profilePicUri, "r");
+            fileSize = afd.getLength();
+            afd.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileSize;
     }
 
     @Override

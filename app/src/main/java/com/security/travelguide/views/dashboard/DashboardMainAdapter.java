@@ -35,14 +35,14 @@ public class DashboardMainAdapter extends RecyclerView.Adapter<DashboardMainAdap
     }
 
     @Override
-    public DashboardMainAdapter.DashboardAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DashboardAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dashboard_main, parent, false);
-        return new DashboardMainAdapter.DashboardAdapterViewHolder(v);
+        return new DashboardAdapterViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final DashboardMainAdapter.DashboardAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final DashboardAdapterViewHolder holder, int position) {
         try {
             if (dashboardItemMainList.size() > 0) {
                 holder.setItem(dashboardItemMainList.get(position));

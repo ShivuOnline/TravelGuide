@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#008577</color>
-    <color name="color_primary_dark">#04554C</color>
-    <color name="color_acent">#0CBDAB</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#04554C</color>
+    <color name="colorAccent">#0CBDAB</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -29,5 +29,44 @@
     <color name="color_success">#29DF09</color>
     <color name="color_light_green">#8FDA81</color>
     <color name="color_dark_green">#4CAF50</color>
+
+
+    // New UX Colors
+    <color name="error_color">#EF5350</color>
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="success_color">#4CAF50</color>
+
+    <color name="colorBlue">#33b5f1</color>
+    <color name="colorYellow">#f1e833</color>
+    <color name="colorYellowGolden">#d4edba40</color>
+    <color name="colorYellowGoldenLight">#D4E6C77C</color>
+
+    <color name="colorLightGrey">#FFFFFFFF</color>
+    <color name="colorLightAccent">#cefa7d21</color>
+    <color name="colorDarkOrange">#f57210</color>
+
+    <color name="colorBorder">#66847c7c</color>
+    <color name="colorBgLog">#FBFBFB</color>
+
+    <color name="colorVeniceBlue">#08588B</color>
+    <color name="colorJaffa">#F58634</color>
+    <color name="colorCerulean1">#00B0DC</color>
+    <color name="colorCerulean">#00CCFF</color>
+
+    <color name="colorDarkGrayBorder">#bfbebe</color>
+    <color name="colorMoreDarkGrayBorder">#838080</color>
+    <color name="colorDarkGray">#E0E0E0</color>
+    <color name="colorMoon">#E0E0E0</color>
+    <color name="colorMoonLight">#ECECEC</color>
+    <color name="colorSecondaryText">#616161</color>
+
+    // Colors for new Design
+    <color name="colorAccentLatest">#F47A2E</color>
+    <color name="colorSwitchNotChecked">#C6CBDC</color>
+    <color name="colorUnAllowButton">#E5E5EA</color>
+    <color name="colorLightDarkBottomSheet">#F7F7F7</color>
+
+    <color name="material_button_ripple_color">#33AAAAAA</color>
+
 
 </resources>

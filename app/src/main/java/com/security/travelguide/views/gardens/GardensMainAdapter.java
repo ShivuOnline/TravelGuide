@@ -35,14 +35,14 @@ public class GardensMainAdapter extends RecyclerView.Adapter<GardensMainAdapter.
     }
 
     @Override
-    public GardensMainAdapter.GardensAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GardensAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main, parent, false);
-        return new GardensMainAdapter.GardensAdapterViewHolder(v);
+        return new GardensAdapterViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final GardensMainAdapter.GardensAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final GardensAdapterViewHolder holder, int position) {
         try {
             if (beachesMainItemList.size() > 0) {
                 holder.setItem(beachesMainItemList.get(position));

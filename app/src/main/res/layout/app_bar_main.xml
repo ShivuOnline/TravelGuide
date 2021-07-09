@@ -12,7 +12,7 @@
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_primary"
+        android:background="@color/colorPrimary"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -22,45 +22,42 @@
             android:visibility="visible"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="@dimen/std_36_dp"
+                android:layout_height="@dimen/std_36_dp"
+                android:layout_marginStart="@dimen/std_10_dp"
+                android:contentDescription="User image"
+                android:src="@drawable/ic_person_profile"
+                app:civ_border_color="@color/colorWhite"
+                app:civ_border_width="1dp" />
+
             <TextView
                 android:id="@+id/title_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
                 android:layout_marginTop="15dp"
+                android:text="@string/app_name"
                 android:textColor="@color/colorWhite"
                 android:textSize="18sp"
-                android:text="@string/app_name"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <ImageView
-                android:id="@+id/menu_icon"
+                android:id="@+id/logout"
                 android:layout_width="@dimen/std_30_dp"
                 android:layout_height="@dimen/std_30_dp"
-                android:layout_gravity="top|left"
-                android:layout_marginLeft="@dimen/std_10_dp"
+                android:layout_gravity="top|right"
                 android:layout_marginTop="@dimen/std_10_dp"
-                android:alpha="0.75"
-                android:src="@drawable/ic_arrow_back"
-                android:visibility="gone"/>
-
-            <ImageView
-                android:id="@+id/image_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_home"
-                android:layout_gravity="right|end"
                 android:layout_marginEnd="@dimen/std_10_dp"
-                android:layout_marginTop="@dimen/std_10_dp"
-                android:alpha="0.75"
-                android:visibility="gone"/>
+                android:src="@drawable/ic_logout"
+                android:visibility="visible" />
 
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

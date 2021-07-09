@@ -35,14 +35,14 @@ public class HillStationMainAdapter extends RecyclerView.Adapter<HillStationMain
     }
 
     @Override
-    public HillStationMainAdapter.HillStationAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HillStationAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main, parent, false);
-        return new HillStationMainAdapter.HillStationAdapterViewHolder(v);
+        return new HillStationAdapterViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final HillStationMainAdapter.HillStationAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final HillStationAdapterViewHolder holder, int position) {
         try {
             if (hillStationsMainItemList.size() > 0) {
                 holder.setItem(hillStationsMainItemList.get(position));

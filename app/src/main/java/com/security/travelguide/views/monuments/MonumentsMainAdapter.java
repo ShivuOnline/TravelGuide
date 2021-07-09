@@ -35,14 +35,14 @@ public class MonumentsMainAdapter extends RecyclerView.Adapter<MonumentsMainAdap
     }
 
     @Override
-    public MonumentsMainAdapter.MonumentsAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MonumentsAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main, parent, false);
-        return new MonumentsMainAdapter.MonumentsAdapterViewHolder(v);
+        return new MonumentsAdapterViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final MonumentsMainAdapter.MonumentsAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final MonumentsAdapterViewHolder holder, int position) {
         try {
             if (monumentsMainItemList.size() > 0) {
                 holder.setItem(monumentsMainItemList.get(position));

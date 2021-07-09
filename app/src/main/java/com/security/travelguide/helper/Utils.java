@@ -6,11 +6,13 @@ import android.util.Log;
 
 import androidx.core.content.res.ResourcesCompat;
 
+import com.security.travelguide.R;
 import com.security.travelguide.model.DashboardItem;
-import com.security.travelguide.model.PlaceItem;
 import com.security.travelguide.model.SliderItem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Utils {
@@ -58,6 +60,32 @@ public class Utils {
     }
 
     public static Drawable getImageFromDrawable(Context context, String name) {
-        return ResourcesCompat.getDrawable(context.getResources(), context.getResources().getIdentifier(name, "drawable", context.getPackageName()), null);
+        try {
+            return ResourcesCompat.getDrawable(context.getResources(), context.getResources().getIdentifier(name, "drawable", context.getPackageName()), null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResourcesCompat.getDrawable(context.getResources(),R.drawable.empty_image, null);
+        }
+    }
+
+    public static String getCurrentTimeStampWithSeconds() {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            String currentDateTime = dateFormat.format(new Date()); // Find todays date
+
+            return currentDateTime;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+
+    public static List<String> getGenderType() {
+        List<String> genderType = new ArrayList<>();
+        genderType.add(AppConstants.MALE_GENDER);
+        genderType.add(AppConstants.FEMALE_GENDER);
+        genderType.add(AppConstants.OTHER_GENDER);
+        return genderType;
     }
 }

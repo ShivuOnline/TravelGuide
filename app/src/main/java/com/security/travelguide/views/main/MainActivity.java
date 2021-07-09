@@ -1,24 +1,35 @@
 package com.security.travelguide.views.main;
 
-import android.opengl.Visibility;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.model.userDetails.UserMain;
 import com.security.travelguide.views.beaches.Beaches;
 import com.security.travelguide.views.dashboard.Dashboard;
 import com.security.travelguide.views.gardens.Gardens;
 import com.security.travelguide.views.hillstations.HillStations;
+import com.security.travelguide.views.login.LoginActivity;
 import com.security.travelguide.views.monuments.Monuments;
+import com.security.travelguide.views.profile.Profile;
 import com.security.travelguide.views.religious.Religious;
+import com.security.travelguide.views.updateMpin.UpdateMPin;
 import com.security.travelguide.views.waterfalls.WaterFalls;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
 
 public class MainActivity extends AppCompatActivity implements Dashboard.OnFragmentInteractionListener, Beaches.OnFragmentInteractionListener,
@@ -29,12 +40,18 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
     private FragmentManager fragmentManager;
     public static BottomNavigation bottomNavigationView;
+    private TextView titleHeader;
+    private CircleImageView userProfilePic;
+    private ImageView imageLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
             setContentView(R.layout.activity_main);
+            titleHeader = findViewById(R.id.title_header);
+            userProfilePic = findViewById(R.id.profile_pic);
+            imageLogout = findViewById(R.id.logout);
 
             fragmentManager = getSupportFragmentManager();
 
@@ -48,13 +65,13 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            Toast.makeText(MainActivity.this, "Places Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
-                            Toast.makeText(MainActivity.this, "Profile Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Profile(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 3:
-                            Toast.makeText(MainActivity.this, "About Us Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UpdateMPin(), Integer.toString(getFragmentCount())).commit();
                             break;
                     }
                 }
@@ -66,13 +83,13 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            Toast.makeText(MainActivity.this, "Places Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
-                            Toast.makeText(MainActivity.this, "Profile Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Profile(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 3:
-                            Toast.makeText(MainActivity.this, "About Us Pending", Toast.LENGTH_SHORT).show();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UpdateMPin(), Integer.toString(getFragmentCount())).commit();
                             break;
                     }
                 }
@@ -80,23 +97,112 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
 
+            imageLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showAlertDialogForLogout();
+                }
+            });
+
+            loadProfilePic();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void hideBottomNav(){
+    public void loadProfilePic() {
         try {
-            bottomNavigationView.setVisibility(View.GONE);
-        }catch (Exception e){
+            UserMain loginUser = UserUtils.getLoginUserDetails(MainActivity.this);
+            if (loginUser != null) {
+                if (loginUser.getProfilePicUrl() != null) {
+                    Glide.with(userProfilePic)
+                            .load(loginUser.getProfilePicUrl())
+                            .fitCenter()
+                            .centerCrop()
+                            .into(userProfilePic);
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void showBottomNav(){
+    public void showAlertDialogForLogout() {
+        try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater inflater = this.getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.alert_dialog_with_two_buttons, null);
+            builder.setView(dialogView);
+            builder.setCancelable(false);
+
+            // TextView and EditText Initialization
+            TextView textAlertHeader = dialogView.findViewById(R.id.dialog_message_header);
+            TextView textAlertDesc = dialogView.findViewById(R.id.dialog_message_desc);
+
+            TextView textBtnNo = dialogView.findViewById(R.id.text_button_left);
+            TextView textBtnYes = dialogView.findViewById(R.id.text_button_right);
+
+            textAlertHeader.setText("Alert..!");
+            String logoutSureMessage = "Are you sure want to logout from app?";
+
+            textAlertDesc.setText(logoutSureMessage);
+            textBtnNo.setText("No");
+            textBtnYes.setText("Yes");
+
+            AlertDialog alert = builder.create();
+            alert.show();
+
+            textBtnYes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        alert.dismiss();
+                        logout();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            textBtnNo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        alert.dismiss();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void logout() {
+        try {
+            UserUtils.removeAllDataWhenLogout(MainActivity.this);
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void hideBottomNav() {
+        try {
+            bottomNavigationView.setVisibility(View.GONE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void showBottomNav() {
         try {
             bottomNavigationView.setVisibility(View.VISIBLE);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -141,6 +247,14 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
             } else if (fragment instanceof WaterFalls) {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                        Integer.toString(getFragmentCount())).commit();
+            } else if (fragment instanceof Profile) {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                        Integer.toString(getFragmentCount())).commit();
+            } else if (fragment instanceof UpdateMPin) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();

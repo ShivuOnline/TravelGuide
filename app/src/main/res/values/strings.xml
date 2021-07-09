@@ -8,6 +8,7 @@
     <string name="transaction_name" translatable="false">places</string>
     <string name="transaction_title_name" translatable="false">placeTitle</string>
 
+    <string name="account_signup">Don\'t have an account? Sign Up</string>
 
     // Beaches Description
     <string name="beaches_gokarna_beach_desc">\tGokarna Beaches are the chief tourist attractions in the holy town of Gokarna. The name itself has been derived from Go (holy cow) and Karna (ears); hence, it has considerable mythological reverence as well.

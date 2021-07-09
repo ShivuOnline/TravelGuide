@@ -82,7 +82,7 @@ public class DashboardSliderAdapter extends
         return mSliderItems.size();
     }
 
-    class SliderAdapterViewHolder extends SliderViewAdapter.ViewHolder {
+    class SliderAdapterViewHolder extends ViewHolder {
 
         View itemView;
         ImageView imageViewBackground;

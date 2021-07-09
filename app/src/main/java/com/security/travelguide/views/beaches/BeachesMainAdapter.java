@@ -35,14 +35,14 @@ public class BeachesMainAdapter extends RecyclerView.Adapter<BeachesMainAdapter.
     }
 
     @Override
-    public BeachesMainAdapter.BeachesAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BeachesAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main, parent, false);
-        return new BeachesMainAdapter.BeachesAdapterViewHolder(v);
+        return new BeachesAdapterViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final BeachesMainAdapter.BeachesAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final BeachesAdapterViewHolder holder, int position) {
         try {
             if (beachesMainItemList.size() > 0) {
                 holder.setItem(beachesMainItemList.get(position));

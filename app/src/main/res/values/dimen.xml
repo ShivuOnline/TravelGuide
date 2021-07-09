@@ -67,6 +67,9 @@
     <dimen name="std_2_sp">2sp</dimen>
 
     <!-- Custom DP Dimension Values -->
+    <dimen name="std_360_dp">360dp</dimen>
+    <dimen name="std_340_dp">340dp</dimen>
+    <dimen name="std_320_dp">320dp</dimen>
     <dimen name="std_300_dp">300dp</dimen>
     <dimen name="std_290_dp">290dp</dimen>
     <dimen name="std_280_dp">280dp</dimen>

@@ -64,6 +64,7 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.M_BANGALORE_
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BIDAR_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_BUDDHA_VIHAR;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_CHITRADURGA_FORT;
+import static com.security.travelguide.helper.UtilityPlaceConstants.M_DEVANAHALLI_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOL_GUMBAZ;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_GOMMATESHWARA;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_GULBARGA_FORT;
@@ -71,7 +72,6 @@ import static com.security.travelguide.helper.UtilityPlaceConstants.M_KITTUR_FOR
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MADIKERI_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MENA_BASADI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_MYSORE_PALACE;
-import static com.security.travelguide.helper.UtilityPlaceConstants.M_DEVANAHALLI_FORT;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_PHILOMENA_CHURCH;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_SAAVIRA_KAMBADA_BASADI;
 import static com.security.travelguide.helper.UtilityPlaceConstants.M_STONE_CHARIOT_HAMPI;
@@ -294,7 +294,7 @@ public class UtilityPlaces {
         return placeItemList;
     }
 
-    private static List<String> getBeachList() {
+    public static List<String> getBeachList() {
         // Beaches Names
         List<String> beachList = new ArrayList<>();
         beachList.add(B_GOKARNA_BEACH);
@@ -316,7 +316,7 @@ public class UtilityPlaces {
         return beachList;
     }
 
-    private static List<String> getHillStationList() {
+    public static List<String> getHillStationList() {
         // Hills Station Names
         List<String> hillStationList = new ArrayList<>();
         hillStationList.add(H_KUDREMUKH);
@@ -338,7 +338,7 @@ public class UtilityPlaces {
         return hillStationList;
     }
 
-    private static List<String> getMonumentsList() {
+    public static List<String> getMonumentsList() {
         // Monuments Names
         List<String> monumentList = new ArrayList<>();
         monumentList.add(M_GOL_GUMBAZ);
@@ -360,7 +360,7 @@ public class UtilityPlaces {
         return monumentList;
     }
 
-    private static List<String> getReligiousList() {
+    public static List<String> getReligiousList() {
         // Religious Names
         List<String> religiousList = new ArrayList<>();
         religiousList.add(R_KUDALA_SANGAMA);
@@ -382,7 +382,7 @@ public class UtilityPlaces {
         return religiousList;
     }
 
-    private static List<String> getGardensList() {
+    public static List<String> getGardensList() {
         // Gardens Names
         List<String> gardensList = new ArrayList<>();
         gardensList.add(G_ALAMATTI_GARDEN);
@@ -404,7 +404,7 @@ public class UtilityPlaces {
         return gardensList;
     }
 
-    private static List<String> getWaterFallsList() {
+    public static List<String> getWaterFallsList() {
         // Water Falls Names
         List<String> waterFallsList = new ArrayList<>();
         waterFallsList.add(W_JOG_FALLS);
@@ -464,23 +464,23 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mangalore/sasihithlu-beach/";
         } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/udupi/padubidri-beach/";
-        }else if (B_PANAMBUR_BEACH.equals(placeName)) {
+        } else if (B_PANAMBUR_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/panambur-beach/";
-        }else if (B_SOMESHWARA_BEACH.equals(placeName)) {
+        } else if (B_SOMESHWARA_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/someshwara-beach/";
-        }else if (B_ULLAL_BEACH.equals(placeName)) {
+        } else if (B_ULLAL_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/ullal-beach/";
-        }else if (B_BHATKAL_BEACH.equals(placeName)) {
+        } else if (B_BHATKAL_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/murdeshwar/bhatkal-beach/";
-        }else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
+        } else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/murdeshwar/murdeshwar-beach/";
-        }else if (B_KURUMGAD_BEACH.equals(placeName)) {
+        } else if (B_KURUMGAD_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/karwar/kurumgad-beach/";
-        }else if (B_SURATHKAL_BEACH.equals(placeName)) {
+        } else if (B_SURATHKAL_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/surathkal/surathkal-beach/";
-        }else if (B_MARAVANTHE_BEACH.equals(placeName)) {
+        } else if (B_MARAVANTHE_BEACH.equals(placeName)) {
             return "https://www.karnataka.com/maravanthe/maravanthe-beach/";
-        }else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
+        } else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
             return "https://www.thrillophilia.com/attractions/tannirbhavi-beach";
         }
         return "";
@@ -499,25 +499,25 @@ public class UtilityPlaces {
             return "https://www.holidify.com/places/shivagange/";
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return "https://www.holidify.com/places/savandurga/";
-        }else if (H_YANA.equals(placeName)) {
+        } else if (H_YANA.equals(placeName)) {
             return "https://www.karnataka.com/hubli/yana-hill-station/";
-        }else if (H_SIDDARA_BETTA.equals(placeName)) {
+        } else if (H_SIDDARA_BETTA.equals(placeName)) {
             return "https://www.karnataka.com/madhugiri/siddara-betta/";
-        }else if (H_COORG.equals(placeName)) {
+        } else if (H_COORG.equals(placeName)) {
             return "https://www.karnataka.com/coorg/about-coorg/";
-        }else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
+        } else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
             return "https://www.karnataka.com/coorg/brahmagiri-trek/";
-        }else if (H_CHARMADI_GHAT.equals(placeName)) {
+        } else if (H_CHARMADI_GHAT.equals(placeName)) {
             return "https://www.karnataka.com/chikmagalur/charmadi-ghat-trek/";
-        }else if (H_RAMANAGARA_HILLS.equals(placeName)) {
+        } else if (H_RAMANAGARA_HILLS.equals(placeName)) {
             return "https://www.karnataka.com/ramanagara/about-ramanagara/";
-        }else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
+        } else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
             return "https://www.karnataka.com/shimoga/sharavathi-valley-trek/";
-        }else if (H_MULLAYANAGIRI.equals(placeName)) {
+        } else if (H_MULLAYANAGIRI.equals(placeName)) {
             return "https://www.karnataka.com/chikmagalur/mullayanagiri-trek/";
-        }else if (H_KUMARA_PARVATHA.equals(placeName)) {
+        } else if (H_KUMARA_PARVATHA.equals(placeName)) {
             return "https://www.karnataka.com/coorg/kumara-parvatha-trek/";
-        }else if (H_KODACHADRI.equals(placeName)) {
+        } else if (H_KODACHADRI.equals(placeName)) {
             return "https://www.karnataka.com/kollur/kodachadri-trek/";
         }
         return "";
@@ -536,25 +536,25 @@ public class UtilityPlaces {
             return "https://en.wikipedia.org/wiki/Badami_cave_temples";
         } else if (M_BIDAR_FORT.equals(placeName)) {
             return "https://www.karnatakatourism.org/tour-item/bidar-fort/";
-        }else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
+        } else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
             return "https://www.karnataka.com/mangalore/saavira-kambada-basadi-moodbidri/";
-        }else if (M_BANGALORE_PALACE.equals(placeName)) {
+        } else if (M_BANGALORE_PALACE.equals(placeName)) {
             return "https://www.karnataka.com/bangalore/bangalore-palace/";
-        }else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
+        } else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
             return "https://www.karnataka.com/hampi/stone-chariot/";
-        }else if (M_GOMMATESHWARA.equals(placeName)) {
+        } else if (M_GOMMATESHWARA.equals(placeName)) {
             return "https://www.karnataka.com/personalities/saint-bahubali/";
-        }else if (M_CHITRADURGA_FORT.equals(placeName)) {
+        } else if (M_CHITRADURGA_FORT.equals(placeName)) {
             return "https://www.karnataka.com/chitradurga/about-chitradurga/";
-        }else if (M_BUDDHA_VIHAR.equals(placeName)) {
+        } else if (M_BUDDHA_VIHAR.equals(placeName)) {
             return "https://www.karnataka.com/gulbarga/buddha-vihara/";
-        }else if (M_KITTUR_FORT.equals(placeName)) {
+        } else if (M_KITTUR_FORT.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/kittur-fort-and-palace/";
-        }else if (M_MADIKERI_FORT.equals(placeName)) {
+        } else if (M_MADIKERI_FORT.equals(placeName)) {
             return "https://www.karnataka.com/coorg/madikeri-fort/";
-        }else if (M_GULBARGA_FORT.equals(placeName)) {
+        } else if (M_GULBARGA_FORT.equals(placeName)) {
             return "https://www.karnataka.com/gulbarga/gulbarga-fort/";
-        }else if (M_DEVANAHALLI_FORT.equals(placeName)) {
+        } else if (M_DEVANAHALLI_FORT.equals(placeName)) {
             return "https://www.karnataka.com/bangalore/devanahalli-fort/";
         }
         return "";
@@ -579,19 +579,19 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/kolar/kotilingeshwara-temple/";
         } else if (R_SRINGERI_SHARDA_PEETHAM.equals(placeName)) {
             return "https://www.karnataka.com/sringeri/about-sringeri/";
-        }else if (R_KALASA_TEMPLE.equals(placeName)) {
+        } else if (R_KALASA_TEMPLE.equals(placeName)) {
             return "https://www.karnataka.com/chikmagalur/kalasa/";
-        }else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
+        } else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
             return "https://www.karnataka.com/kollur/about-kollur/";
-        }else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
+        } else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
             return "https://www.karnataka.com/tumkur/mahalakshmi-temple-goravanahalli/";
-        }else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
+        } else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
             return "https://www.karnataka.com/tumkur/siddaganga-mutt/";
-        }else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
+        } else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
             return "https://www.karnataka.com/badami/cholachagudd-banashankari-amma-temple/";
-        }else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
+        } else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
             return "https://www.karnataka.com/badami/godachi-veerabhadra-temple/";
-        }else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
+        } else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
             return "https://www.karnataka.com/belgaum/saundatti-yellamma-devi-temple/";
         }
         return "";
@@ -610,25 +610,25 @@ public class UtilityPlaces {
             return "https://www.karnataka.com/mysore/mysore-zoo/";
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.tourmyindia.com/wildlife_sancturies/dandeli-national-park.html";
-        }else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
             return "https://www.karnataka.com/coorg/nagarhole-national-park/";
-        }else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
+        } else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
             return "https://www.karnataka.com/srirangapatna/ranganathittu-bird-sanctuary/";
-        }else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
             return "https://www.karnataka.com/bangalore/bannerghatta-national-park/";
-        }else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
             return "https://www.karnataka.com/bandipur/about-bandipur/";
-        }else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
             return "https://www.karnataka.com/karwar/anshi-national-park/";
-        }else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
+        } else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
             return "https://www.karnataka.com/tourism/sanctuary/daroji-sloth-bear-sanctuary/";
-        }else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
+        } else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
             return "https://www.karnataka.com/tourism/sanctuary/jayamangali-blackbuck-reserve/";
-        }else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
+        } else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
             return "https://www.karnataka.com/tourism/sanctuary/ranebennur-blackbuck-sanctuary/";
-        }else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
+        } else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
             return "https://www.karnataka.com/tourism/sanctuary/bankapura-peacock-sanctuary/";
-        }else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
+        } else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
             return "https://www.karnataka.com/mysore/kokkarebellur-bird-sanctuary/";
         }
         return "";
@@ -688,23 +688,23 @@ public class UtilityPlaces {
             return new LatLng(13.0703809, 74.7775755);
         } else if (B_PADUBIDRI_BEACH.equals(placeName)) {
             return new LatLng(13.1308061, 74.762498);
-        }else if (B_PANAMBUR_BEACH.equals(placeName)) {
+        } else if (B_PANAMBUR_BEACH.equals(placeName)) {
             return new LatLng(12.936954, 74.804623);
-        }else if (B_SOMESHWARA_BEACH.equals(placeName)) {
+        } else if (B_SOMESHWARA_BEACH.equals(placeName)) {
             return new LatLng(12.786331, 74.853695);
-        }else if (B_ULLAL_BEACH.equals(placeName)) {
+        } else if (B_ULLAL_BEACH.equals(placeName)) {
             return new LatLng(12.807656, 74.842757);
-        }else if (B_BHATKAL_BEACH.equals(placeName)) {
+        } else if (B_BHATKAL_BEACH.equals(placeName)) {
             return new LatLng(13.992258, 74.514458);
-        }else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
+        } else if (B_MURUDESHWAR_BEACH.equals(placeName)) {
             return new LatLng(14.095227, 74.485656);
-        }else if (B_KURUMGAD_BEACH.equals(placeName)) {
+        } else if (B_KURUMGAD_BEACH.equals(placeName)) {
             return new LatLng(14.847758, 74.115604);
-        }else if (B_SURATHKAL_BEACH.equals(placeName)) {
-            return new LatLng(13.0096015,74.7886857);
-        }else if (B_MARAVANTHE_BEACH.equals(placeName)) {
+        } else if (B_SURATHKAL_BEACH.equals(placeName)) {
+            return new LatLng(13.0096015, 74.7886857);
+        } else if (B_MARAVANTHE_BEACH.equals(placeName)) {
             return new LatLng(13.704708, 74.642438);
-        }else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
+        } else if (B_TANNIRBHAVI_BEACH.equals(placeName)) {
             return new LatLng(12.886762, 74.815224);
         }
         return new LatLng(0.0, 0.0);
@@ -723,26 +723,26 @@ public class UtilityPlaces {
             return new LatLng(13.1697204, 77.2206819);
         } else if (H_SAVANADURGA_HILLS.equals(placeName)) {
             return new LatLng(12.899733, 77.2656555);
-        }else if (H_YANA.equals(placeName)) {
+        } else if (H_YANA.equals(placeName)) {
             return new LatLng(14.590163, 74.566667);
-        }else if (H_SIDDARA_BETTA.equals(placeName)) {
+        } else if (H_SIDDARA_BETTA.equals(placeName)) {
             return new LatLng(13.565131, 77.142188);
-        }else if (H_COORG.equals(placeName)) {
+        } else if (H_COORG.equals(placeName)) {
             return new LatLng(12.420010, 75.729191);
-        }else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
+        } else if (H_BRAHMAGIRI_HILL.equals(placeName)) {
             return new LatLng(12.424417, 75.738197);
-        }else if (H_CHARMADI_GHAT.equals(placeName)) {
+        } else if (H_CHARMADI_GHAT.equals(placeName)) {
             return new LatLng(13.058180, 75.429480);
-        }else if (H_RAMANAGARA_HILLS.equals(placeName)) {
-            return new LatLng(12.7529302,77.3019236);
-        }else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
-            return new LatLng(14.2790231,74.4749231);
-        }else if (H_MULLAYANAGIRI.equals(placeName)) {
+        } else if (H_RAMANAGARA_HILLS.equals(placeName)) {
+            return new LatLng(12.7529302, 77.3019236);
+        } else if (H_SHARAVATHI_VALLEY.equals(placeName)) {
+            return new LatLng(14.2790231, 74.4749231);
+        } else if (H_MULLAYANAGIRI.equals(placeName)) {
             return new LatLng(13.390861, 75.721314);
-        }else if (H_KUMARA_PARVATHA.equals(placeName)) {
+        } else if (H_KUMARA_PARVATHA.equals(placeName)) {
             return new LatLng(12.662849, 75.687289);
-        }else if (H_KODACHADRI.equals(placeName)) {
-            return new LatLng(13.8563942,74.8703597);
+        } else if (H_KODACHADRI.equals(placeName)) {
+            return new LatLng(13.8563942, 74.8703597);
         }
         return new LatLng(0.0, 0.0);
     }
@@ -760,25 +760,25 @@ public class UtilityPlaces {
             return new LatLng(15.916642, 75.691002);
         } else if (M_BIDAR_FORT.equals(placeName)) {
             return new LatLng(17.922706, 77.526042);
-        }else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
+        } else if (M_SAAVIRA_KAMBADA_BASADI.equals(placeName)) {
             return new LatLng(13.074266, 74.998174);
-        }else if (M_BANGALORE_PALACE.equals(placeName)) {
-            return new LatLng(12.9987041,77.5919296);
-        }else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
+        } else if (M_BANGALORE_PALACE.equals(placeName)) {
+            return new LatLng(12.9987041, 77.5919296);
+        } else if (M_STONE_CHARIOT_HAMPI.equals(placeName)) {
             return new LatLng(15.342267, 76.475786);
-        }else if (M_GOMMATESHWARA.equals(placeName)) {
+        } else if (M_GOMMATESHWARA.equals(placeName)) {
             return new LatLng(12.853962, 76.484659);
-        }else if (M_CHITRADURGA_FORT.equals(placeName)) {
+        } else if (M_CHITRADURGA_FORT.equals(placeName)) {
             return new LatLng(14.216044, 76.398915);
-        }else if (M_BUDDHA_VIHAR.equals(placeName)) {
+        } else if (M_BUDDHA_VIHAR.equals(placeName)) {
             return new LatLng(17.306700, 76.892529);
-        }else if (M_KITTUR_FORT.equals(placeName)) {
+        } else if (M_KITTUR_FORT.equals(placeName)) {
             return new LatLng(15.601225, 74.791409);
-        }else if (M_MADIKERI_FORT.equals(placeName)) {
+        } else if (M_MADIKERI_FORT.equals(placeName)) {
             return new LatLng(12.421042, 75.738677);
-        }else if (M_GULBARGA_FORT.equals(placeName)) {
-            return new LatLng(17.3404462,76.8296551);
-        }else if (M_DEVANAHALLI_FORT.equals(placeName)) {
+        } else if (M_GULBARGA_FORT.equals(placeName)) {
+            return new LatLng(17.3404462, 76.8296551);
+        } else if (M_DEVANAHALLI_FORT.equals(placeName)) {
             return new LatLng(13.249751, 77.708188);
         }
         return new LatLng(0.0, 0.0);
@@ -803,19 +803,19 @@ public class UtilityPlaces {
             return new LatLng(12.995150, 78.295711);
         } else if (R_SRINGERI_SHARDA_PEETHAM.equals(placeName)) {
             return new LatLng(13.4162243, 75.2520464);
-        }else if (R_KALASA_TEMPLE.equals(placeName)) {
+        } else if (R_KALASA_TEMPLE.equals(placeName)) {
             return new LatLng(13.232640, 75.363374);
-        }else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
+        } else if (R_KOLLUR_MOOKAMBIKA.equals(placeName)) {
             return new LatLng(13.863827, 74.814464);
-        }else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
+        } else if (R_GORAVANAHALLI_MAHALAKSHMI.equals(placeName)) {
             return new LatLng(13.472025, 77.282746);
-        }else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
+        } else if (R_SIDDAGANGA_MUTT.equals(placeName)) {
             return new LatLng(13.321826, 77.148378);
-        }else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
+        } else if (R_BADAMI_BANASHANKARI.equals(placeName)) {
             return new LatLng(13.321826, 77.148378);
-        }else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
-            return new LatLng(16.0134923,75.1941104);
-        }else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
+        } else if (R_GODACHI_VEERABADRA_TEMPLE.equals(placeName)) {
+            return new LatLng(16.0134923, 75.1941104);
+        } else if (R_SAVADATTI_YELLAMMA.equals(placeName)) {
             return new LatLng(15.754554, 75.154191);
         }
         return new LatLng(0.0, 0.0);
@@ -834,25 +834,25 @@ public class UtilityPlaces {
             return new LatLng(12.302315, 76.665788);
         } else if (G_DANDELI_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(15.246803, 74.622078);
-        }else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_NAGARHOLE_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(12.050003, 76.099419);
-        }else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
+        } else if (G_RANGANATHITTU_BIRD_SANCTUARY.equals(placeName)) {
             return new LatLng(12.424621, 76.656342);
-        }else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_BANNERGHATTA_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(12.798586, 77.567816);
-        }else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_BANDIPUR_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(11.667517, 76.628677);
-        }else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
+        } else if (G_ANSHI_NATIONAL_PARK.equals(placeName)) {
             return new LatLng(14.997799, 74.358715);
-        }else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
+        } else if (G_DAROJI_SLOTH_BEAR_SANCTUARY.equals(placeName)) {
             return new LatLng(15.269635, 76.531377);
-        }else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
+        } else if (G_JAYAMANGALI_BLACKBUCK.equals(placeName)) {
             return new LatLng(13.740013, 77.323251);
-        }else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
+        } else if (G_RANEBENNUR_BLACKBUCK.equals(placeName)) {
             return new LatLng(14.648028, 75.684246);
-        }else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
+        } else if (G_BANKAPURA_PEACOCK_SANCTUARY.equals(placeName)) {
             return new LatLng(14.920102, 75.262446);
-        }else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
+        } else if (G_KOKKARE_BELLUR_PELICANRY.equals(placeName)) {
             return new LatLng(12.513302, 77.087656);
         }
         return new LatLng(0.0, 0.0);
@@ -893,5 +893,18 @@ public class UtilityPlaces {
             return new LatLng(16.143003, 74.642841);
         }
         return new LatLng(0.0, 0.0);
+    }
+
+    // PlaceType List
+
+    public static List<String> getPlaceTypeList() {
+        List<String> itemTitleList = new ArrayList<>();
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_BEACHES);
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_HILL_STATION);
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_MONUMENTS);
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_RELIGIOUS);
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_GARDENS);
+        itemTitleList.add(UtilityConstants.DASHBOARD_ITEM_WATER_FALLS);
+        return itemTitleList;
     }
 }

@@ -5,6 +5,7 @@ public class FireBaseDatabaseConstants {
 
     // User Table Name
     public static final String USERS_TABLE = "users";
+    public static final String PHOTO_GALLERY_TABLE = "photogallery";
 
     // User Details
 

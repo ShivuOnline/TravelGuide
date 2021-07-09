@@ -23,6 +23,7 @@ import com.security.travelguide.views.gardens.Gardens;
 import com.security.travelguide.views.hillstations.HillStations;
 import com.security.travelguide.views.login.LoginActivity;
 import com.security.travelguide.views.monuments.Monuments;
+import com.security.travelguide.views.photoupload.PhotoUpload;
 import com.security.travelguide.views.profile.Profile;
 import com.security.travelguide.views.religious.Religious;
 import com.security.travelguide.views.settings.Settings;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
+                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 2:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
@@ -247,6 +248,10 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
             } else if (fragment instanceof WaterFalls) {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                        Integer.toString(getFragmentCount())).commit();
+            } else if (fragment instanceof PhotoUpload) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();

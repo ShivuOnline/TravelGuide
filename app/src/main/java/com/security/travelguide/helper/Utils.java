@@ -80,6 +80,18 @@ public class Utils {
         }
     }
 
+    public static String getCurrentTimeStampWithSecondsAsId() {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+            String currentDateTime = dateFormat.format(new Date()); // Find todays date
+
+            return currentDateTime;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
 
     public static List<String> getGenderType() {
         List<String> genderType = new ArrayList<>();

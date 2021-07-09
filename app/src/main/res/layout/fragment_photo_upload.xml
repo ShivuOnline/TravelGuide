@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.photoupload.PhotoUpload">
+
+    <ScrollView
+        android:id="@+id/driver_signup_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:scrollbarStyle="insideOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_place_type_header"
+                style="@style/AppTheme.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="Place Type"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_place_type"
+                style="@style/AppTheme.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_place_type_header"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/text_border"
+                android:drawableEnd="@drawable/ic_drop_down"
+                android:hint="Select place type"
+                android:nextFocusDown="@+id/btn_signup"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:id="@+id/text_place_header"
+                style="@style/AppTheme.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_place_type"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="Place"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_place"
+                style="@style/AppTheme.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_place_header"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/text_border"
+                android:drawableEnd="@drawable/ic_drop_down"
+                android:hint="Select place"
+                android:nextFocusDown="@+id/btn_signup"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:id="@+id/text_select_picture_header"
+                style="@style/AppTheme.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_place"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="Select Picture"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/image_place_layout"
+                android:layout_width="@dimen/std_360_dp"
+                android:layout_height="@dimen/std_200_dp"
+                android:layout_below="@+id/text_select_picture_header"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/std_10_dp"
+                android:background="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/place_image"
+                    android:layout_width="@dimen/std_360_dp"
+                    android:layout_height="@dimen/std_200_dp"
+                    android:contentDescription=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/image_camera_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignEnd="@id/place_image"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="160dp"
+                    android:background="@drawable/icon_background_dark_gray"
+                    android:contentDescription="Camera Icon"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.978"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/text_comments_header"
+                style="@style/AppTheme.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_place_layout"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="Comments"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_comments"
+                style="@style/AppTheme.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_comments_header"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/text_border"
+                android:gravity="start"
+                android:hint="Enter your comments"
+                android:inputType="textCapSentences|textMultiLine"
+                android:lines="20"
+                android:minLines="5"
+                android:nextFocusDown="@+id/edit_last_name"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@null" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_comments"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_all_radius_rounded_deep_corner"
+                android:gravity="center"
+                android:text="Submit"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/std_18_sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

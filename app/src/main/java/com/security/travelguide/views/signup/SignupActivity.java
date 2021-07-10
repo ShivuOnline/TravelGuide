@@ -1,5 +1,6 @@
 package com.security.travelguide.views.signup;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.InputFilter;
@@ -46,6 +48,8 @@ import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -192,7 +196,9 @@ public class SignupActivity extends AppCompatActivity {
 
             });
 
-            userProfilePic.setOnClickListener(new View.OnClickListener() {
+            RxView.clicks(userProfilePic).subscribe(view -> CropImage.startPickImageActivity(this));
+
+          /*  userProfilePic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     try {
@@ -204,7 +210,7 @@ public class SignupActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-            });
+            });*/
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -281,9 +287,18 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private String getFileExtension(Uri profilePicUri) {
-        ContentResolver contentResolver = getContentResolver();
-        MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri));
+        try {
+            ContentResolver contentResolver = getContentResolver();
+            MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
+            if (mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri)) != null) {
+                return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri));
+            } else {
+                return "jpg";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "jpg";
+        }
     }
 
     public void navigateToLogin() {
@@ -449,7 +464,45 @@ public class SignupActivity extends AppCompatActivity {
         if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             profilePicUri = data.getData();
             userProfilePic.setImageURI(profilePicUri);
+        } else {
+            switch (requestCode) {
+                case CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE:
+                    Uri imageUri = CropImage.getPickImageResultUri(this, data);
+                    if (CropImage.isReadExternalStoragePermissionsRequired(this, imageUri)) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE);
+                        }
+                    } else {
+                        cropImage(imageUri);
+                    }
+                    break;
+                case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
+                    if (resultCode == RESULT_OK) {
+                        try {
+                            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                            if (result != null) {
+                                profilePicUri = result.getUri();
+                                userProfilePic.setImageURI(profilePicUri);
+                            } else {
+                                TravelGuideToast.showErrorToast(SignupActivity.this, "Failed to crop image", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    break;
+            }
         }
+    }
 
+    private void cropImage(Uri imageUri) {
+        try {
+            CropImage.activity(imageUri)
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .start(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

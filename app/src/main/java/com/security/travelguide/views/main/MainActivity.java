@@ -1,5 +1,6 @@
 package com.security.travelguide.views.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +33,9 @@ import com.security.travelguide.views.religious.Religious;
 import com.security.travelguide.views.settings.Settings;
 import com.security.travelguide.views.updateMpin.UpdateMPin;
 import com.security.travelguide.views.waterfalls.WaterFalls;
+import com.theartofdev.edmodo.cropper.CropImage;
+
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
@@ -219,7 +223,9 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
     public static void hideBottomNav() {
         try {
-            bottomNavigationView.setVisibility(View.GONE);
+            if(bottomNavigationView != null){
+                bottomNavigationView.setVisibility(View.GONE);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -227,9 +233,19 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
     public static void showBottomNav() {
         try {
-            bottomNavigationView.setVisibility(View.VISIBLE);
+            if(bottomNavigationView != null) {
+                bottomNavigationView.setVisibility(View.VISIBLE);
+            }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void setBottomNavigationPosition(int position){
+        Log.d(TAG, "setBottomNavigationPosition: position: "+position);
+        if(bottomNavigationView != null){
+            bottomNavigationView.setSelectedIndex(position);
+            bottomNavigationView.setDefaultSelectedIndex(position);
         }
     }
 
@@ -280,6 +296,17 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
+//                setBottomNavigationPosition(0);
+            }else if (fragment instanceof UserGallery) {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                        Integer.toString(getFragmentCount())).commit();
+//                setBottomNavigationPosition(0);
+            }else if (fragment instanceof Settings) {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
+                        Integer.toString(getFragmentCount())).commit();
+//                setBottomNavigationPosition(0);
             } else if (fragment instanceof Profile) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(),
@@ -296,6 +323,29 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                         Integer.toString(getFragmentCount())).commit();
             } else {
                 super.onBackPressed();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        try {
+            if (resultCode == Activity.RESULT_OK) {
+                switch (requestCode) {
+                    case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
+                        Objects.requireNonNull(getSupportFragmentManager().findFragmentById(R.id.frame_layout_main)).onActivityResult(requestCode, resultCode, data);
+                        break;
+                    case CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE:
+                        Objects.requireNonNull(getSupportFragmentManager().findFragmentById(R.id.frame_layout_main)).onActivityResult(requestCode, resultCode, data);
+                        break;
+                    default:
+                        Objects.requireNonNull(getSupportFragmentManager().findFragmentById(R.id.frame_layout_main)).onActivityResult(requestCode, resultCode, data);
+                        break;
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();

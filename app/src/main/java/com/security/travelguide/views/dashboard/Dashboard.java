@@ -96,7 +96,12 @@ public class Dashboard extends Fragment implements DashboardMainAdapter.Dashboar
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setUpViews();
+        try {
+            setUpViews();
+//            MainActivity.setBottomNavigationPosition(0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void setUpViews() {

@@ -1,6 +1,7 @@
 package com.security.travelguide.views.gallery;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,8 +21,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.galleryDetails.GalleryUploadMain;
 import com.security.travelguide.model.userDetails.UserMain;
 
@@ -98,7 +102,7 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
                 userGalleryRecyclerView.setVisibility(View.GONE);
                 textNoPhotos.setVisibility(View.VISIBLE);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -112,7 +116,7 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
                     try {
-                        if(snapshot != null){
+                        if (snapshot != null) {
                             galleryUploadMainList.clear();
                             Log.d(TAG, "onDataChange: snapshot: " + snapshot.toString());
                             for (DataSnapshot postSnapshot : snapshot.getChildren()) {
@@ -177,6 +181,12 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
 
     @Override
     public void userItemItemClicked(int position, GalleryUploadMain galleryUploadMain) {
-
+        if (NetworkUtil.getConnectivityStatus(requireContext())) {
+            Intent intentPhotoView = new Intent(requireContext(), PhotoViewer.class);
+            intentPhotoView.putExtra(AppConstants.SELECTED_PLACE_ALL_DETAILS, galleryUploadMain);
+            startActivityForResult(intentPhotoView, 3);
+        } else {
+            TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+        }
     }
 }

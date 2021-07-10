@@ -314,22 +314,6 @@ public class PhotoUpload extends Fragment {
             });
 
             RxView.clicks(imageCameraIcon).subscribe(view -> CropImage.startPickImageActivity(requireActivity()));
-
-            /*imageCameraIcon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent galleryIntent = new Intent();
-                        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                        galleryIntent.setType("image/*");
-                        startActivityForResult(galleryIntent, 2);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });*/
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

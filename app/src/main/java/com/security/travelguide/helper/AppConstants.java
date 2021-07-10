@@ -36,4 +36,6 @@ public class AppConstants {
     // Local Data Types keys
     public static final String SELECTED_PLACE_TYPE = "Selected Place Type";
     public static final String SELECTED_PLACE = "Selected Place";
+
+    public static final String SELECTED_PLACE_ALL_DETAILS = "Selected Place All Details";
 }

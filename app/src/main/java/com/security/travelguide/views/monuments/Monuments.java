@@ -1,5 +1,6 @@
 package com.security.travelguide.views.monuments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,12 +21,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.UtilityPlaces;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.model.PlaceItem;
 import com.security.travelguide.views.main.MainActivity;
 import com.security.travelguide.views.main.MainViewActivity;
+import com.security.travelguide.views.photoupload.PhotoUpload;
 
 import java.util.List;
 
@@ -123,7 +126,7 @@ public class Monuments extends Fragment implements MonumentsMainAdapter.PlaceIte
             // Call Multiple Shared Transaction using Pair Option
             ActivityOptionsCompat options = ActivityOptionsCompat.
                     makeSceneTransitionAnimation(requireActivity(), transactionPairOne, transactionPairTwo);
-            startActivity(intent, options.toBundle());
+            startActivityForResult(intent,123, options.toBundle());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -144,6 +147,23 @@ public class Monuments extends Fragment implements MonumentsMainAdapter.PlaceIte
         super.onDestroyView();
         try {
             MainActivity.showBottomNav();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        try {
+            if (requestCode == 123 && resultCode == Activity.RESULT_OK && data != null) {
+                String selectedPlaceType = data.getStringExtra(AppConstants.SELECTED_PLACE_TYPE);
+                String selectedPlace = data.getStringExtra(AppConstants.SELECTED_PLACE);
+                Bundle bundle = new Bundle();
+                bundle.putString(AppConstants.SELECTED_PLACE_TYPE, selectedPlaceType);
+                bundle.putString(AppConstants.SELECTED_PLACE, selectedPlace);
+                listener.onFragmentInteraction(PhotoUpload.createInstance(bundle));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

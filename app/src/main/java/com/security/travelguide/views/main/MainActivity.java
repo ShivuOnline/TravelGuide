@@ -53,24 +53,11 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
     private CircleImageView userProfilePic;
     private ImageView imageLogout;
 
-    private String selectedPlaceType = "";
-    private String selectedPlace = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
             setContentView(R.layout.activity_main);
-
-            if (getIntent() != null) {
-                selectedPlaceType = getIntent().getStringExtra(AppConstants.SELECTED_PLACE_TYPE);
-                selectedPlace = getIntent().getStringExtra(AppConstants.SELECTED_PLACE);
-
-                if (selectedPlaceType == null) {
-                    selectedPlaceType = "";
-                    selectedPlace = "";
-                }
-            }
 
             titleHeader = findViewById(R.id.title_header);
             userProfilePic = findViewById(R.id.profile_pic);
@@ -126,14 +113,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 }
             });
 
-            if (!selectedPlaceType.isEmpty()) {
-                Bundle bundle = new Bundle();
-                bundle.putString(AppConstants.SELECTED_PLACE_TYPE, selectedPlaceType);
-                bundle.putString(AppConstants.SELECTED_PLACE, selectedPlace);
-                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, PhotoUpload.createInstance(bundle)).commit();
-            } else {
-                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
-            }
+            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
 
             imageLogout.setOnClickListener(new View.OnClickListener() {
                 @Override

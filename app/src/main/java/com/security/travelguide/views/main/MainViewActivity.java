@@ -189,7 +189,7 @@ public class MainViewActivity extends Activity {
                 @Override
                 public void onClick(View view) {
                     try {
-                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(),placeItemMain.getPlaceName());
+                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(), placeItemMain.getPlaceName());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -200,7 +200,7 @@ public class MainViewActivity extends Activity {
                 @Override
                 public void onClick(View view) {
                     try {
-                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(),placeItemMain.getPlaceName());
+                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(), placeItemMain.getPlaceName());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -243,10 +243,10 @@ public class MainViewActivity extends Activity {
 
     private void openPhotoUploadFragment(String placeType, String place) {
         try {
-            Intent intent = new Intent(MainViewActivity.this, MainActivity.class);
-            intent.putExtra(AppConstants.SELECTED_PLACE_TYPE,placeType);
-            intent.putExtra(AppConstants.SELECTED_PLACE,place);
-            startActivity(intent);
+            Intent intent = new Intent();
+            intent.putExtra(AppConstants.SELECTED_PLACE_TYPE, placeType);
+            intent.putExtra(AppConstants.SELECTED_PLACE, place);
+            setResult(RESULT_OK, intent);
             finish();
         } catch (Exception e) {
             e.printStackTrace();

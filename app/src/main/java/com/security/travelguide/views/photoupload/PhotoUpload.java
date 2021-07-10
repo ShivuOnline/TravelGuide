@@ -84,6 +84,7 @@ public class PhotoUpload extends Fragment {
     private String selectedPlaceType = "";
     private String selectedPlace = "";
     private Bundle bundle;
+    private TextView textTitle;
 
     public PhotoUpload() {
         // Required empty public constructor
@@ -114,6 +115,11 @@ public class PhotoUpload extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_photo_upload, container, false);
+        textTitle = requireActivity().findViewById(R.id.title_header);
+        if (textTitle != null) {
+            textTitle.setVisibility(View.VISIBLE);
+            textTitle.setText(R.string.photo_upload);
+        }
         return rootView;
     }
 

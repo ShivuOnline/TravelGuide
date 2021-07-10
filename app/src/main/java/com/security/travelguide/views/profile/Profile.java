@@ -25,9 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jakewharton.rxbinding.view.RxView;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
 import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
@@ -45,6 +47,7 @@ public class Profile extends Fragment {
     private EditText editUserName;
     private TextView textGender, textMobileNumber;
     private Button btnUpdate;
+    private TextView textTitle;
 
     private ProgressDialog progressDialog;
 
@@ -77,6 +80,11 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        textTitle = requireActivity().findViewById(R.id.title_header);
+        if (textTitle != null) {
+            textTitle.setVisibility(View.VISIBLE);
+            textTitle.setText(AppConstants.SETTINGS_PROFILE);
+        }
         return rootView;
     }
 

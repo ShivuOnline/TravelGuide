@@ -18,6 +18,7 @@ import com.security.travelguide.BuildConfig;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.NetworkUtil;
+import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.views.dashboard.Dashboard;
@@ -35,6 +36,7 @@ public class Settings extends Fragment implements SettingsMainAdapter.SettingsIt
     private List<String> settingsOptionList = new ArrayList<>();
     private RecyclerView recyclerSettingOption;
     private SettingsMainAdapter settingsMainAdapter;
+    private TextView textTitle;
 
     private OnFragmentInteractionListener listener;
 
@@ -81,6 +83,11 @@ public class Settings extends Fragment implements SettingsMainAdapter.SettingsIt
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        textTitle = requireActivity().findViewById(R.id.title_header);
+        if (textTitle != null) {
+            textTitle.setVisibility(View.VISIBLE);
+            textTitle.setText(R.string.settings);
+        }
         return rootView;
     }
 

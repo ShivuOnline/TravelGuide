@@ -25,6 +25,7 @@ import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
 import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.galleryDetails.GalleryUploadMain;
 import com.security.travelguide.model.userDetails.UserMain;
@@ -36,6 +37,8 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
 
     private static final String TAG = "UserGallery";
     private View rootView;
+
+    private TextView textTitle;
 
     private RecyclerView userGalleryRecyclerView;
     private UserGalleryMainAdapter userGalleryMainAdapter;
@@ -67,6 +70,11 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_user_gallery, container, false);
+        textTitle = requireActivity().findViewById(R.id.title_header);
+        if (textTitle != null) {
+            textTitle.setVisibility(View.VISIBLE);
+            textTitle.setText(R.string.gallery);
+        }
         return rootView;
     }
 

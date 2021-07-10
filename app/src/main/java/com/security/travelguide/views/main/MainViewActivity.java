@@ -162,7 +162,7 @@ public class MainViewActivity extends Activity implements TextToSpeech.OnInitLis
                                     textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice, 0);
                                 } else {
                                     textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice_red, 0);
-                                    String speechText = placeItemMain.getPlaceName() + " " + placeItemMain.getPlaceDescription();
+                                    String speechText = placeItemMain.getPlaceName() + ". " + placeItemMain.getPlaceDescription()+" "+getString(R.string.thank_you);
                                     speak(speechText);
                                 }
                             }

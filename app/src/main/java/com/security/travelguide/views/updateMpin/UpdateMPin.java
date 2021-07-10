@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -21,9 +22,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
 import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
 import com.security.travelguide.views.main.MainActivity;
@@ -44,6 +47,8 @@ public class UpdateMPin extends Fragment {
     // Firebase Storage
     FirebaseDatabase firebaseDatabase;
     private DatabaseReference mUserReference;
+
+    private TextView textTitle;
 
 
     public UpdateMPin() {
@@ -68,6 +73,11 @@ public class UpdateMPin extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_update_mpin, container, false);
+        textTitle = requireActivity().findViewById(R.id.title_header);
+        if (textTitle != null) {
+            textTitle.setVisibility(View.VISIBLE);
+            textTitle.setText(AppConstants.SETTINGS_UPDATE_MPIN);
+        }
         return rootView;
     }
 

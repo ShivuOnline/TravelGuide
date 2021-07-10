@@ -161,6 +161,7 @@ public class Religious extends Fragment implements ReligiousMainAdapter.PlaceIte
                 Bundle bundle = new Bundle();
                 bundle.putString(AppConstants.SELECTED_PLACE_TYPE, selectedPlaceType);
                 bundle.putString(AppConstants.SELECTED_PLACE, selectedPlace);
+                MainActivity.setBottomNavigationPosition(1);
                 listener.onFragmentInteraction(PhotoUpload.createInstance(bundle));
             }
         } catch (Exception e) {

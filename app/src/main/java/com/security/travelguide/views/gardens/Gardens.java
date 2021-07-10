@@ -164,6 +164,7 @@ public class Gardens extends Fragment implements GardensMainAdapter.PlaceItemCli
                 Bundle bundle = new Bundle();
                 bundle.putString(AppConstants.SELECTED_PLACE_TYPE, selectedPlaceType);
                 bundle.putString(AppConstants.SELECTED_PLACE, selectedPlace);
+                MainActivity.setBottomNavigationPosition(1);
                 listener.onFragmentInteraction(PhotoUpload.createInstance(bundle));
             }
         } catch (Exception e) {

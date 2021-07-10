@@ -244,10 +244,8 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
     }
 
     public static void setBottomNavigationPosition(int position) {
-        Log.d(TAG, "setBottomNavigationPosition: position: " + position);
         if (bottomNavigationView != null) {
-            bottomNavigationView.setSelectedIndex(position);
-            bottomNavigationView.setDefaultSelectedIndex(position);
+            bottomNavigationView.setSelectedIndex(position, true);
         }
     }
 
@@ -298,17 +296,17 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
-//                setBottomNavigationPosition(0);
+                setBottomNavigationPosition(0);
             } else if (fragment instanceof UserGallery) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
-//                setBottomNavigationPosition(0);
+                setBottomNavigationPosition(0);
             } else if (fragment instanceof Settings) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
-//                setBottomNavigationPosition(0);
+                setBottomNavigationPosition(0);
             } else if (fragment instanceof Profile) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(),

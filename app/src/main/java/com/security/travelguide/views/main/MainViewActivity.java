@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -23,6 +25,8 @@ import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.model.PlaceItem;
 
+import java.util.Locale;
+
 public class MainViewActivity extends Activity {
     private static final String TAG = MainViewActivity.class.getSimpleName();
     public static final String PLACES_ITEM_DETAILS = "Places Item Details";
@@ -34,6 +38,8 @@ public class MainViewActivity extends Activity {
 
     private CardView cardGoogleInfo, cardGmapDirection, cardPhotoUpload;
     private TextView textGoogleInfo, textGmapDirection, textPhotoUpload;
+
+    private TextToSpeech textToSpeech;
 
     public MainViewActivity() {
         // Required empty public constructor
@@ -138,6 +144,44 @@ public class MainViewActivity extends Activity {
                         .into(placesImage);
             }
 
+            // create an object textToSpeech and adding features into it
+            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int i) {
+                    try {
+                        // if No error is found then only it will run
+                        if (i != TextToSpeech.ERROR) {
+                            // To Choose language of speech
+                            textToSpeech.setLanguage(Locale.ENGLISH);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            textHeaderSecondary.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_UP) {
+                        if (event.getRawX() >= textHeaderSecondary.getRight() - textHeaderSecondary.getTotalPaddingRight()) {
+                            if (textToSpeech != null) {
+                                if (textToSpeech.isSpeaking()) {
+                                    textToSpeech.stop();
+                                    textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice, 0);
+                                } else {
+                                    textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice_red, 0);
+                                    String speechText = placeItemMain.getPlaceName() + " " + placeItemMain.getPlaceDescription();
+                                    textToSpeech.speak(speechText, TextToSpeech.QUEUE_FLUSH, null);
+                                }
+                            }
+                            return true;
+                        }
+                    }
+                    return true;
+                }
+            });
+
             // Open Google for More Info
             cardGoogleInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -209,6 +253,18 @@ public class MainViewActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void onPause() {
+        try {
+            if (textToSpeech != null) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onPause();
     }
 
     private void openGoogleInfo(Context context, String placeInfoUrl) {

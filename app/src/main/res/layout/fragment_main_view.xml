@@ -36,6 +36,10 @@
                 android:background="@color/colorPrimary"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
+                android:drawableRight="@drawable/ic_voice"
+                android:drawableEnd="@drawable/ic_voice"
+                android:paddingEnd="@dimen/std_20_dp"
+                android:paddingRight="@dimen/std_20_dp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/std_18_sp" />
 

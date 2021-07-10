@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,9 +26,10 @@ import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.model.PlaceItem;
 
+import java.util.HashMap;
 import java.util.Locale;
 
-public class MainViewActivity extends Activity {
+public class MainViewActivity extends Activity implements TextToSpeech.OnInitListener {
     private static final String TAG = MainViewActivity.class.getSimpleName();
     public static final String PLACES_ITEM_DETAILS = "Places Item Details";
 
@@ -40,6 +42,9 @@ public class MainViewActivity extends Activity {
     private TextView textGoogleInfo, textGmapDirection, textPhotoUpload;
 
     private TextToSpeech textToSpeech;
+    //    private String utteranceIdMain;
+    private boolean initialized;
+    private String queuedText;
 
     public MainViewActivity() {
         // Required empty public constructor
@@ -53,7 +58,6 @@ public class MainViewActivity extends Activity {
 
             if (getIntent() != null) {
                 placeItemMain = getIntent().getParcelableExtra(PLACES_ITEM_DETAILS);
-                Log.d(TAG, "onCreate: placeItemMain" + placeItemMain);
             }
 
             setUpViews();
@@ -144,21 +148,8 @@ public class MainViewActivity extends Activity {
                         .into(placesImage);
             }
 
-            // create an object textToSpeech and adding features into it
-            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int i) {
-                    try {
-                        // if No error is found then only it will run
-                        if (i != TextToSpeech.ERROR) {
-                            // To Choose language of speech
-                            textToSpeech.setLanguage(Locale.ENGLISH);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            textToSpeech = new TextToSpeech(this, this);
+            textToSpeech.setOnUtteranceProgressListener(mProgressListener);
 
             textHeaderSecondary.setOnTouchListener(new View.OnTouchListener() {
                 @Override
@@ -172,7 +163,7 @@ public class MainViewActivity extends Activity {
                                 } else {
                                     textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice_red, 0);
                                     String speechText = placeItemMain.getPlaceName() + " " + placeItemMain.getPlaceDescription();
-                                    textToSpeech.speak(speechText, TextToSpeech.QUEUE_FLUSH, null);
+                                    speak(speechText);
                                 }
                             }
                             return true;
@@ -255,7 +246,62 @@ public class MainViewActivity extends Activity {
         }
     }
 
-    public void onPause() {
+    public void speak(String text) {
+        if (!initialized) {
+            queuedText = text;
+            return;
+        }
+        queuedText = null;
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "MessageId");
+        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, map);
+    }
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            initialized = true;
+            textToSpeech.setLanguage(Locale.ENGLISH);
+            if (queuedText != null) {
+                speak(queuedText);
+            }
+        }
+    }
+
+
+    private abstract class runnable implements Runnable {
+    }
+
+    private UtteranceProgressListener mProgressListener = new UtteranceProgressListener() {
+        @Override
+        public void onStart(String utteranceId) {
+        } // Do nothing
+
+        @Override
+        public void onError(String utteranceId) {
+        } // Do nothing.
+
+        @Override
+        public void onDone(String utteranceId) {
+            try {
+                new Thread() {
+                    public void run() {
+                        MainViewActivity.this.runOnUiThread(new runnable() {
+                            public void run() {
+                                textHeaderSecondary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_voice, 0);
+                            }
+                        });
+                    }
+                }.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
         try {
             if (textToSpeech != null) {
                 textToSpeech.stop();
@@ -264,7 +310,7 @@ public class MainViewActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        super.onPause();
+        super.onDestroy();
     }
 
     private void openGoogleInfo(Context context, String placeInfoUrl) {

@@ -22,10 +22,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
 import com.security.travelguide.views.main.MainActivity;
+import com.security.travelguide.views.signup.SignupActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -106,17 +108,21 @@ public class UpdateMPin extends Fragment {
             btnUpdate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (validateFields()) {
-                        UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
-                        Log.d(TAG, "onClick: loginUser:" + loginUser);
-                        if (loginUser.getmPin().equals(editOldMPin.getText().toString().trim())) {
-                            loginUser.setmPin(editNewMPin.getText().toString().trim());
-                            showProgressDialog("Processing please wait.");
+                    if (NetworkUtil.getConnectivityStatus(requireContext())) {
+                        if (validateFields()) {
+                            UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
                             Log.d(TAG, "onClick: loginUser:" + loginUser);
-                            updateUserDetails(loginUser);
-                        } else {
-                            TravelGuideToast.showErrorToastWithBottom(requireContext(), "Please verify old mPin.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                            if (loginUser.getmPin().equals(editOldMPin.getText().toString().trim())) {
+                                loginUser.setmPin(editNewMPin.getText().toString().trim());
+                                showProgressDialog("Processing please wait.");
+                                Log.d(TAG, "onClick: loginUser:" + loginUser);
+                                updateUserDetails(loginUser);
+                            } else {
+                                TravelGuideToast.showErrorToastWithBottom(requireContext(), "Please verify old mPin.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                            }
                         }
+                    } else {
+                        TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                     }
                 }
             });

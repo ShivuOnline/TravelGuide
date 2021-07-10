@@ -41,6 +41,7 @@ import com.jakewharton.rxbinding.view.RxView;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
@@ -140,49 +141,55 @@ public class SignupActivity extends AppCompatActivity {
             btnSignup.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (validateFields()) {
-                        UserMain userMain = new UserMain();
-                        userMain.setMobileNumber(UserUtils.getFieldValue(editMobileNumber));
-                        userMain.setmPin(UserUtils.getFieldValue(mPin));
-                        userMain.setUserName(UserUtils.getFieldValue(editUserName));
-                        userMain.setGender(textGender.getText().toString().trim());
-                        userMain.setRole(AppConstants.User_ROLE);
-                        userMain.setIsActive(AppConstants.ACTIVE_USER);
 
-                        boolean isNotExistUser = verifyUserRegistration(userMain);
-                        Log.d(TAG, "onClick: isNotExistUser:" + isNotExistUser);
-                        if (isNotExistUser) {
-                            long photoSize = getFileSize(profilePicUri);
-                            Log.d(TAG, "onClick: photoSize:" + photoSize);
-                            if (photoSize > MAX_2_MB) {
-                                int scaleDivider = 4;
+                    if (NetworkUtil.getConnectivityStatus(SignupActivity.this)) {
 
-                                try {
-                                    // 1. Convert uri to bitmap
-                                    Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(SignupActivity.this.getContentResolver(), profilePicUri);
+                        if (validateFields()) {
+                            UserMain userMain = new UserMain();
+                            userMain.setMobileNumber(UserUtils.getFieldValue(editMobileNumber));
+                            userMain.setmPin(UserUtils.getFieldValue(mPin));
+                            userMain.setUserName(UserUtils.getFieldValue(editUserName));
+                            userMain.setGender(textGender.getText().toString().trim());
+                            userMain.setRole(AppConstants.User_ROLE);
+                            userMain.setIsActive(AppConstants.ACTIVE_USER);
 
-                                    // 2. Get the downsized image content as a byte[]
-                                    int scaleWidth = fullBitmap.getWidth() / scaleDivider;
-                                    int scaleHeight = fullBitmap.getHeight() / scaleDivider;
-                                    byte[] downsizedImageBytes =
-                                            getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
+                            boolean isNotExistUser = verifyUserRegistration(userMain);
+                            Log.d(TAG, "onClick: isNotExistUser:" + isNotExistUser);
+                            if (isNotExistUser) {
+                                long photoSize = getFileSize(profilePicUri);
+                                Log.d(TAG, "onClick: photoSize:" + photoSize);
+                                if (photoSize > MAX_2_MB) {
+                                    int scaleDivider = 4;
+                                    try {
+                                        // 1. Convert uri to bitmap
+                                        Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(SignupActivity.this.getContentResolver(), profilePicUri);
 
-                                    if (downsizedImageBytes != null) {
-                                        upLoadProfilePicWithBytes(userMain, downsizedImageBytes);
-                                    } else {
-                                        TravelGuideToast.showErrorToast(SignupActivity.this, "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                        // 2. Get the downsized image content as a byte[]
+                                        int scaleWidth = fullBitmap.getWidth() / scaleDivider;
+                                        int scaleHeight = fullBitmap.getHeight() / scaleDivider;
+                                        byte[] downsizedImageBytes =
+                                                getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
+
+                                        if (downsizedImageBytes != null) {
+                                            upLoadProfilePicWithBytes(userMain, downsizedImageBytes);
+                                        } else {
+                                            TravelGuideToast.showErrorToast(SignupActivity.this, "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                        }
+                                    } catch (IOException ioEx) {
+                                        ioEx.printStackTrace();
                                     }
-                                } catch (IOException ioEx) {
-                                    ioEx.printStackTrace();
+                                } else {
+                                    upLoadProfilePic(userMain, profilePicUri);
                                 }
                             } else {
-                                upLoadProfilePic(userMain, profilePicUri);
+                                TravelGuideToast.showErrorToast(SignupActivity.this, "Mobile number already exists", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                             }
-                        } else {
-                            TravelGuideToast.showErrorToastWithBottom(SignupActivity.this, "Mobile number already exists", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                         }
+                    } else {
+                        TravelGuideToast.showErrorToast(SignupActivity.this, getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                     }
                 }
+
             });
 
             userProfilePic.setOnClickListener(new View.OnClickListener() {

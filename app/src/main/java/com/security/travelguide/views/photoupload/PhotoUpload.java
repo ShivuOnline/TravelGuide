@@ -38,6 +38,7 @@ import com.google.firebase.storage.UploadTask;
 import com.jakewharton.rxbinding.view.RxView;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.UtilityPlaces;
@@ -229,52 +230,56 @@ public class PhotoUpload extends Fragment {
             btnSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (validateFields()) {
+                    if (NetworkUtil.getConnectivityStatus(requireContext())) {
+                        if (validateFields()) {
 
-                        UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
+                            UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
 
-                        String userId = loginUser.getMobileNumber();
-                        String selectedPlaceType = textPlaceType.getText().toString().trim();
-                        String selectedPlace = textPlace.getText().toString().trim();
+                            String userId = loginUser.getMobileNumber();
+                            String selectedPlaceType = textPlaceType.getText().toString().trim();
+                            String selectedPlace = textPlace.getText().toString().trim();
 
-                        GalleryUploadMain galleryUploadMain = new GalleryUploadMain();
-                        galleryUploadMain.setPlaceType(selectedPlaceType);
-                        galleryUploadMain.setPlace(selectedPlace);
-                        galleryUploadMain.setPlacePhotoId(Utils.getCurrentTimeStampWithSecondsAsId());
-                        // Initial PhotoPath is Empty
-                        galleryUploadMain.setPlacePhotoPath("");
-                        galleryUploadMain.setPlacePhotoUploadedDate(Utils.getCurrentTimeStampWithSeconds());
-                        galleryUploadMain.setUserComments(editComments.getText().toString().trim());
-                        galleryUploadMain.setLatitude(0.0);
-                        galleryUploadMain.setLongitude(0.0);
+                            GalleryUploadMain galleryUploadMain = new GalleryUploadMain();
+                            galleryUploadMain.setPlaceType(selectedPlaceType);
+                            galleryUploadMain.setPlace(selectedPlace);
+                            galleryUploadMain.setPlacePhotoId(Utils.getCurrentTimeStampWithSecondsAsId());
+                            // Initial PhotoPath is Empty
+                            galleryUploadMain.setPlacePhotoPath("");
+                            galleryUploadMain.setPlacePhotoUploadedDate(Utils.getCurrentTimeStampWithSeconds());
+                            galleryUploadMain.setUserComments(editComments.getText().toString().trim());
+                            galleryUploadMain.setLatitude(0.0);
+                            galleryUploadMain.setLongitude(0.0);
 
-                        long photoSize = getFileSize(photoUploadUri);
+                            long photoSize = getFileSize(photoUploadUri);
 
-                        Log.d(TAG, "onClick: photoSize:" + photoSize);
-                        if (photoSize > MAX_2_MB) {
-                            int scaleDivider = 4;
+                            Log.d(TAG, "onClick: photoSize:" + photoSize);
+                            if (photoSize > MAX_2_MB) {
+                                int scaleDivider = 4;
 
-                            try {
-                                // 1. Convert uri to bitmap
-                                Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), photoUploadUri);
+                                try {
+                                    // 1. Convert uri to bitmap
+                                    Bitmap fullBitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), photoUploadUri);
 
-                                // 2. Get the downsized image content as a byte[]
-                                int scaleWidth = fullBitmap.getWidth() / scaleDivider;
-                                int scaleHeight = fullBitmap.getHeight() / scaleDivider;
-                                byte[] downsizedImageBytes =
-                                        getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
+                                    // 2. Get the downsized image content as a byte[]
+                                    int scaleWidth = fullBitmap.getWidth() / scaleDivider;
+                                    int scaleHeight = fullBitmap.getHeight() / scaleDivider;
+                                    byte[] downsizedImageBytes =
+                                            getDownsizedImageBytes(fullBitmap, scaleWidth, scaleHeight);
 
-                                if (downsizedImageBytes != null) {
-                                    upLoadPlacePhotoMoreSize(galleryUploadMain, downsizedImageBytes, userId);
-                                } else {
-                                    TravelGuideToast.showErrorToast(requireContext(), "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                    if (downsizedImageBytes != null) {
+                                        upLoadPlacePhotoMoreSize(galleryUploadMain, downsizedImageBytes, userId);
+                                    } else {
+                                        TravelGuideToast.showErrorToast(requireContext(), "Failed to reduce photo size, try again.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                                    }
+                                } catch (IOException ioEx) {
+                                    ioEx.printStackTrace();
                                 }
-                            } catch (IOException ioEx) {
-                                ioEx.printStackTrace();
+                            } else {
+                                upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId);
                             }
-                        } else {
-                            upLoadPlacePhoto(galleryUploadMain, photoUploadUri, userId);
                         }
+                    } else {
+                        TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                     }
                 }
             });

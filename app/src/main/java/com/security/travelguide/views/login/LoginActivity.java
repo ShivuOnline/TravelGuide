@@ -30,6 +30,7 @@ import com.security.travelguide.BuildConfig;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
@@ -96,16 +97,17 @@ public class LoginActivity extends AppCompatActivity {
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (validateFields()) {
-                        Log.d(TAG, "onClick mobileNumber: " + editMobileNumber.getText().toString().trim());
-                        Log.d(TAG, "onClick mPin: " + editMPin.getText().toString().trim());
+                    if (NetworkUtil.getConnectivityStatus(LoginActivity.this)) {
+                        if (validateFields()) {
+                            String userMobileNumber = editMobileNumber.getText().toString().trim();
+                            String userMPin = editMPin.getText().toString().trim();
+                            Log.d(TAG, "onClick mobileNumber: " + userMobileNumber);
+                            showProgressDialog("Verifying please wait.");
 
-                        String userMobileNumber = editMobileNumber.getText().toString().trim();
-                        String userMPin = editMPin.getText().toString().trim();
-
-                        showProgressDialog("Verifying please wait.");
-
-                        verifyUserLogin(LoginActivity.this, userMobileNumber, userMPin);
+                            verifyUserLogin(LoginActivity.this, userMobileNumber, userMPin);
+                        }
+                    } else {
+                        TravelGuideToast.showErrorToast(LoginActivity.this, getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                     }
                 }
             });

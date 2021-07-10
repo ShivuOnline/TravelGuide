@@ -17,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.security.travelguide.BuildConfig;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.AppConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.Utils;
+import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.views.dashboard.Dashboard;
 import com.security.travelguide.views.profile.Profile;
 import com.security.travelguide.views.updateMpin.UpdateMPin;
@@ -120,15 +122,33 @@ public class Settings extends Fragment implements SettingsMainAdapter.SettingsIt
             switch (item) {
                 case AppConstants
                         .SETTINGS_PROFILE:
-                    listener.onFragmentInteraction(new Profile());
+                    if (checkInternet()) {
+                        listener.onFragmentInteraction(new Profile());
+                    }
                     break;
                 case AppConstants
                         .SETTINGS_UPDATE_MPIN:
-                    listener.onFragmentInteraction(new UpdateMPin());
+                    if (checkInternet()) {
+                        listener.onFragmentInteraction(new UpdateMPin());
+                    }
                     break;
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private boolean checkInternet() {
+        try {
+            if (NetworkUtil.getConnectivityStatus(requireContext())) {
+                return true;
+            } else {
+                TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return true;
         }
     }
 }

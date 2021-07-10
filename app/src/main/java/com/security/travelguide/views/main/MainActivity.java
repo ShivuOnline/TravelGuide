@@ -15,7 +15,9 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
+import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.userDetails.UserMain;
 import com.security.travelguide.views.beaches.Beaches;
 import com.security.travelguide.views.dashboard.Dashboard;
@@ -67,10 +69,14 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
+                            if (checkInternet()) {
+                                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
+                            }
                             break;
                         case 2:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
+                            if (checkInternet()) {
+                                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
+                            }
                             break;
                         case 3:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(), Integer.toString(getFragmentCount())).commit();
@@ -85,10 +91,14 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
                             break;
                         case 1:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
+                            if (checkInternet()) {
+                                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new PhotoUpload(), Integer.toString(getFragmentCount())).commit();
+                            }
                             break;
                         case 2:
-                            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(), Integer.toString(getFragmentCount())).commit();
+                            if (checkInternet()) {
+                                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new UserGallery(), Integer.toString(getFragmentCount())).commit();
+                            }
                             break;
                         case 3:
                             fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Settings(), Integer.toString(getFragmentCount())).commit();
@@ -110,6 +120,20 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private boolean checkInternet() {
+        try {
+            if (NetworkUtil.getConnectivityStatus(MainActivity.this)) {
+                return true;
+            } else {
+                TravelGuideToast.showErrorToast(MainActivity.this, getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return true;
         }
     }
 

@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.jakewharton.rxbinding.view.RxView;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
+import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.Utils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
@@ -42,7 +43,7 @@ public class Profile extends Fragment {
     private CircleImageView imageUser;
 
     private EditText editUserName;
-    private TextView textGender,textMobileNumber;
+    private TextView textGender, textMobileNumber;
     private Button btnUpdate;
 
     private ProgressDialog progressDialog;
@@ -145,27 +146,30 @@ public class Profile extends Fragment {
             btnUpdate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (validateFields()) {
+                    if (NetworkUtil.getConnectivityStatus(requireContext())) {
+                        if (validateFields()) {
+                            UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
 
-                        UserMain loginUser = UserUtils.getLoginUserDetails(requireContext());
+                            Log.d(TAG, "onClick: loginUser: " + loginUser);
+                            UserMain userMain = new UserMain();
+                            userMain.setMobileNumber(loginUser.getMobileNumber());
+                            userMain.setmPin(loginUser.getmPin());
+                            userMain.setProfilePicUrl(loginUser.getProfilePicUrl());
+                            userMain.setRole(loginUser.getProfilePicUrl());
+                            userMain.setIsActive(loginUser.getProfilePicUrl());
 
-                        Log.d(TAG, "onClick: loginUser: " + loginUser);
-                        UserMain userMain = new UserMain();
-                        userMain.setMobileNumber(loginUser.getMobileNumber());
-                        userMain.setmPin(loginUser.getmPin());
-                        userMain.setProfilePicUrl(loginUser.getProfilePicUrl());
-                        userMain.setRole(loginUser.getProfilePicUrl());
-                        userMain.setIsActive(loginUser.getProfilePicUrl());
+                            userMain.setUserName(UserUtils.getFieldValue(editUserName));
+                            userMain.setGender(textGender.getText().toString().trim());
 
-                        userMain.setUserName(UserUtils.getFieldValue(editUserName));
-                        userMain.setGender(textGender.getText().toString().trim());
-
-                        if (isAnyUpdate(loginUser, userMain)) {
-                            showProgressDialog("Processing please wait.");
-                            updateUserDetails(userMain);
-                        } else {
-                            TravelGuideToast.showInfoToast(requireContext(), "Nothing to update.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                            if (isAnyUpdate(loginUser, userMain)) {
+                                showProgressDialog("Processing please wait.");
+                                updateUserDetails(userMain);
+                            } else {
+                                TravelGuideToast.showInfoToast(requireContext(), "Nothing to update.", TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
+                            }
                         }
+                    } else {
+                        TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
                     }
                 }
             });

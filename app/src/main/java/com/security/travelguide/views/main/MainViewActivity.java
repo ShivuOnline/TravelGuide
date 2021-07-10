@@ -19,6 +19,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.bumptech.glide.Glide;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.model.PlaceItem;
 
@@ -31,8 +32,8 @@ public class MainViewActivity extends Activity {
     private TextView textHeaderPrimary, textHeaderSecondary, textPlacesDesc;
     private PlaceItem placeItemMain;
 
-    private CardView cardGoogleInfo, cardGmapDirection;
-    private TextView textGoogleInfo, textGmapDirection;
+    private CardView cardGoogleInfo, cardGmapDirection, cardPhotoUpload;
+    private TextView textGoogleInfo, textGmapDirection, textPhotoUpload;
 
     public MainViewActivity() {
         // Required empty public constructor
@@ -65,9 +66,11 @@ public class MainViewActivity extends Activity {
 
             cardGoogleInfo = findViewById(R.id.google_info_item_cardview);
             cardGmapDirection = findViewById(R.id.gmap_direction_item_cardview);
+            cardPhotoUpload = findViewById(R.id.photo_upload_item_cardview);
 
             textGoogleInfo = findViewById(R.id.text_google_info);
             textGmapDirection = findViewById(R.id.text_gmap_direction);
+            textPhotoUpload = findViewById(R.id.text_photo_upload);
 
             // Initially hide the textHeaderPrimary and Visible textHeaderSecondary view
             textHeaderPrimary.setAlpha(0f);
@@ -180,6 +183,29 @@ public class MainViewActivity extends Activity {
                     }
                 }
             });
+
+            // Open GooGle Map for Direction
+            cardPhotoUpload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(),placeItemMain.getPlaceName());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            textPhotoUpload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        openPhotoUploadFragment(placeItemMain.getStaticPlaceType(),placeItemMain.getPlaceName());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -210,6 +236,18 @@ public class MainViewActivity extends Activity {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openPhotoUploadFragment(String placeType, String place) {
+        try {
+            Intent intent = new Intent(MainViewActivity.this, MainActivity.class);
+            intent.putExtra(AppConstants.SELECTED_PLACE_TYPE,placeType);
+            intent.putExtra(AppConstants.SELECTED_PLACE,place);
+            startActivity(intent);
+            finish();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -39,6 +39,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.jakewharton.rxbinding.view.RxView;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.FireBaseDatabaseConstants;
 import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
@@ -80,6 +81,9 @@ public class PhotoUpload extends Fragment {
     private List<String> placeTypeList = new ArrayList<>();
     List<String> placeList = new ArrayList<>();
 
+    private String selectedPlaceType = "";
+    private String selectedPlace = "";
+    private Bundle bundle;
 
     public PhotoUpload() {
         // Required empty public constructor
@@ -94,8 +98,14 @@ public class PhotoUpload extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
+        try {
+            if (getArguments() != null) {
+                bundle = getArguments();
+                selectedPlaceType = bundle.getString(AppConstants.SELECTED_PLACE_TYPE, "");
+                selectedPlace = bundle.getString(AppConstants.SELECTED_PLACE, "");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -118,6 +128,21 @@ public class PhotoUpload extends Fragment {
             storageReference = FirebaseStorage.getInstance().getReference();
 
             setUpViews();
+
+            Log.d(TAG, "onActivityCreated: selectedPlaceType: " + selectedPlaceType);
+            Log.d(TAG, "onActivityCreated: selectedPlace: " + selectedPlace);
+            if (!selectedPlaceType.isEmpty()) {
+                loadPlaceTypeAndPlace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadPlaceTypeAndPlace() {
+        try {
+            textPlaceType.setText(selectedPlaceType);
+            textPlace.setText(selectedPlace);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -534,9 +559,9 @@ public class PhotoUpload extends Fragment {
             ContentResolver contentResolver = requireActivity().getContentResolver();
             MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
 
-            if(mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri)) != null){
+            if (mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri)) != null) {
                 return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(profilePicUri));
-            }else{
+            } else {
                 return "jpg";
             }
         } catch (Exception e) {

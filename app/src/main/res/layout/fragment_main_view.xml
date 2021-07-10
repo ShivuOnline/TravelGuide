@@ -61,6 +61,8 @@
                 android:layout_below="@+id/places_description"
                 android:layout_marginTop="@dimen/std_20_dp"
                 android:layout_marginBottom="@dimen/std_40_dp"
+                android:layout_marginStart="@dimen/std_10_dp"
+                android:layout_marginEnd="@dimen/std_10_dp"
                 android:baselineAligned="false"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -145,6 +147,48 @@
                         android:textSize="@dimen/std_16_sp"
                         android:gravity="center"
                         android:text="Direction"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_photo_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/photo_upload_item_cardview"
+                        android:layout_width="100dp"
+                        android:layout_height="98dp"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="12dp"
+                        android:innerRadius="40dp"
+                        android:shape="ring"
+                        android:thicknessRatio="4"
+                        app:cardCornerRadius="75dp">
+
+                        <ImageView
+                            android:id="@+id/photo_upload_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_gallery_main"
+                            android:contentDescription="Photo Upload" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_photo_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/std_10_dp"
+                        android:textSize="@dimen/std_16_sp"
+                        android:gravity="center"
+                        android:text="Photo Upload"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>

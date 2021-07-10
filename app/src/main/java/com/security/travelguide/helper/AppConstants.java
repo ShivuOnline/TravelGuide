@@ -32,4 +32,8 @@ public class AppConstants {
     // User Active Status
     public static final String ACTIVE_USER = "Active";
     public static final String IN_ACTIVE_USER = "InActive";
+
+    // Local Data Types keys
+    public static final String SELECTED_PLACE_TYPE = "Selected Place Type";
+    public static final String SELECTED_PLACE = "Selected Place";
 }

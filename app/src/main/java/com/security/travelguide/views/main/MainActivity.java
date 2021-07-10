@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.security.travelguide.R;
+import com.security.travelguide.helper.AppConstants;
 import com.security.travelguide.helper.NetworkUtil;
 import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
@@ -52,11 +53,25 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
     private CircleImageView userProfilePic;
     private ImageView imageLogout;
 
+    private String selectedPlaceType = "";
+    private String selectedPlace = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
             setContentView(R.layout.activity_main);
+
+            if (getIntent() != null) {
+                selectedPlaceType = getIntent().getStringExtra(AppConstants.SELECTED_PLACE_TYPE);
+                selectedPlace = getIntent().getStringExtra(AppConstants.SELECTED_PLACE);
+
+                if (selectedPlaceType == null) {
+                    selectedPlaceType = "";
+                    selectedPlace = "";
+                }
+            }
+
             titleHeader = findViewById(R.id.title_header);
             userProfilePic = findViewById(R.id.profile_pic);
             imageLogout = findViewById(R.id.logout);
@@ -111,7 +126,14 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 }
             });
 
-            fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
+            if (!selectedPlaceType.isEmpty()) {
+                Bundle bundle = new Bundle();
+                bundle.putString(AppConstants.SELECTED_PLACE_TYPE, selectedPlaceType);
+                bundle.putString(AppConstants.SELECTED_PLACE, selectedPlace);
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, PhotoUpload.createInstance(bundle)).commit();
+            } else {
+                fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard()).commit();
+            }
 
             imageLogout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -223,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
     public static void hideBottomNav() {
         try {
-            if(bottomNavigationView != null){
+            if (bottomNavigationView != null) {
                 bottomNavigationView.setVisibility(View.GONE);
             }
         } catch (Exception e) {
@@ -233,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
 
     public static void showBottomNav() {
         try {
-            if(bottomNavigationView != null) {
+            if (bottomNavigationView != null) {
                 bottomNavigationView.setVisibility(View.VISIBLE);
             }
         } catch (Exception e) {
@@ -241,9 +263,9 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
         }
     }
 
-    public static void setBottomNavigationPosition(int position){
-        Log.d(TAG, "setBottomNavigationPosition: position: "+position);
-        if(bottomNavigationView != null){
+    public static void setBottomNavigationPosition(int position) {
+        Log.d(TAG, "setBottomNavigationPosition: position: " + position);
+        if (bottomNavigationView != null) {
             bottomNavigationView.setSelectedIndex(position);
             bottomNavigationView.setDefaultSelectedIndex(position);
         }
@@ -297,12 +319,12 @@ public class MainActivity extends AppCompatActivity implements Dashboard.OnFragm
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
 //                setBottomNavigationPosition(0);
-            }else if (fragment instanceof UserGallery) {
+            } else if (fragment instanceof UserGallery) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();
 //                setBottomNavigationPosition(0);
-            }else if (fragment instanceof Settings) {
+            } else if (fragment instanceof Settings) {
                 fragmentManager.popBackStack();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout_main, new Dashboard(),
                         Integer.toString(getFragmentCount())).commit();

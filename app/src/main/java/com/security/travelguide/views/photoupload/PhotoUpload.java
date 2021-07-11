@@ -192,6 +192,12 @@ public class PhotoUpload extends Fragment {
 
                         builderSingle.setAdapter(placeTypeSelectionAdapter, (dialog, position) -> {
                             textPlaceType.setText(placeTypeSelectionAdapter.getItem(position));
+                            if (selectedPlaceType.equalsIgnoreCase(placeTypeSelectionAdapter.getItem(position))) {
+                                selectedPlaceType = placeTypeSelectionAdapter.getItem(position);
+                            } else {
+                                selectedPlaceType = placeTypeSelectionAdapter.getItem(position);
+                                textPlace.setText("");
+                            }
                         });
                         builderSingle.show();
                     }

@@ -7,9 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +32,7 @@ import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
 import com.security.travelguide.model.galleryDetails.GalleryUploadMain;
 import com.security.travelguide.model.userDetails.UserMain;
+import com.security.travelguide.views.main.MainViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -188,11 +192,25 @@ public class UserGallery extends Fragment implements UserGalleryMainAdapter.User
     }
 
     @Override
-    public void userItemItemClicked(int position, GalleryUploadMain galleryUploadMain) {
+    public void userItemItemClicked(int position, GalleryUploadMain galleryUploadMain,ImageView imagePlace, TextView textPlaceHeader) {
         if (NetworkUtil.getConnectivityStatus(requireContext())) {
             Intent intentPhotoView = new Intent(requireContext(), PhotoViewer.class);
             intentPhotoView.putExtra(AppConstants.SELECTED_PLACE_ALL_DETAILS, galleryUploadMain);
-            startActivityForResult(intentPhotoView, 3);
+
+            Pair<View, String> transactionPairOne = Pair.create((View) imagePlace, requireContext().getResources().getString(R.string.transaction_image));
+            Pair<View, String> transactionPairTwo = Pair.create((View) textPlaceHeader, requireContext().getResources().getString(R.string.transaction_image_name));
+
+           /*
+           // Call single Shared Transaction
+           ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(requireActivity(), (View) imagePlace, requireContext().getResources().getString(R.string.transaction_name));
+            */
+
+            // Call Multiple Shared Transaction using Pair Option
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(requireActivity(), transactionPairOne, transactionPairTwo);
+            startActivityForResult(intentPhotoView, 3, options.toBundle());
+
         } else {
             TravelGuideToast.showErrorToast(requireContext(), getString(R.string.no_internet), TravelGuideToast.TRAVEL_GUIDE_TOAST_LENGTH_SHORT);
         }

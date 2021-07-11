@@ -37,7 +37,7 @@ public class UserGalleryMainAdapter extends RecyclerView.Adapter<UserGalleryMain
     @Override
     public UserGalleryAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_places_main_gallery, parent, false);
         return new UserGalleryAdapterViewHolder(v);
     }
 
@@ -53,21 +53,21 @@ public class UserGalleryMainAdapter extends RecyclerView.Adapter<UserGalleryMain
                     holder.imageIcon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.userItemItemClicked(position, galleryUploadMain);
+                            listener.userItemItemClicked(position, galleryUploadMain, holder.imageIcon, holder.textTitle);
                         }
                     });
 
                     holder.textTitle.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.userItemItemClicked(position, galleryUploadMain);
+                            listener.userItemItemClicked(position, galleryUploadMain, holder.imageIcon, holder.textTitle);
                         }
                     });
 
                     holder.galleryItemCardView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            listener.userItemItemClicked(position, galleryUploadMain);
+                            listener.userItemItemClicked(position, galleryUploadMain, holder.imageIcon, holder.textTitle);
                         }
                     });
                 }
@@ -93,7 +93,7 @@ public class UserGalleryMainAdapter extends RecyclerView.Adapter<UserGalleryMain
     }
 
     public interface UserGalleryItemClickListener {
-        void userItemItemClicked(int position, GalleryUploadMain galleryUploadMain);
+        void userItemItemClicked(int position, GalleryUploadMain galleryUploadMain,ImageView imagePlace, TextView textPlaceHeader);
     }
 
     static class UserGalleryAdapterViewHolder extends RecyclerView.ViewHolder {

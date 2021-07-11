@@ -8,6 +8,9 @@
     <string name="transaction_name" translatable="false">places</string>
     <string name="transaction_title_name" translatable="false">placeTitle</string>
 
+    <string name="transaction_image" translatable="false">image</string>
+    <string name="transaction_image_name" translatable="false">imageTitle</string>
+
     <string name="account_signup">Don\'t have an account? Sign Up</string>
 
     // Beaches Description

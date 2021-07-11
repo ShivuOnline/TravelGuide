@@ -46,7 +46,7 @@ import com.security.travelguide.helper.UserUtils;
 import com.security.travelguide.helper.UtilityConstants;
 import com.security.travelguide.helper.UtilityPlaces;
 import com.security.travelguide.helper.Utils;
-import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
+import com.security.travelguide.helper.travelGuideToast.TravelGuideToast;
 import com.security.travelguide.model.galleryDetails.GalleryUploadMain;
 import com.security.travelguide.model.userDetails.UserMain;
 import com.theartofdev.edmodo.cropper.CropImage;

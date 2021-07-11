@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.security.travelguide.R;
 import com.security.travelguide.helper.AppConstants;
-import com.security.travelguide.helper.myTaskToast.TravelGuideToast;
+import com.security.travelguide.helper.travelGuideToast.TravelGuideToast;
 import com.security.travelguide.model.galleryDetails.GalleryUploadMain;
 
 public class PhotoViewer extends AppCompatActivity {

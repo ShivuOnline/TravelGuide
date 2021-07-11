@@ -1,4 +1,4 @@
-package com.security.travelguide.helper.myTaskToast;
+package com.security.travelguide.helper.travelGuideToast;
 
 import android.content.Context;
 import android.view.Gravity;
